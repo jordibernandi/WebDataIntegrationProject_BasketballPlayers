@@ -17,6 +17,6 @@ public class PlayerSalaryXMLFormatter extends XMLFormatter<PlayerSalary>{
 
 		player.appendChild(createTextElement("name", record.getName(), doc));
 
-		return actor;
+		return player;
 	}
 }

@@ -117,7 +117,7 @@ public class PlayerSalary extends AbstractRecord<Attribute> implements Serializa
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Actor other = (Actor) obj;
+		PlayerSalary other = (PlayerSalary) obj;
 		if (name == null) {
 			if (other.name != null)
 				return false;
