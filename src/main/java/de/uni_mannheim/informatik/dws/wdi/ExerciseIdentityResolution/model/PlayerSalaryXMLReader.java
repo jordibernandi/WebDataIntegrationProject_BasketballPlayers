@@ -1,3 +1,6 @@
+package de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.model;
+
+
 /*
  * Copyright (c) 2017 Data and Web Science Group, University of Mannheim, Germany (http://dws.informatik.uni-mannheim.de/)
  *
@@ -9,45 +12,77 @@
  * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and limitations under the License.
  */
-package de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.model;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
 import java.time.temporal.ChronoField;
+import java.util.List;
 import java.util.Locale;
 
 import org.w3c.dom.Node;
 
+import de.uni_mannheim.informatik.dws.winter.model.DataSet;
 import de.uni_mannheim.informatik.dws.winter.model.defaultmodel.Attribute;
 import de.uni_mannheim.informatik.dws.winter.model.io.XMLMatchableReader;
 
 /**
- * A {@link XMLMatchableReader} for {@link Actor}s.
+ * A {@link XMLMatchableReader} for {@link Movie}s.
  * 
  * @author Oliver Lehmberg (oli@dwslab.de)
  * 
  */
-public class PlayerSalaryXMLReader extends XMLMatchableReader<PlayerSalary, Attribute> {
+public class PlayerSalaryXMLReader extends XMLMatchableReader<Movie, Attribute>  {
 
+	/* (non-Javadoc)
+	 * @see de.uni_mannheim.informatik.wdi.model.io.XMLMatchableReader#initialiseDataset(de.uni_mannheim.informatik.wdi.model.DataSet)
+	 */
 	@Override
-	public PlayerSalary createModelFromElement(Node node, String provenanceInfo) {
-		String id = getValueFromChildElement(node, "id");
-
+	protected void initialiseDataset(DataSet<Movie, Attribute> dataset) {
+		super.initialiseDataset(dataset);
+		
+	}
+	
+	@Override
+	public Movie createModelFromElement(Node node, String provenanceInfo) {
+		String name = getValueFromChildElement(node, "name");
+        String birth_date = getValueFromChildElement(node, "birth_date");
+        String year_start = getValueFromChildElement(node, "year_start");
+        String year_end = getValueFromChildElement(node, "year_end");
+        String position = getValueFromChildElement(node, "position");
+        String height = getValueFromChildElement(node, "height");
+        String weight = getValueFromChildElement(node, "weight");
+        String college = getValueFromChildElement(node, "college");
 		// create the object with id and provenance information
-		PlayerSalary playerSalary = new PlayerSalary(id, provenanceInfo);
+		Movie movie = new Movie(name, provenanceInfo);
 
 		// fill the attributes
-		playerSalary.setRegisterValue(getValueFromChildElement(node, "registerValue"));
-		playerSalary.setName(getValueFromChildElement(node, "name"));
-		playerSalary.setSalary(getValueFromChildElement(node, "salary"));
-		playerSalary.setStartYear(getValueFromChildElement(node, "startYear"));
-		playerSalary.setEndYear(getValueFromChildElement(node, "endYear"));
-		playerSalary.setTeam(getValueFromChildElement(node, "team"));
-		playerSalary.setFullTeamName(getValueFromChildElement(node, "fullTeamName"));
+		movie.setTitle(getValueFromChildElement(node, "title"));
+		movie.setDirector(getValueFromChildElement(node, "director"));
 
-		return playerSalary;
+		// convert the date string into a DateTime object
+		try {
+			String date = getValueFromChildElement(node, "date");
+			if (date != null && !date.isEmpty()) {
+				DateTimeFormatter formatter = new DateTimeFormatterBuilder()
+				        .appendPattern("yyyy-MM-dd")
+				        .parseDefaulting(ChronoField.CLOCK_HOUR_OF_DAY, 0)
+				        .parseDefaulting(ChronoField.MINUTE_OF_HOUR, 0)
+				        .parseDefaulting(ChronoField.SECOND_OF_MINUTE, 0)
+				        .toFormatter(Locale.ENGLISH);
+				LocalDateTime dt = LocalDateTime.parse(date, formatter);
+				movie.setDate(dt);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		// load the list of actors
+		List<Actor> actors = getObjectListFromChildElement(node, "actors",
+				"actor", new ActorXMLReader(), provenanceInfo);
+		movie.setActors(actors);
+
+		return movie;
 	}
 
 }
-
