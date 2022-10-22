@@ -142,17 +142,17 @@ public class PlayerSalary extends AbstractRecord<Attribute> implements Serializa
 		if(attribute==REGISTERVALUE)
 			return name!=null;
 		else if(attribute==NAME) 
-			return birthplace!=null;
+			return registerValue!=null;
 		else if(attribute==SALARY)
-			return birthday!=null;
+			return salary!=null;
 		else if(attribute==STARTYEAR)
-			return birthday!=null;
+			return startYear!=null;
 		else if(attribute==ENDYEAR)
-			return birthday!=null;
+			return endYear!=null;
 		else if(attribute==TEAM)
-			return birthday!=null;
+			return team!=null;
 		else if(attribute==FULLTEAMNAME)
-			return birthday!=null;
+			return fullTeamName!=null;
 		return false;
 	}
 }
