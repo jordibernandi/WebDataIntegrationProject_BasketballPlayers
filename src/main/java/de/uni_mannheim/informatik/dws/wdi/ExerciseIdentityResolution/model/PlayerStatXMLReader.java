@@ -44,40 +44,22 @@ public class PlayerStatXMLReader extends XMLMatchableReader<Movie, Attribute>  {
 	
 	@Override
 	public Movie createModelFromElement(Node node, String provenanceInfo) {
-		String registerValue = getValueFromChildElement(node, "registerValue");
-        String name = getValueFromChildElement(node, "name");
-        String salary = getValueFromChildElement(node, "salary");
-        String startYear = getValueFromChildElement(node, "startYear");
-        String endYear = getValueFromChildElement(node, "endYear");
-        String team = getValueFromChildElement(node, "team");
+		String name = getValueFromChildElement(node, "name");
+        String birth_date = dateFormate(getValueFromChildElement(node, "birth_date"));
+        String year_start = getValueFromChildElement(node, "year_start");
+        String year_end = getValueFromChildElement(node, "year_end");
+        String position = getValueFromChildElement(node, "position");
+        String height = getValueFromChildElement(node, "height");
         String weight = getValueFromChildElement(node, "weight");
-        String fullTeamName = getValueFromChildElement(node, "fullTeamName");
+        String college = getValueFromChildElement(node, "college");
 
       
 
 		// create the object with id and provenance information
 		Movie movie = new Movie(name, provenanceInfo);
 
-		// fill the attributes
-		movie.setTitle(getValueFromChildElement(node, "title"));
-		movie.setDirector(getValueFromChildElement(node, "director"));
-
-		// convert the date string into a DateTime object
-		try {
-			String date = getValueFromChildElement(node, "date");
-			if (date != null && !date.isEmpty()) {
-				DateTimeFormatter formatter = new DateTimeFormatterBuilder()
-				        .appendPattern("yyyy-MM-dd")
-				        .parseDefaulting(ChronoField.CLOCK_HOUR_OF_DAY, 0)
-				        .parseDefaulting(ChronoField.MINUTE_OF_HOUR, 0)
-				        .parseDefaulting(ChronoField.SECOND_OF_MINUTE, 0)
-				        .toFormatter(Locale.ENGLISH);
-				LocalDateTime dt = LocalDateTime.parse(date, formatter);
-				movie.setDate(dt);
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		
+	
 
 		// load the list of actors
 		List<Actor> actors = getObjectListFromChildElement(node, "actors",
@@ -87,4 +69,20 @@ public class PlayerStatXMLReader extends XMLMatchableReader<Movie, Attribute>  {
 		return movie;
 	}
 
+}
+public static dateFormate(date){
+    try {
+        if (date != null && !date.isEmpty()) {
+            DateTimeFormatter formatter = new DateTimeFormatterBuilder()
+                    .appendPattern("yyyy-MM-dd")
+                    .parseDefaulting(ChronoField.CLOCK_HOUR_OF_DAY, 0)
+                    .parseDefaulting(ChronoField.MINUTE_OF_HOUR, 0)
+                    .parseDefaulting(ChronoField.SECOND_OF_MINUTE, 0)
+                    .toFormatter(Locale.ENGLISH);
+            LocalDateTime dt = LocalDateTime.parse(date, formatter);
+            return dt;
+        }
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
 }
