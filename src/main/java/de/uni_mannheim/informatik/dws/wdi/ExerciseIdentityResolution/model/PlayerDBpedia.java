@@ -11,10 +11,10 @@ public class PlayerDBpedia extends AbstractRecord<Attribute> implements Serializ
     private String name;
     private LocalDateTime birthDate;
     private String birthPlace;
-    private double height;
-    private double weight;
-    private int startYear;
-    private int endYear;
+    private float height;
+    private float weight;
+    private LocalDateTime startYear;
+    private LocalDateTime endYear;
     private List<String> leagues;
     private List<String> positions;
     private List<String> teams;
@@ -48,35 +48,35 @@ public class PlayerDBpedia extends AbstractRecord<Attribute> implements Serializ
         this.birthPlace = birthPlace;
     }
 
-    public double getHeight() {
+    public float getHeight() {
         return height;
     }
 
-    public void setHeight(double height) {
+    public void setHeight(float height) {
         this.height = height;
     }
 
-    public double getWeight() {
+    public float getWeight() {
         return weight;
     }
 
-    public void setWeight(double weight) {
+    public void setWeight(float weight) {
         this.weight = weight;
     }
 
-    public Integer getStartYear() {
+    public LocalDateTime getStartYear() {
         return startYear;
     }
 
-    public void setStartYear(Integer startYear) {
+    public void setStartYear(LocalDateTime startYear) {
         this.startYear = startYear;
     }
 
-    public Integer getEndYear() {
+    public LocalDateTime getEndYear() {
         return endYear;
     }
 
-    public void setEndYear(Integer endYear) {
+    public void setEndYear(LocalDateTime endYear) {
         this.endYear = endYear;
     }
 
@@ -144,9 +144,9 @@ public class PlayerDBpedia extends AbstractRecord<Attribute> implements Serializ
         else if(attribute==WEIGHT)
             return weight!=0;
         else if(attribute==STARTYEAR)
-            return startYear!=0;
+            return startYear!=null;
         else if(attribute==ENDYEAR)
-            return endYear!=0;
+            return endYear!=null;
         else if(attribute==LEAGUES)
             return leagues!=null && leagues.size() > 0;
         else if(attribute==POSITIONS)

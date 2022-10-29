@@ -47,11 +47,50 @@ public class PlayerDBpediaXMLReader extends XMLMatchableReader<PlayerDBpedia, At
             e.printStackTrace();
         }
 
-        playerDBpedia.setBirthPlace(getValueFromChildElement(node, "birthPlace"));
-        playerDBpedia.setHeight(Double.parseDouble(getValueFromChildElement(node, "height")));
-        playerDBpedia.setWeight(Double.parseDouble(getValueFromChildElement(node, "weight")));
-        playerDBpedia.setStartYear(Integer.valueOf(getValueFromChildElement(node, "startYear")));
-        playerDBpedia.setEndYear(Integer.valueOf(getValueFromChildElement(node, "endYear")));
+        String birthPlace = getValueFromChildElement(node, "birthPlace");
+        if (birthPlace != null && !birthPlace.isEmpty()) {
+            playerDBpedia.setBirthPlace(birthPlace);
+        }
+        String height = getValueFromChildElement(node, "height");
+        if (height != null && !height.isEmpty()) {
+            playerDBpedia.setHeight(Float.parseFloat(height));
+        }
+        String weight = getValueFromChildElement(node, "weight");
+        if (weight != null && !weight.isEmpty()) {
+            playerDBpedia.setWeight(Float.parseFloat(weight));
+        }
+
+        try {
+            String date = getValueFromChildElement(node, "startYear");
+            if (date != null) {
+                DateTimeFormatter formatter = new DateTimeFormatterBuilder()
+                        .appendPattern("yyyy-MM-dd")
+                        .parseDefaulting(ChronoField.CLOCK_HOUR_OF_DAY, 0)
+                        .parseDefaulting(ChronoField.MINUTE_OF_HOUR, 0)
+                        .parseDefaulting(ChronoField.SECOND_OF_MINUTE, 0)
+                        .toFormatter(Locale.ENGLISH);
+                LocalDateTime dt = LocalDateTime.parse(date, formatter);
+                playerDBpedia.setStartYear(dt);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        try {
+            String date = getValueFromChildElement(node, "endYear");
+            if (date != null) {
+                DateTimeFormatter formatter = new DateTimeFormatterBuilder()
+                        .appendPattern("yyyy-MM-dd")
+                        .parseDefaulting(ChronoField.CLOCK_HOUR_OF_DAY, 0)
+                        .parseDefaulting(ChronoField.MINUTE_OF_HOUR, 0)
+                        .parseDefaulting(ChronoField.SECOND_OF_MINUTE, 0)
+                        .toFormatter(Locale.ENGLISH);
+                LocalDateTime dt = LocalDateTime.parse(date, formatter);
+                playerDBpedia.setEndYear(dt);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         playerDBpedia.setLeagues(new ArrayList<String>(getListFromChildElement(node, "leagues")));
         playerDBpedia.setPositions(new ArrayList<String>(getListFromChildElement(node, "positions")));
