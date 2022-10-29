@@ -21,7 +21,8 @@ public class PlayerDBpediaXMLReader extends XMLMatchableReader<PlayerDBpedia, At
     }
     @Override
     public PlayerDBpedia createModelFromElement(Node node, String provenanceInfo) {
-        String id = UUID.randomUUID().toString();
+        String id = "player_dbpedia_" + UUID.randomUUID();
+
 
         // create the object with id and provenance information
         PlayerDBpedia playerDBpedia = new PlayerDBpedia(id, provenanceInfo);

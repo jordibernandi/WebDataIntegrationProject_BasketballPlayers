@@ -17,12 +17,6 @@ import java.time.LocalDateTime;
 import de.uni_mannheim.informatik.dws.winter.model.AbstractRecord;
 import de.uni_mannheim.informatik.dws.winter.model.defaultmodel.Attribute;
 
-/**
- * A {@link AbstractRecord} which represents an actor
- * 
- * @author Oliver Lehmberg (oli@dwslab.de)
- * 
- */
 public class PlayerSalary extends AbstractRecord<Attribute> implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -42,7 +36,7 @@ public class PlayerSalary extends AbstractRecord<Attribute> implements Serializa
 		return registerValue;
 	}
 
-	public void setRegisterValue(String registerValue) {
+	public void setRegisterValue(int registerValue) {
 		this.registerValue = registerValue;
 	}
 	
@@ -142,13 +136,13 @@ public class PlayerSalary extends AbstractRecord<Attribute> implements Serializa
 		if(attribute==REGISTERVALUE)
 			return name!=null;
 		else if(attribute==NAME) 
-			return registerValue!=null;
+			return registerValue!=0;
 		else if(attribute==SALARY)
-			return salary!=null;
+			return salary!=0;
 		else if(attribute==STARTYEAR)
-			return startYear!=null;
+			return startYear!=0;
 		else if(attribute==ENDYEAR)
-			return endYear!=null;
+			return endYear!=0;
 		else if(attribute==TEAM)
 			return team!=null;
 		else if(attribute==FULLTEAMNAME)

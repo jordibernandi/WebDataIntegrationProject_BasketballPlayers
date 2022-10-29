@@ -13,8 +13,8 @@ public class PlayerDBpedia extends AbstractRecord<Attribute> implements Serializ
     private String birthPlace;
     private double height;
     private double weight;
-    private Integer startYear;
-    private Integer endYear;
+    private int startYear;
+    private int endYear;
     private List<String> leagues;
     private List<String> positions;
     private List<String> teams;
@@ -144,9 +144,9 @@ public class PlayerDBpedia extends AbstractRecord<Attribute> implements Serializ
         else if(attribute==WEIGHT)
             return weight!=0;
         else if(attribute==STARTYEAR)
-            return startYear!=null;
+            return startYear!=0;
         else if(attribute==ENDYEAR)
-            return endYear!=null;
+            return endYear!=0;
         else if(attribute==LEAGUES)
             return leagues!=null && leagues.size() > 0;
         else if(attribute==POSITIONS)

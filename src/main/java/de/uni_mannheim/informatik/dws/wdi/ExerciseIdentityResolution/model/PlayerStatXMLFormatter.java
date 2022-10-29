@@ -5,13 +5,7 @@ import org.w3c.dom.Element;
 
 import de.uni_mannheim.informatik.dws.winter.model.io.XMLFormatter;
 
-/**
- * {@link XMLFormatter} for {@link Actor}s.
- * 
- * @author Oliver Lehmberg (oli@dwslab.de)
- * 
- */
-public class PlayerStatXMLFormatter extends XMLFormatter<Playerstat> {
+public class PlayerStatXMLFormatter extends XMLFormatter<PlayerStat> {
 
 	@Override
 	public Element createRootElement(Document doc) {
@@ -19,12 +13,12 @@ public class PlayerStatXMLFormatter extends XMLFormatter<Playerstat> {
 	}
 
 	@Override
-	public Element createElementFromRecord(Playerstat record, Document doc) {
-		Element playerstat = doc.createElement("playerstat");
+	public Element createElementFromRecord(PlayerStat record, Document doc) {
+		Element playerStat = doc.createElement("playerStat");
 
-		actor.appendChild(createTextElement("name", record.getName(), doc));
+		playerStat.appendChild(createTextElement("name", record.getName(), doc));
 
-		return playerstat;
+		return playerStat;
 	}
 
 }
