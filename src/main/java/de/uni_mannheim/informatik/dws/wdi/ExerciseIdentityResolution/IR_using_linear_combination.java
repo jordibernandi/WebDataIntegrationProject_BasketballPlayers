@@ -41,7 +41,7 @@ public class IR_using_linear_combination
 	 */
 
 	private static final Logger logger = WinterLogManager.activateLogger("default");
-	
+
     public static void main( String[] args ) throws Exception
     {
 		// loading data
@@ -54,17 +54,13 @@ public class IR_using_linear_combination
 		new PlayerSalaryXMLReader().loadFromXML(new File("data/input/player_salary.xml"), "/players/player", dataPlayerSalary);
 		HashedDataSet<PlayerInjury, Attribute> dataPlayerInjury = new HashedDataSet<>();
 		new PlayerInjuryXMLReader().loadFromXML(new File("data/input/player_injury.xml"), "/players/player", dataPlayerInjury);
-//		HashedDataSet<Movie, Attribute> dataAcademyAwards = new HashedDataSet<>();
-//		new MovieXMLReader().loadFromXML(new File("data/input/academy_awards.xml"), "/movies/movie", dataAcademyAwards);
-//		HashedDataSet<Movie, Attribute> dataActors = new HashedDataSet<>();
-//		new MovieXMLReader().loadFromXML(new File("data/input/actors.xml"), "/movies/movie", dataActors);
 
 //		// load the gold standard (test set)
 //		logger.info("*\tLoading gold standard\t*");
 //		MatchingGoldStandard gsTest = new MatchingGoldStandard();
 //		gsTest.loadFromCSVFile(new File(
 //				"data/goldstandard/gs_academy_awards_2_actors_test.csv"));
-//
+
 //		// create a matching rule
 //		LinearCombinationMatchingRule<Movie, Attribute> matchingRule = new LinearCombinationMatchingRule<>(
 //				0.7);
