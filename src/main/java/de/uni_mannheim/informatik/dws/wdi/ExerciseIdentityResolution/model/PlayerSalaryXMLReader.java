@@ -18,8 +18,7 @@ public class PlayerSalaryXMLReader extends XMLMatchableReader<PlayerSalary, Attr
 
     @Override
     public PlayerSalary createModelFromElement(Node node, String provenanceInfo) {
-        String id = "player_salary_" + UUID.randomUUID();
-
+        String id = getValueFromChildElement(node, "id");
 
         // create the object with id and provenance information
         PlayerSalary playerSalary = new PlayerSalary(id, provenanceInfo);
