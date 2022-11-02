@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="players">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="player" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="id" type="xs:string"/>
+							<xs:element name="name" type="xs:string"/>
+							<xs:element name="birthDate" type="xs:date"/>
+							<xs:element name="birthPlace" type="xs:string"/>
+							<xs:choice>
+								<xs:sequence>
+									<xs:element name="height" type="xs:decimal"/>
+									<xs:choice>
+										<xs:sequence>
+											<xs:element name="weight" type="xs:decimal"/>
+											<xs:choice>
+												<xs:sequence>
+													<xs:element name="startYear" type="xs:date"/>
+													<xs:element name="endYear" minOccurs="0" type="xs:date"/>
+													<xs:element name="leagues" type="T3_leagues"/>
+													<xs:element name="positions" type="T3_positions"/>
+													<xs:element name="teams" type="T3_teams"/>
+													<xs:element name="awards" type="T3_awards"/>
+												</xs:sequence>
+												<xs:sequence>
+													<xs:element name="endYear" minOccurs="0" type="xs:date"/>
+													<xs:element name="leagues" type="T3_leagues"/>
+													<xs:element name="positions" type="T3_positions"/>
+													<xs:element name="teams" type="T3_teams"/>
+													<xs:element name="awards" type="T3_awards"/>
+												</xs:sequence>
+											</xs:choice>
+										</xs:sequence>
+										<xs:sequence>
+											<xs:element name="startYear" type="xs:date"/>
+											<xs:element name="endYear" minOccurs="0" type="xs:date"/>
+											<xs:element name="leagues" type="T3_leagues"/>
+											<xs:element name="positions" type="T3_positions"/>
+											<xs:element name="teams" type="T3_teams"/>
+											<xs:element name="awards" type="T3_awards"/>
+										</xs:sequence>
+										<xs:sequence>
+											<xs:element name="endYear" minOccurs="0" type="xs:date"/>
+											<xs:element name="leagues" type="T3_leagues"/>
+											<xs:element name="positions" type="T3_positions"/>
+											<xs:element name="teams" type="T3_teams"/>
+											<xs:element name="awards" type="T3_awards"/>
+										</xs:sequence>
+									</xs:choice>
+								</xs:sequence>
+								<xs:sequence>
+									<xs:element name="weight" type="xs:decimal"/>
+									<xs:choice>
+										<xs:sequence>
+											<xs:element name="leagues" type="T3_leagues"/>
+											<xs:element name="positions" type="T3_positions"/>
+											<xs:element name="teams" type="T3_teams"/>
+											<xs:element name="awards" type="T3_awards"/>
+										</xs:sequence>
+										<xs:sequence>
+											<xs:element name="startYear" type="xs:date"/>
+											<xs:element name="endYear" minOccurs="0" type="xs:date"/>
+											<xs:element name="leagues" type="T3_leagues"/>
+											<xs:element name="positions" type="T3_positions"/>
+											<xs:element name="teams" type="T3_teams"/>
+											<xs:element name="awards" type="T3_awards"/>
+										</xs:sequence>
+									</xs:choice>
+								</xs:sequence>
+								<xs:sequence>
+									<xs:element name="startYear" type="xs:date"/>
+									<xs:element name="endYear" minOccurs="0" type="xs:date"/>
+									<xs:element name="leagues" type="T3_leagues"/>
+									<xs:element name="positions" type="T3_positions"/>
+									<xs:element name="teams" type="T3_teams"/>
+									<xs:element name="awards" type="T3_awards"/>
+								</xs:sequence>
+								<xs:sequence>
+									<xs:element name="endYear" minOccurs="0" type="xs:date"/>
+									<xs:element name="leagues" type="T3_leagues"/>
+									<xs:element name="positions" type="T3_positions"/>
+									<xs:element name="teams" type="T3_teams"/>
+									<xs:element name="awards" type="T3_awards"/>
+								</xs:sequence>
+							</xs:choice>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="T3_awards">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="T3_leagues">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="T3_positions">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="T3_teams">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

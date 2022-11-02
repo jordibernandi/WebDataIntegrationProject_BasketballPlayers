@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Edited with Altova MapForce 2022r2 -->
+<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="22">
+	<resources/>
+	<component name="defaultmap" uid="1" editable="1" blackbox="0">
+		<properties SelectedLanguage="builtin"/>
+		<structure>
+			<children>
+				<component name="divide" library="core" uid="9" kind="5">
+					<sources>
+						<datapoint pos="0" key="53"/>
+						<datapoint pos="1" key="54"/>
+					</sources>
+					<targets>
+						<datapoint/>
+					</targets>
+					<view ltx="409" lty="46" rbx="481" rby="98"/>
+				</component>
+				<component name="constant" library="core" uid="10" kind="2">
+					<targets>
+						<datapoint pos="0" key="55"/>
+					</targets>
+					<view ltx="321" lty="37" rbx="385" rby="53"/>
+					<data>
+						<constant value="30.48" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="17" kind="2">
+					<targets>
+						<datapoint pos="0" key="56"/>
+					</targets>
+					<view ltx="447" lty="394" rbx="517" rby="410"/>
+					<data>
+						<constant value="Center" datatype="string"/>
+					</data>
+				</component>
+				<component name="equal" library="core" uid="12" kind="5">
+					<sources>
+						<datapoint pos="0" key="41"/>
+						<datapoint pos="1" key="42"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="43"/>
+					</targets>
+					<view ltx="494" lty="294" rbx="545" rby="346"/>
+				</component>
+				<component name="constant" library="core" uid="13" kind="2">
+					<targets>
+						<datapoint pos="0" key="40"/>
+					</targets>
+					<view ltx="399" lty="330" rbx="445" rby="346"/>
+					<data>
+						<constant value="C" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="18" kind="2">
+					<targets>
+						<datapoint pos="0" key="46"/>
+					</targets>
+					<view ltx="356" lty="473" rbx="400" rby="489"/>
+					<data>
+						<constant value="F" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="23" kind="2">
+					<targets>
+						<datapoint pos="0" key="57"/>
+					</targets>
+					<view ltx="430" lty="477" rbx="498" rby="493"/>
+					<data>
+						<constant value="Guard" datatype="string"/>
+					</data>
+				</component>
+				<component name="player_stat" library="xml" uid="4" kind="14">
+					<properties XSLTTargetEncoding="UTF-8"/>
+					<view ltx="78" lty="47" rbx="282" rby="431"/>
+					<data>
+						<root>
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="players" expanded="1">
+										<entry name="player" outkey="18" expanded="1">
+											<entry name="id" outkey="19"/>
+											<entry name="name" outkey="20"/>
+											<entry name="year_start" outkey="21"/>
+											<entry name="year_end" outkey="22"/>
+											<entry name="position" outkey="23"/>
+											<entry name="height" outkey="24"/>
+											<entry name="weight" outkey="25"/>
+											<entry name="birth_date" outkey="26"/>
+											<entry name="college" outkey="27"/>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="player_stat.xsd" instanceroot="{}players" inputinstance="player_stat.xml" outputinstance="player_stat.xml"/>
+					</data>
+				</component>
+				<component name="equal" library="core" uid="19" kind="5">
+					<sources>
+						<datapoint pos="0" key="45"/>
+						<datapoint pos="1" key="47"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="48"/>
+					</targets>
+					<view ltx="455" lty="410" rbx="506" rby="462"/>
+				</component>
+				<component name="constant" library="core" uid="6" kind="2">
+					<targets>
+						<datapoint pos="0" key="1"/>
+					</targets>
+					<view ltx="292" lty="294" rbx="336" rby="310"/>
+					<data>
+						<constant value="-" datatype="string"/>
+					</data>
+				</component>
+				<component name="tokenize" library="core" uid="5" kind="5">
+					<sources>
+						<datapoint pos="0" key="4"/>
+						<datapoint pos="1" key="2"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="3"/>
+					</targets>
+					<view ltx="349" lty="241" rbx="433" rby="293"/>
+				</component>
+				<component name="constant" library="core" uid="21" kind="2">
+					<targets>
+						<datapoint pos="0" key="50"/>
+					</targets>
+					<view ltx="258" lty="411" rbx="305" rby="427"/>
+					<data>
+						<constant value="G" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="20" kind="2">
+					<targets>
+						<datapoint pos="0" key="65"/>
+					</targets>
+					<view ltx="332" lty="446" rbx="410" rby="462"/>
+					<data>
+						<constant value="Forward" datatype="string"/>
+					</data>
+				</component>
+				<component name="equal" library="core" uid="22" kind="5">
+					<sources>
+						<datapoint pos="0" key="49"/>
+						<datapoint pos="1" key="51"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="52"/>
+					</targets>
+					<view ltx="368" lty="375" rbx="419" rby="427"/>
+				</component>
+				<component name="if-else" library="core" uid="16" kind="4">
+					<sources>
+						<datapoint pos="0" key="44"/>
+						<datapoint pos="1" key="58"/>
+						<datapoint pos="2" key="59"/>
+						<datapoint pos="3" key="60"/>
+						<datapoint pos="4" key="61"/>
+						<datapoint pos="5" key="62"/>
+						<datapoint pos="6" key="63"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="64"/>
+					</targets>
+					<view ltx="506" lty="315" rbx="601" rby="453"/>
+				</component>
+				<component name="player_stat" library="xml" uid="7" kind="14">
+					<properties XSLTDefaultOutput="1"/>
+					<view ltx="679" lty="81" rbx="867" rby="281"/>
+					<data>
+						<root scrollposition="19">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="players" inpkey="28" expanded="1">
+										<entry name="player" inpkey="29" expanded="1">
+											<entry name="id" inpkey="30"/>
+											<entry name="name" inpkey="31"/>
+											<entry name="yearStart" inpkey="32"/>
+											<entry name="yearEnd" inpkey="33"/>
+											<entry name="position" inpkey="34" expanded="1">
+												<entry name="name" inpkey="35"/>
+											</entry>
+											<entry name="weight" inpkey="37"/>
+											<entry name="birthDate" inpkey="38"/>
+											<entry name="college" inpkey="39"/>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="..\..\schemas\player_stat.xsd" instanceroot="{}players" outputinstance="..\..\schemas\player_stat.xml"/>
+					</data>
+				</component>
+			</children>
+			<graph directed="1">
+				<edges/>
+				<vertices>
+					<vertex vertexkey="1">
+						<edges>
+							<edge vertexkey="2"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="23">
+						<edges>
+							<edge vertexkey="4"/>
+							<edge vertexkey="34"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="18">
+						<edges>
+							<edge vertexkey="28"/>
+							<edge vertexkey="29"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="19">
+						<edges>
+							<edge vertexkey="30"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="20">
+						<edges>
+							<edge vertexkey="31"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="21">
+						<edges>
+							<edge vertexkey="32"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="22">
+						<edges>
+							<edge vertexkey="33"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="64">
+						<edges>
+							<edge vertexkey="35"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="25">
+						<edges>
+							<edge vertexkey="37"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="26">
+						<edges>
+							<edge vertexkey="38"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="27">
+						<edges>
+							<edge vertexkey="39"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="3">
+						<edges>
+							<edge vertexkey="41"/>
+							<edge vertexkey="45"/>
+							<edge vertexkey="49"/>
+							<edge vertexkey="63"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="40">
+						<edges>
+							<edge vertexkey="42"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="43">
+						<edges>
+							<edge vertexkey="44"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="46">
+						<edges>
+							<edge vertexkey="47"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="50">
+						<edges>
+							<edge vertexkey="51"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="24">
+						<edges>
+							<edge vertexkey="53"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="55">
+						<edges>
+							<edge vertexkey="54"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="56">
+						<edges>
+							<edge vertexkey="58"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="48">
+						<edges>
+							<edge vertexkey="59"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="65">
+						<edges>
+							<edge vertexkey="60"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="52">
+						<edges>
+							<edge vertexkey="61"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="57">
+						<edges>
+							<edge vertexkey="62"/>
+						</edges>
+					</vertex>
+				</vertices>
+			</graph>
+		</structure>
+	</component>
+</mapping>
