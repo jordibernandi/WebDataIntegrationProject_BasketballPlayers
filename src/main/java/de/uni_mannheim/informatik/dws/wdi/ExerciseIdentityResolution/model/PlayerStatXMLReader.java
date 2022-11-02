@@ -22,7 +22,7 @@ public class PlayerStatXMLReader extends XMLMatchableReader<PlayerStat, Attribut
 
 	@Override
 	public PlayerStat createModelFromElement(Node node, String provenanceInfo) {
-		String id = "player_stat_" + UUID.randomUUID();
+		String id = getValueFromChildElement(node, "id");
 
 		// create the object with id and provenance information
 		PlayerStat playerStat = new PlayerStat(id, provenanceInfo);

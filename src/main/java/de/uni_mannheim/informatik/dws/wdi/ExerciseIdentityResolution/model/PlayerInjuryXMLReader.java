@@ -25,7 +25,7 @@ public class PlayerInjuryXMLReader extends XMLMatchableReader<PlayerInjury, Attr
 	
 	@Override
 	public PlayerInjury createModelFromElement(Node node, String provenanceInfo) {
-		String id = "player_injury_" + UUID.randomUUID();
+		String id = getValueFromChildElement(node, "id");
 
 
 		// create the object with id and provenance information
