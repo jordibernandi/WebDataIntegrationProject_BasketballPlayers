@@ -13,55 +13,31 @@
               <xs:element type="xs:float" name="weight"/>
               <xs:element type="xs:date" name="startYear"/>
               <xs:element type="xs:date" name="endYear"/>
-              <xs:element name="leagues">
+              <xs:element name="league">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element name="league">
-                      <xs:complexType>
-                        <xs:sequence>
-                          <xs:element type="xs:string" name="name"/>
-                        </xs:sequence>
-                      </xs:complexType>
-                    </xs:element>
+                    <xs:element type="xs:string" name="name" maxOccurs="unbounded" minOccurs="0"/>
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
-              <xs:element name="positions">
+              <xs:element name="position">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element name="position">
-                      <xs:complexType>
-                        <xs:sequence>
-                          <xs:element type="xs:string" name="name"/>
-                        </xs:sequence>
-                      </xs:complexType>
-                    </xs:element>
+                    <xs:element type="xs:string" name="name" maxOccurs="unbounded" minOccurs="0"/>
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
-              <xs:element name="teams">
+              <xs:element name="team">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element name="team">
-                      <xs:complexType>
-                        <xs:sequence>
-                          <xs:element type="xs:string" name="name"/>
-                        </xs:sequence>
-                      </xs:complexType>
-                    </xs:element>
+                    <xs:element type="xs:string" name="name" maxOccurs="unbounded" minOccurs="0"/>
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
-              <xs:element name="awards">
+              <xs:element name="award">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element name="award">
-                      <xs:complexType>
-                        <xs:sequence>
-                          <xs:element type="xs:string" name="name"/>
-                        </xs:sequence>
-                      </xs:complexType>
-                    </xs:element>
+                    <xs:element type="xs:string" name="name" maxOccurs="unbounded" minOccurs="0"/>
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>

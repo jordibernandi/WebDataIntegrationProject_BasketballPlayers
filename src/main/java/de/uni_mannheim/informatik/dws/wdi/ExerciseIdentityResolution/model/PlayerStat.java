@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.LinkedList;
 import java.util.Locale;
+import java.util.List;
 
 import de.uni_mannheim.informatik.dws.winter.model.AbstractRecord;
 import de.uni_mannheim.informatik.dws.winter.model.Matchable;
@@ -17,7 +18,7 @@ public class PlayerStat implements Matchable {
 	private String name;
     private int yearStart;
     private int yearEnd;
-    private String position;
+    private List<String> positions;
 	private float height;
     private float weight;
     private LocalDateTime birthDate;
@@ -59,11 +60,12 @@ public class PlayerStat implements Matchable {
 		this.yearEnd = yearEnd;
 	}
 
-    public String getPosition() {
-	    return position;
+	public List<String> getPositionss() {
+		return positions;
 	}
-	public void setPosition(String position) {
-		this.position = position;
+
+	public void setPositions(List<String> positions) {
+		this.positions = positions;
 	}
 
     public float getHeight() {
