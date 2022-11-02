@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<players xsi:noNamespaceSchemaLocation="file:///C:/Users/Milon/Documents/players_stats.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<players xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<player>
 		<id>player_stat_id_1</id>
 		<name>Alaa Abdelnaby</name>
