@@ -52,9 +52,9 @@ public class IR_using_machine_learning {
 		// loading data
 		logger.info("*\tLoading datasets\t*");
 		HashedDataSet<PlayerStat, Attribute> dataPlayerStat = new HashedDataSet<>();
-		new PlayerStatXMLReader().loadFromXML(new File("data/input/player_stat.xml"), "/players/player", dataPlayerStat);
+		new PlayerStatXMLReader().loadFromXML(new File("data/input/player_stat_new.xml"), "/players/player", dataPlayerStat);
 		HashedDataSet<PlayerDBpedia, Attribute> dataPlayerDBpedia = new HashedDataSet<>();
-		new PlayerDBpediaXMLReader().loadFromXML(new File("data/input/player_dbpedia.xml"), "/players/player", dataPlayerDBpedia);
+		new PlayerDBpediaXMLReader().loadFromXML(new File("data/input/player_dbpedia_new.xml"), "/players/player", dataPlayerDBpedia);
 		HashedDataSet<PlayerSalary, Attribute> dataPlayerSalary = new HashedDataSet<>();
 		new PlayerSalaryXMLReader().loadFromXML(new File("data/input/player_salary.xml"), "/players/player", dataPlayerSalary);
 		HashedDataSet<PlayerInjury, Attribute> dataPlayerInjury = new HashedDataSet<>();

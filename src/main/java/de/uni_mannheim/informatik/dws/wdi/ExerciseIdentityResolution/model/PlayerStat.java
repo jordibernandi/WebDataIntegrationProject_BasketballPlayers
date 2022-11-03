@@ -60,7 +60,7 @@ public class PlayerStat implements Matchable {
 		this.yearEnd = yearEnd;
 	}
 
-	public List<String> getPositionss() {
+	public List<String> getPositions() {
 		return positions;
 	}
 

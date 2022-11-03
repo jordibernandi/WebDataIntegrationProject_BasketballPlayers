@@ -29,9 +29,18 @@ public class PlayerStatXMLReader extends XMLMatchableReader<PlayerStat, Attribut
 
 		// fill the attributes
 		playerStat.setName(getValueFromChildElement(node, "name"));
-		playerStat.setYearStart(Integer.parseInt(getValueFromChildElement(node, "yearStart")));
-		playerStat.setYearEnd(Integer.parseInt(getValueFromChildElement(node, "yearEnd")));
-		playerStat.setPositions(new ArrayList<String>(getListFromChildElement(node, "position")));
+
+		String yearStart = getValueFromChildElement(node, "yearStart");
+		if (yearStart != null && !yearStart.isEmpty()) {
+			playerStat.setYearStart(Integer.parseInt(yearStart));
+		}
+
+		String yearEnd = getValueFromChildElement(node, "yearEnd");
+		if (yearEnd != null && !yearEnd.isEmpty()) {
+			playerStat.setYearStart(Integer.parseInt(yearEnd));
+		}
+
+		playerStat.setPositions(getListFromChildElement(node, "position"));
 
 		String height = getValueFromChildElement(node, "height");
 		if (height != null && !height.isEmpty()) {

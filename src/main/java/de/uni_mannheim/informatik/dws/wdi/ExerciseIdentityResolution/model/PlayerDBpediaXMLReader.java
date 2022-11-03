@@ -91,10 +91,10 @@ public class PlayerDBpediaXMLReader extends XMLMatchableReader<PlayerDBpedia, At
             e.printStackTrace();
         }
 
-        playerDBpedia.setLeagues(new ArrayList<String>(getListFromChildElement(node, "leagues")));
-        playerDBpedia.setPositions(new ArrayList<String>(getListFromChildElement(node, "positions")));
-        playerDBpedia.setTeams(new ArrayList<String>(getListFromChildElement(node, "teams")));
-        playerDBpedia.setAwards(new ArrayList<String>(getListFromChildElement(node, "awards")));
+        playerDBpedia.setLeagues(getListFromChildElement(node, "league"));
+        playerDBpedia.setPositions(getListFromChildElement(node, "position"));
+        playerDBpedia.setTeams(getListFromChildElement(node, "team"));
+        playerDBpedia.setAwards(getListFromChildElement(node, "award"));
 
         return playerDBpedia;
     }
