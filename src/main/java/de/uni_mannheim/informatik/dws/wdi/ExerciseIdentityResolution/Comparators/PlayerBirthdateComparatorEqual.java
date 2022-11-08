@@ -1,7 +1,7 @@
-package comparator;
+package de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Comparators;
 
-import de.uni_mannheim.informatik.dws.winter.matching.rules.Comparator;
-import de.uni_mannheim.informatik.dws.winter.matching.rules.ComparatorLogger;
+import de.uni_mannheim.informatik.dws.winter.matching.rules.comparators.Comparator;
+import de.uni_mannheim.informatik.dws.winter.matching.rules.comparators.ComparatorLogger;
 import de.uni_mannheim.informatik.dws.winter.model.Correspondence;
 import de.uni_mannheim.informatik.dws.winter.model.Matchable;
 import de.uni_mannheim.informatik.dws.winter.model.defaultmodel.Attribute;
@@ -21,10 +21,14 @@ public class PlayerBirthdateComparatorEqual implements Comparator<PlayerStat, At
 
     private ComparatorLogger comparisonLog;
 
+
+
+
+
     @Override
-    public double compare(PlayerStat record1, PlayerStat record2, Correspondence<PlayerDBpedia, Matchable> schemaCorrespondence) {
-        LocalDate record1BirthDate = record1.getBirthDate();
-        LocalDate record2BirthDate = record2.getBirthDate();
+    public double compare(PlayerStat record1, PlayerStat record2, Correspondence<Attribute, Matchable> schemaCorrespondence) {
+        LocalDate record1BirthDate = LocalDate.from(record1.getBirthDate());
+        LocalDate record2BirthDate = LocalDate.from(record2.getBirthDate());
 
         if(record1BirthDate != null && record2BirthDate != null) {
             String s1 = record1BirthDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
@@ -47,23 +51,22 @@ public class PlayerBirthdateComparatorEqual implements Comparator<PlayerStat, At
     }
 
     @Override
-    public boolean hasMissingValue(PlayerStat record1, PlayerStat record2, Correspondence<PlayerDBpedia, Matchable> schemaCorrespondence) {
+    public boolean hasMissingValue(PlayerStat record1, PlayerStat record2, Correspondence<Attribute, Matchable> schemaCorrespondence) {
         return Comparator.super.hasMissingValue(record1, record2, schemaCorrespondence);
     }
 
-    @Override
-    public PlayerDBpedia getFirstSchemaElement(PlayerStat record) {
-        return Comparator.super.getFirstSchemaElement(record);
-    }
 
-    @Override
-    public PlayerDBpedia getSecondSchemaElement(PlayerStat record) {
-        return Comparator.super.getSecondSchemaElement(record);
-    }
 
     @Override
     public ComparatorLogger getComparisonLog() {
         return Comparator.super.getComparisonLog();
+    }
+
+
+
+    @Override
+    public String getName(Correspondence<Attribute, Matchable> schemaCorrespondence) {
+        return Comparator.super.getName(schemaCorrespondence);
     }
 
     @Override

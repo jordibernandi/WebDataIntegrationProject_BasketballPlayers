@@ -8,6 +8,9 @@ import de.uni_mannheim.informatik.dws.winter.similarity.string.TokenizingJaccard
 import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.model.PlayerDBpedia;
 import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.model.PlayerStat;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 public class PlayerBirthdateComparatorJaccard implements Comparator<PlayerStat, PlayerDBpedia> {
     private static final long serialVersionUID = 1L;
     private TokenizingJaccardSimilarity sim = new TokenizingJaccardSimilarity();
@@ -15,8 +18,8 @@ public class PlayerBirthdateComparatorJaccard implements Comparator<PlayerStat, 
     private ComparatorLogger comparisonLog;
     @Override
     public double compare(PlayerStat record1, PlayerStat record2, Correspondence<PlayerDBpedia, Matchable> schemaCorrespondence) {
-    	LocalDate record1BirthDate = record1.getBirthDate();
-        LocalDate record2BirthDate = record2.getBirthDate();
+    	LocalDate record1BirthDate = LocalDate.from(record1.getBirthDate());
+        LocalDate record2BirthDate = LocalDate.from(record2.getBirthDate());
 
         if(record1BirthDate != null && record2BirthDate != null) {
             String s1 = record1BirthDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
