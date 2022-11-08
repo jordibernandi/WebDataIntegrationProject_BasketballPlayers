@@ -9,7 +9,7 @@ import de.uni_mannheim.informatik.dws.winter.similarity.string.LevenshteinSimila
 import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.model.PlayerDBpedia;
 import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.model.PlayerStat;
 
-public class PlayerNameComparatorLevenshtein {
+public class PlayerHeightComparatorLevenshtein {
 	
 	private static final long serialVersionUID = 1L;
 	private LevenshteinSimilarity sim = new LevenshteinSimilarity();
@@ -22,9 +22,8 @@ public class PlayerNameComparatorLevenshtein {
 			PlayerStat record2,
 			Correspondence<PlayerDBpedia, Matchable> schemaCorrespondences) {
 		
-		 String s1 = record1.getName();
-	     String s2 = record2.getName();
-
+		int s1 = record1.getHeight();
+        int s2 = record2.getHeight();
 
         double similarity = sim.calculate(s1, s2);
 
