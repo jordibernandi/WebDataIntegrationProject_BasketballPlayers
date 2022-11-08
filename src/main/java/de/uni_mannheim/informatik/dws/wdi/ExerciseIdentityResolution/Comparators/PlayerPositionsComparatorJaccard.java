@@ -1,24 +1,25 @@
 package de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Comparators;
 
+import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.model.PlayerDBpedia;
+import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.model.PlayerStat;
 import de.uni_mannheim.informatik.dws.winter.matching.rules.comparators.Comparator;
 import de.uni_mannheim.informatik.dws.winter.matching.rules.comparators.ComparatorLogger;
 import de.uni_mannheim.informatik.dws.winter.model.Correspondence;
 import de.uni_mannheim.informatik.dws.winter.model.Matchable;
-import de.uni_mannheim.informatik.dws.winter.model.defaultmodel.Attribute;
+import de.uni_mannheim.informatik.dws.winter.similarity.EqualsSimilarity;
 import de.uni_mannheim.informatik.dws.winter.similarity.string.TokenizingJaccardSimilarity;
-import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.model.PlayerStat;
 
 import java.util.List;
 
-public class PlayerTeamsComparatorJaccard implements Comparator<PlayerStat, Attribute> {
+public class PlayerPositionsComparatorJaccard implements Comparator<PlayerStat, PlayerDBpedia> {
+
     private static final long serialVersionUID = 1L;
     private TokenizingJaccardSimilarity sim = new TokenizingJaccardSimilarity();
 
     private ComparatorLogger comparisonLog;
+
     @Override
-    public double compare(PlayerStat record1, PlayerStat record2, Correspondence<Attribute, Matchable> schemaCorrespondence) {
-
-
+    public double compare(PlayerStat record1, PlayerStat record2, Correspondence<PlayerDBpedia, Matchable> schemaCorrespondence) {
         List<String> s1 = record1.getPositions();
         List<String> s2L = record2.getPositions();
         if (s2L != null && s1 != null) {
@@ -57,22 +58,11 @@ public class PlayerTeamsComparatorJaccard implements Comparator<PlayerStat, Attr
         }
     }
 
-
-
     @Override
-    public boolean hasMissingValue(PlayerStat record1, PlayerStat record2, Correspondence<Attribute, Matchable> schemaCorrespondence) {
+    public boolean hasMissingValue(PlayerStat record1, PlayerStat record2, Correspondence<PlayerDBpedia, Matchable> schemaCorrespondence) {
         return Comparator.super.hasMissingValue(record1, record2, schemaCorrespondence);
     }
 
-    @Override
-    public Attribute getFirstSchemaElement(PlayerStat record) {
-        return Comparator.super.getFirstSchemaElement(record);
-    }
-
-    @Override
-    public Attribute getSecondSchemaElement(PlayerStat record) {
-        return Comparator.super.getSecondSchemaElement(record);
-    }
 
     @Override
     public ComparatorLogger getComparisonLog() {
@@ -84,4 +74,8 @@ public class PlayerTeamsComparatorJaccard implements Comparator<PlayerStat, Attr
         Comparator.super.setComparisonLog(comparatorLog);
     }
 
+    @Override
+    public String getName(Correspondence<PlayerDBpedia, Matchable> schemaCorrespondence) {
+        return Comparator.super.getName(schemaCorrespondence);
+    }
 }

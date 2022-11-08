@@ -6,17 +6,22 @@ import de.uni_mannheim.informatik.dws.winter.matching.rules.comparators.Comparat
 import de.uni_mannheim.informatik.dws.winter.matching.rules.comparators.ComparatorLogger;
 import de.uni_mannheim.informatik.dws.winter.model.Correspondence;
 import de.uni_mannheim.informatik.dws.winter.model.Matchable;
+import de.uni_mannheim.informatik.dws.winter.model.defaultmodel.Attribute;
 import de.uni_mannheim.informatik.dws.winter.similarity.string.TokenizingJaccardSimilarity;
 
-public class PlayerNameComparatorJaccard implements Comparator<PlayerStat, PlayerDBpedia> {
+public class PlayerNameComparatorJaccard implements Comparator<PlayerStat, Attribute> {
     private static final long serialVersionUID = 1L;
     private TokenizingJaccardSimilarity sim = new TokenizingJaccardSimilarity();
 
     private ComparatorLogger comparisonLog;
+
+
+
+
     @Override
-    public double compare(PlayerStat record1, PlayerStat record2, Correspondence<PlayerDBpedia, Matchable> schemaCorrespondence) {
-        String s1 = record1.getName();
-        String s2 = record2.getName();
+    public double compare(PlayerStat record1, PlayerStat record2, Correspondence<Attribute, Matchable> schemaCorrespondence) {
+        String s1 = record1.getName().toLowerCase();
+        String s2 = record2.getName().toLowerCase();
 
         double similarity = sim.calculate(s1, s2);
 
@@ -33,19 +38,10 @@ public class PlayerNameComparatorJaccard implements Comparator<PlayerStat, Playe
     }
 
     @Override
-    public boolean hasMissingValue(PlayerStat record1, PlayerStat record2, Correspondence<PlayerDBpedia, Matchable> schemaCorrespondence) {
+    public boolean hasMissingValue(PlayerStat record1, PlayerStat record2, Correspondence<Attribute, Matchable> schemaCorrespondence) {
         return Comparator.super.hasMissingValue(record1, record2, schemaCorrespondence);
     }
 
-    @Override
-    public PlayerDBpedia getFirstSchemaElement(PlayerStat record) {
-        return Comparator.super.getFirstSchemaElement(record);
-    }
-
-    @Override
-    public PlayerDBpedia getSecondSchemaElement(PlayerStat record) {
-        return Comparator.super.getSecondSchemaElement(record);
-    }
 
     @Override
     public ComparatorLogger getComparisonLog() {
@@ -57,8 +53,4 @@ public class PlayerNameComparatorJaccard implements Comparator<PlayerStat, Playe
         Comparator.super.setComparisonLog(comparatorLog);
     }
 
-    @Override
-    public String getName(Correspondence<PlayerDBpedia, Matchable> schemaCorrespondence) {
-        return Comparator.super.getName(schemaCorrespondence);
-    }
 }

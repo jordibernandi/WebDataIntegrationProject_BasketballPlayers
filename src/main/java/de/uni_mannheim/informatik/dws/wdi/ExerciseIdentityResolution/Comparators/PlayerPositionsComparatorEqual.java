@@ -1,7 +1,5 @@
 package de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Comparators;
 
-import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.model.Movie;
-import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.model.PlayerDBpedia;
 import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.model.PlayerStat;
 import de.uni_mannheim.informatik.dws.winter.matching.rules.comparators.Comparator;
 import de.uni_mannheim.informatik.dws.winter.matching.rules.comparators.ComparatorLogger;
@@ -10,30 +8,51 @@ import de.uni_mannheim.informatik.dws.winter.model.Matchable;
 import de.uni_mannheim.informatik.dws.winter.model.defaultmodel.Attribute;
 import de.uni_mannheim.informatik.dws.winter.similarity.EqualsSimilarity;
 
-public class PlayerHeightComparatorEqual implements Comparator<PlayerStat, Attribute> {
+import java.util.List;
 
+public class PlayerPositionsComparatorEqual implements Comparator<PlayerStat, Attribute> {
     private static final long serialVersionUID = 1L;
     private EqualsSimilarity<String> sim = new EqualsSimilarity<String>();
 
     private ComparatorLogger comparisonLog;
-
-
     @Override
     public double compare(PlayerStat record1, PlayerStat record2, Correspondence<Attribute, Matchable> schemaCorrespondence) {
-        String s1 = String.valueOf(record1.getHeight()).toLowerCase();
-        String s2 = String.valueOf(record1.getHeight()).toLowerCase();
+        List<String> s1 = record1.getPositions();
+        List<String> s2L = record2.getPositions();
+        if (s2L != null && s1 != null) {
+            String s2 = s2L.get(0);
+            for (int posNumb = 0; posNumb < s1.size(); posNumb++) {
+                String chars = "";
+                for (int i = 0; i < s1.get(posNumb).length(); i++) {
+                    if (Character.isUpperCase(s1.get(posNumb).charAt(i))) {
+                        chars = chars + s1.get(posNumb).charAt(i);
+                    }
+                }
+                s1.set(posNumb, chars);
+            }
+            double maxVal = 0;
+            String s1S = "";
+            for (int i = 0; i < s1.size(); i++) {
+                double similarity = sim.calculate(s2, s1.get(i));
+                if (similarity > maxVal) {
+                    maxVal = similarity;
+                    s1S = s1.get(i);
+                }
+            }
 
-        double similarity = sim.calculate(s1, s2);
+            if (this.comparisonLog != null) {
+                this.comparisonLog.setComparatorName(getClass().getName());
 
-        if(this.comparisonLog != null){
-            this.comparisonLog.setComparatorName(getClass().getName());
+                this.comparisonLog.setRecord1Value(s1S);
+                this.comparisonLog.setRecord2Value(s2);
 
-            this.comparisonLog.setRecord1Value(String.valueOf(s1));
-            this.comparisonLog.setRecord2Value(String.valueOf((s2)));
+                this.comparisonLog.setSimilarity(Double.toString(maxVal));
+            }
 
-            this.comparisonLog.setSimilarity(Double.toString(similarity));
+            return maxVal;
+        } else{
+            return 0;
         }
-        return similarity;
     }
 
     @Override

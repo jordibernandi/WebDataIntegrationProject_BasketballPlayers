@@ -15,8 +15,8 @@ public class PlayerWeightComparatorJaccard implements Comparator<PlayerStat, Pla
     private ComparatorLogger comparisonLog;
     @Override
     public double compare(PlayerStat record1, PlayerStat record2, Correspondence<PlayerDBpedia, Matchable> schemaCorrespondence) {
-        int s1 = record1.getWeight();
-        int s2 = record2.getWeight();
+        String s1 = String.valueOf(record1.getWeight()).toLowerCase();
+        String s2 = String.valueOf(record2.getWeight()).toLowerCase();
 
         double similarity = sim.calculate(s1, s2);
 
