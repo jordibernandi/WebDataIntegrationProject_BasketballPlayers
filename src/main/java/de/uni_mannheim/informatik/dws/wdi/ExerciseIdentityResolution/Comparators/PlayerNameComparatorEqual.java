@@ -1,8 +1,6 @@
 package de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Comparators;
 
-import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.model.Movie;
-import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.model.PlayerDBpedia;
-import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.model.PlayerStat;
+import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.model.Player;
 import de.uni_mannheim.informatik.dws.winter.matching.rules.comparators.Comparator;
 import de.uni_mannheim.informatik.dws.winter.matching.rules.comparators.ComparatorLogger;
 import de.uni_mannheim.informatik.dws.winter.model.Correspondence;
@@ -10,7 +8,7 @@ import de.uni_mannheim.informatik.dws.winter.model.Matchable;
 import de.uni_mannheim.informatik.dws.winter.model.defaultmodel.Attribute;
 import de.uni_mannheim.informatik.dws.winter.similarity.EqualsSimilarity;
 
-public class PlayerNameComparatorEqual implements Comparator<PlayerStat, Attribute> {
+public class PlayerNameComparatorEqual implements Comparator<Player, Attribute> {
 
     private static final long serialVersionUID = 1L;
     private EqualsSimilarity<String> sim = new EqualsSimilarity<String>();
@@ -19,7 +17,7 @@ public class PlayerNameComparatorEqual implements Comparator<PlayerStat, Attribu
 
 
     @Override
-    public double compare(PlayerStat record1, PlayerStat record2, Correspondence<Attribute, Matchable> schemaCorrespondence) {
+    public double compare(Player record1, Player record2, Correspondence<Attribute, Matchable> schemaCorrespondence) {
         String s1 = record1.getName().toLowerCase();
         String s2 = record2.getName().toLowerCase();
 
@@ -37,19 +35,13 @@ public class PlayerNameComparatorEqual implements Comparator<PlayerStat, Attribu
     }
 
     @Override
-    public boolean hasMissingValue(PlayerStat record1, PlayerStat record2, Correspondence<Attribute, Matchable> schemaCorrespondence) {
-        return Comparator.super.hasMissingValue(record1, record2, schemaCorrespondence);
-    }
-
-
-    @Override
     public ComparatorLogger getComparisonLog() {
-        return Comparator.super.getComparisonLog();
+        return this.comparisonLog;
     }
 
     @Override
     public void setComparisonLog(ComparatorLogger comparatorLog) {
-        Comparator.super.setComparisonLog(comparatorLog);
+        this.comparisonLog = comparatorLog;
     }
 
 
