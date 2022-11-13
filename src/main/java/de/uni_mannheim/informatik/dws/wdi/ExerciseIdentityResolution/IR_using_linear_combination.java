@@ -77,6 +77,8 @@ public class IR_using_linear_combination
 
 		//added comparators for RealPred
 		matchingRulePlayerStatDBpedia.addComparator(new PlayerNameComparatorEqual(), 1);
+		matchingRulePlayerStatDBpedia.addComparator(new PlayerNameComparatorJaccard(), 1);
+		matchingRulePlayerStatDBpedia.addComparator(new PlayerNameComparatorLevenshtein(), 1);
 //		matchingRuleRealPred.addComparator(new PlayerNationalityComparatorJaccard(), 0.10);
 //		matchingRuleRealPred.addComparator(new PlayerBirthDateComparatorEqual(), 0.50);
 //
