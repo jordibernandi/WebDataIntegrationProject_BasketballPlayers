@@ -16,7 +16,7 @@ public class PlayerBirthdateComparatorJaccard implements Comparator<Player, Attr
 
     private ComparatorLogger comparisonLog;
     @Override
-    public double compare(Player record1, Player record2, Correspondence<Player, Matchable> schemaCorrespondence) {
+    public double compare(Player record1, Player record2, Correspondence<Attribute, Matchable> schemaCorrespondence) {
     	LocalDate record1BirthDate = LocalDate.from(record1.getBirthDate());
         LocalDate record2BirthDate = LocalDate.from(record2.getBirthDate());
 

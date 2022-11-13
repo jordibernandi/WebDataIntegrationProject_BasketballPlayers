@@ -40,7 +40,7 @@ public class PlayerBirthdateComparatorLevenshtein implements Comparator<Player, 
 
 
 	@Override
-	public double compare(PlayerStat record1, PlayerStat record2, Correspondence<Attribute, Matchable> schemaCorrespondence) {
+	public double compare(Player record1, Player record2, Correspondence<Attribute, Matchable> schemaCorrespondence) {
 		LocalDate record1BirthDate = LocalDate.from(record1.getBirthDate());
 		LocalDate record2BirthDate = LocalDate.from(record2.getBirthDate());
 

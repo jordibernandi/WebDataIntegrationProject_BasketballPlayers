@@ -7,13 +7,13 @@ import de.uni_mannheim.informatik.dws.winter.model.Matchable;
 import de.uni_mannheim.informatik.dws.winter.similarity.string.TokenizingJaccardSimilarity;
 import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.model.Player;
 
-public class PlayerWeightComparatorJaccard implements Comparator<Player, PlayerDBpedia> {
+public class PlayerWeightComparatorJaccard implements Comparator<Player, Attribute> {
     private static final long serialVersionUID = 1L;
     private TokenizingJaccardSimilarity sim = new TokenizingJaccardSimilarity();
 
     private ComparatorLogger comparisonLog;
     @Override
-    public double compare(Player record1, Player record2, Correspondence<PlayerDBpedia, Matchable> schemaCorrespondence) {
+    public double compare(Player record1, Player record2, Correspondence<Attribute, Matchable> schemaCorrespondence) {
         float s1 = record1.getWeight();
         float s2 = record2.getWeight();
 
