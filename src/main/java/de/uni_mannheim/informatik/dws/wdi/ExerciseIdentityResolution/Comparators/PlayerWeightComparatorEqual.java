@@ -17,8 +17,8 @@ public class PlayerWeightComparatorEqual implements Comparator<Player, Attribute
 
     @Override
     public double compare(Player record1, Player record2, Correspondence<Attribute, Matchable> schemaCorrespondence) {
-        float s1 = record1.getWeight();
-        float s2 = record2.getWeight();
+        String s1 = String.valueOf(record1.getWeight()).toLowerCase();
+        String s2 = String.valueOf(record2.getWeight()).toLowerCase();
 
         double similarity = sim.calculate(s1, s2);
 

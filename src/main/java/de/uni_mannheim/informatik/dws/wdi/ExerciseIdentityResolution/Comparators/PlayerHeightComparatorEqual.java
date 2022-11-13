@@ -18,8 +18,8 @@ public class PlayerHeightComparatorEqual implements Comparator<Player, Attribute
 
     @Override
     public double compare(Player record1, Player record2, Correspondence<Attribute, Matchable> schemaCorrespondence) {
-        float s1 = record1.getHeight();
-        float s2 = record1.getHeight();
+        String s1 = String.valueOf(record1.getHeight()).toLowerCase();
+        String s2 = String.valueOf(record1.getHeight()).toLowerCase();
 
         double similarity = sim.calculate(s1, s2);
 

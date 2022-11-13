@@ -22,8 +22,8 @@ public class PlayerNameComparatorLevenshtein implements Comparator<Player, Attri
 
 	@Override
 	public double compare(Player record1, Player record2, Correspondence<Attribute, Matchable> schemaCorrespondence) {
-		String s1 = record1.getName().toLowerCase();
-		String s2 = record2.getName().toLowerCase();
+		String s1 = String.valueOf(record1.getName()).toLowerCase();
+		String s2 = String.valueOf(record2.getName()).toLowerCase();
 
 
 		double similarity = sim.calculate(s1, s2);
