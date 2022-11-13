@@ -47,10 +47,10 @@ public class PlayerBirthdateComparatorEqual implements Comparator<Player, Attrib
         }
     }
 
-    @Override
-    public boolean hasMissingValue(Player record1, Player record2, Correspondence<Attribute, Matchable> schemaCorrespondence) {
-        return Comparator.super.hasMissingValue(record1, record2, schemaCorrespondence);
-    }
+//    @Override
+//    public boolean hasMissingValue(Player record1, Player record2, Correspondence<Attribute, Matchable> schemaCorrespondence) {
+//        return Comparator.super.hasMissingValue(record1, record2, schemaCorrespondence);
+//    }
 
 
 
@@ -61,10 +61,10 @@ public class PlayerBirthdateComparatorEqual implements Comparator<Player, Attrib
 
 
 
-    @Override
-    public String getName(Correspondence<Attribute, Matchable> schemaCorrespondence) {
-        return Comparator.super.getName(schemaCorrespondence);
-    }
+//    @Override
+//    public String getName(Correspondence<Attribute, Matchable> schemaCorrespondence) {
+//        return Comparator.super.getName(schemaCorrespondence);
+//    }
 
     @Override
     public void setComparisonLog(ComparatorLogger comparatorLog) {
