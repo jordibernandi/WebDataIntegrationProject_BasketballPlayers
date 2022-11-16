@@ -50,13 +50,14 @@ public class PlayerWeightComparatorEqual implements Comparator<Player, Attribute
 
     @Override
     public ComparatorLogger getComparisonLog() {
-        return Comparator.super.getComparisonLog();
+        return this.comparisonLog;
     }
 
     @Override
     public void setComparisonLog(ComparatorLogger comparatorLog) {
-        Comparator.super.setComparisonLog(comparatorLog);
+    	this.comparisonLog = comparatorLog;
     }
+
 
 //    @Override
 //    public String getName(Correspondence<Attribute, Matchable> schemaCorrespondence) {

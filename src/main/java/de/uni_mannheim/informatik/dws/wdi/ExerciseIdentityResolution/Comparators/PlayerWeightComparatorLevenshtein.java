@@ -36,14 +36,15 @@ public class PlayerWeightComparatorLevenshtein implements Comparator<Player, Att
 
 
 	@Override
-	public ComparatorLogger getComparisonLog() {
-		return Comparator.super.getComparisonLog();
-	}
+    public ComparatorLogger getComparisonLog() {
+        return this.comparisonLog;
+    }
 
-	@Override
-	public void setComparisonLog(ComparatorLogger comparatorLog) {
-		Comparator.super.setComparisonLog(comparatorLog);
-	}
+    @Override
+    public void setComparisonLog(ComparatorLogger comparatorLog) {
+    	this.comparisonLog = comparatorLog;
+    }
+
 
 	@Override
 	public String getName(Correspondence<Attribute, Matchable> schemaCorrespondence) {

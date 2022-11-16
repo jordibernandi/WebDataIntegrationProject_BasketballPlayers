@@ -59,11 +59,12 @@ public class PlayerBirthdateComparatorJaccard implements Comparator<Player, Attr
 
     @Override
     public ComparatorLogger getComparisonLog() {
-        return Comparator.super.getComparisonLog();
+        return this.comparisonLog;
     }
 
     @Override
     public void setComparisonLog(ComparatorLogger comparatorLog) {
-        Comparator.super.setComparisonLog(comparatorLog);
+    	this.comparisonLog = comparatorLog;
     }
+
 }

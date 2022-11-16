@@ -56,8 +56,14 @@ public class PlayerBirthdateComparatorEqual implements Comparator<Player, Attrib
 
     @Override
     public ComparatorLogger getComparisonLog() {
-        return Comparator.super.getComparisonLog();
+        return this.comparisonLog;
     }
+
+    @Override
+    public void setComparisonLog(ComparatorLogger comparatorLog) {
+    	this.comparisonLog = comparatorLog;
+    }
+
 
 
 
@@ -65,9 +71,4 @@ public class PlayerBirthdateComparatorEqual implements Comparator<Player, Attrib
 //    public String getName(Correspondence<Attribute, Matchable> schemaCorrespondence) {
 //        return Comparator.super.getName(schemaCorrespondence);
 //    }
-
-    @Override
-    public void setComparisonLog(ComparatorLogger comparatorLog) {
-        Comparator.super.setComparisonLog(comparatorLog);
-    }
 }

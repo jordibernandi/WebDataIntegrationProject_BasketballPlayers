@@ -80,14 +80,15 @@ public class PlayerBirthdateComparatorLevenshtein implements Comparator<Player, 
 //	}
 
 	@Override
-	public ComparatorLogger getComparisonLog() {
-		return this.comparisonLog;
-	}
+    public ComparatorLogger getComparisonLog() {
+        return this.comparisonLog;
+    }
 
-	@Override
-	public void setComparisonLog(ComparatorLogger comparatorLog) {
-		this.comparisonLog = comparatorLog;
-	}
+    @Override
+    public void setComparisonLog(ComparatorLogger comparatorLog) {
+    	this.comparisonLog = comparatorLog;
+    }
+
 
 //	@Override
 //	public String getName(Correspondence<Attribute, Matchable> schemaCorrespondence) {

@@ -18,6 +18,7 @@ import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Comparators
 import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Comparators.PlayerWeightComparatorEqual;
 import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Comparators.PlayerWeightComparatorJaccard;
 import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Comparators.PlayerWeightComparatorLevenshtein;
+import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Blocking.PlayerBlockingByKeyNameGenerator;
 import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.model.*;
 import org.slf4j.Logger;
 
@@ -128,9 +129,9 @@ public class IR_using_linear_combination
 //		MatchingEngine<Player, Attribute> enginePredFifa = new MatchingEngine<>();
 //
 //		// create a blocker (blocking strategy)
-		NoBlocker<Player, Attribute> blocker = new NoBlocker<>();
+//		NoBlocker<Player, Attribute> blocker = new NoBlocker<>();
 //		SortedNeighbourhoodBlocker<Movie, Attribute, Attribute> blocker = new SortedNeighbourhoodBlocker<>(new MovieBlockingKeyByTitleGenerator(), 1);
-//		StandardRecordBlocker<Player, Attribute> blocker = new StandardRecordBlocker<Player, Attribute>(new PlayerBlockingKeyByNationalityGenerator());
+		StandardRecordBlocker<Player, Attribute> blocker = new StandardRecordBlocker<Player, Attribute>(new PlayerBlockingByKeyNameGenerator());
 //
 //		// Execute the matchings
 		Processable<Correspondence<Player, Attribute>> correspondencesPlayerStatDBpedia = enginePlayerStatDBpedia.runIdentityResolution(
