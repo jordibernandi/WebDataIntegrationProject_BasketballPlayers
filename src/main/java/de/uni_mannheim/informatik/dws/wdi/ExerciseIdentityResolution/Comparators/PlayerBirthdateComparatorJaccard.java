@@ -9,6 +9,7 @@ import de.uni_mannheim.informatik.dws.winter.model.defaultmodel.Attribute;
 import de.uni_mannheim.informatik.dws.winter.similarity.string.TokenizingJaccardSimilarity;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class PlayerBirthdateComparatorJaccard implements Comparator<Player, Attribute> {
@@ -18,8 +19,8 @@ public class PlayerBirthdateComparatorJaccard implements Comparator<Player, Attr
     private ComparatorLogger comparisonLog;
     @Override
     public double compare(Player record1, Player record2, Correspondence<Attribute, Matchable> schemaCorrespondence) {
-    	LocalDate record1BirthDate = LocalDate.from(record1.getBirthDate());
-        LocalDate record2BirthDate = LocalDate.from(record2.getBirthDate());
+    	LocalDateTime record1BirthDate = record1.getBirthDate();
+        LocalDateTime record2BirthDate = record2.getBirthDate();
 
         if(record1BirthDate != null && record2BirthDate != null) {
             String s1 = record1BirthDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));

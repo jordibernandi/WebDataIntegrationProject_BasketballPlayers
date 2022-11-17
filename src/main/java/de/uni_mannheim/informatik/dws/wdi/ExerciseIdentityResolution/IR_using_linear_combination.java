@@ -25,6 +25,8 @@ import org.slf4j.Logger;
 import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Blocking.MovieBlockingKeyByTitleGenerator;
 import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Comparators.MovieDateComparator2Years;
 import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Comparators.MovieTitleComparatorJaccard;
+import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Comparators.PlayerBirthdateComparator10Years;
+import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Comparators.PlayerBirthdateComparator2Years;
 import de.uni_mannheim.informatik.dws.winter.matching.MatchingEngine;
 import de.uni_mannheim.informatik.dws.winter.matching.MatchingEvaluator;
 import de.uni_mannheim.informatik.dws.winter.matching.algorithms.MaximumBipartiteMatchingAlgorithm;
@@ -92,9 +94,7 @@ public class IR_using_linear_combination
 //		gsTestPredFifa.loadFromCSVFile(new File("data/goldstandard/prediction_2_fifa.csv"));
 
 		//added comparators for StatDBpedia
-//		matchingRulePlayerStatDBpedia.addComparator(new PlayerNameComparatorEqual(), 1);
 		matchingRulePlayerStatDBpedia.addComparator(new PlayerNameComparatorJaccard(), 0.5);
-//		matchingRulePlayerStatDBpedia.addComparator(new PlayerNameComparatorLevenshtein(), 1);
 		matchingRulePlayerStatDBpedia.addComparator(new PlayerBirthdateComparatorEqual(), 0.5);
 
 //		//added comparators for StatSalary
