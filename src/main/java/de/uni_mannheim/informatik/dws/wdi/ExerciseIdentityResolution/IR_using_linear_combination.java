@@ -5,6 +5,8 @@ import java.io.File;
 import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Comparators.PlayerNameComparatorEqual;
 import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Comparators.PlayerNameComparatorJaccard;
 import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Comparators.PlayerNameComparatorLevenshtein;
+import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Comparators.PlayerBirthDateComparator10Years;
+import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Comparators.PlayerBirthDateComparator2Years;
 import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Comparators.PlayerBirthDateComparatorEqual;
 import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Comparators.PlayerBirthDateComparatorJaccard;
 import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Comparators.PlayerBirthDateComparatorLevenshtein;
@@ -24,12 +26,6 @@ import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Blocking.Pl
 import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.model.*;
 import org.slf4j.Logger;
 
-import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Blocking.MovieBlockingKeyByTitleGenerator;
-import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Comparators.MovieDateComparator2Years;
-import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Comparators.MovieTitleComparatorJaccard;
-import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Comparators.PlayerBirthDateComparatorEqual;
-import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Comparators.PlayerBirthDateComparator10Years;
-import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Comparators.PlayerBirthDateComparator2Years;
 import de.uni_mannheim.informatik.dws.winter.matching.MatchingEngine;
 import de.uni_mannheim.informatik.dws.winter.matching.MatchingEvaluator;
 import de.uni_mannheim.informatik.dws.winter.matching.algorithms.MaximumBipartiteMatchingAlgorithm;
@@ -139,18 +135,18 @@ public class IR_using_linear_combination
 		new CSVCorrespondenceFormatter().writeCSV(new File("data/output/correspondences/player_stat_2_salary_correspondences.csv"), correspondencesPlayerStatSalary);
 		new CSVCorrespondenceFormatter().writeCSV(new File("data/output/correspondences/player_stat_2_injury_correspondences.csv"), correspondencesPlayerStatInjury);
 
-		System.out.println("*\n*\tEvaluating result for Player Stat to DBpedia \n*");
+//		System.out.println("*\n*\tEvaluating result for Player Stat to DBpedia \n*");
 		// evaluate your results
 		MatchingEvaluator<Player, Attribute> evaluatorPlayerStatDBpedia = new MatchingEvaluator<Player, Attribute>();
 		Performance perfTestPlayerStatDBpedia = evaluatorPlayerStatDBpedia.evaluateMatching(correspondencesPlayerStatDBpedia,
 				gsTestPlayerStatDBpedia);
 
-		System.out.println("*\n*\tEvaluating result for Player Stat to Salary \n*");
+//		System.out.println("*\n*\tEvaluating result for Player Stat to Salary \n*");
 		MatchingEvaluator<Player, Attribute> evaluatorPlayerStatSalary = new MatchingEvaluator<Player, Attribute>();
 		Performance perfTestPlayerStatSalary = evaluatorPlayerStatSalary.evaluateMatching(correspondencesPlayerStatSalary,
 				gsTestPlayerStatSalary);
 
-		System.out.println("*\n*\tEvaluating result for Player Stat to Injury \n*");
+//		System.out.println("*\n*\tEvaluating result for Player Stat to Injury \n*");
 		MatchingEvaluator<Player, Attribute> evaluatorPlayerStatInjury = new MatchingEvaluator<Player, Attribute>();
 		Performance perfTestPlayerStatInjury = evaluatorPlayerStatInjury.evaluateMatching(correspondencesPlayerStatInjury,
 				gsTestPlayerStatInjury);
