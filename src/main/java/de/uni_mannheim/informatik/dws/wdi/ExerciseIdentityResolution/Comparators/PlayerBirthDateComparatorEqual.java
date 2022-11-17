@@ -6,29 +6,32 @@ import de.uni_mannheim.informatik.dws.winter.matching.rules.comparators.Comparat
 import de.uni_mannheim.informatik.dws.winter.model.Correspondence;
 import de.uni_mannheim.informatik.dws.winter.model.Matchable;
 import de.uni_mannheim.informatik.dws.winter.model.defaultmodel.Attribute;
-import de.uni_mannheim.informatik.dws.winter.similarity.string.TokenizingJaccardSimilarity;
+import de.uni_mannheim.informatik.dws.winter.similarity.EqualsSimilarity;
+import de.uni_mannheim.informatik.dws.winter.similarity.date.YearSimilarity;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class PlayerBirthdateComparatorJaccard implements Comparator<Player, Attribute> {
+public class PlayerBirthDateComparatorEqual implements Comparator<Player, Attribute> {
+
     private static final long serialVersionUID = 1L;
-    private TokenizingJaccardSimilarity sim = new TokenizingJaccardSimilarity();
+    private EqualsSimilarity<String> sim = new EqualsSimilarity<String>();
 
     private ComparatorLogger comparisonLog;
+
     @Override
     public double compare(Player record1, Player record2, Correspondence<Attribute, Matchable> schemaCorrespondence) {
-    	LocalDateTime record1BirthDate = record1.getBirthDate();
-        LocalDateTime record2BirthDate = record2.getBirthDate();
+        if (record1.getBirthDate() != null && record2.getBirthDate() != null) {
+            LocalDate record1BirthDate = LocalDate.from(record1.getBirthDate());
+            LocalDate record2BirthDate = LocalDate.from(record2.getBirthDate());
 
-        if(record1BirthDate != null && record2BirthDate != null) {
             String s1 = record1BirthDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
             String s2 = record2BirthDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
 
             double similarity = sim.calculate(s1, s2);
 
-            if(this.comparisonLog != null){
+            if (this.comparisonLog != null) {
                 this.comparisonLog.setComparatorName(getClass().getName());
 
                 this.comparisonLog.setRecord1Value(s1);
@@ -36,7 +39,6 @@ public class PlayerBirthdateComparatorJaccard implements Comparator<Player, Attr
 
                 this.comparisonLog.setSimilarity(Double.toString(similarity));
             }
-
             return similarity;
         } else {
             return 0;
@@ -44,18 +46,8 @@ public class PlayerBirthdateComparatorJaccard implements Comparator<Player, Attr
     }
 
 //    @Override
-//    public boolean hasMissingValue(Player record1, Player record2, Correspondence<Player, Matchable> schemaCorrespondence) {
+//    public boolean hasMissingValue(Player record1, Player record2, Correspondence<Attribute, Matchable> schemaCorrespondence) {
 //        return Comparator.super.hasMissingValue(record1, record2, schemaCorrespondence);
-//    }
-//
-//    @Override
-//    public Player getFirstSchemaElement(Player record) {
-//        return Comparator.super.getFirstSchemaElement(record);
-//    }
-//
-//    @Override
-//    public Player getSecondSchemaElement(Player record) {
-//        return Comparator.super.getSecondSchemaElement(record);
 //    }
 
     @Override
@@ -67,5 +59,4 @@ public class PlayerBirthdateComparatorJaccard implements Comparator<Player, Attr
     public void setComparisonLog(ComparatorLogger comparatorLog) {
     	this.comparisonLog = comparatorLog;
     }
-
 }

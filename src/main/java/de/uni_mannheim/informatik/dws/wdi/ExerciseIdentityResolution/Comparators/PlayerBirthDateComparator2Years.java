@@ -9,7 +9,7 @@ import de.uni_mannheim.informatik.dws.winter.model.defaultmodel.Attribute;
 import de.uni_mannheim.informatik.dws.winter.similarity.date.YearSimilarity;
 import java.time.LocalDateTime;
 
-public class PlayerBirthdateComparator2Years implements Comparator<Player, Attribute> {
+public class PlayerBirthDateComparator2Years implements Comparator<Player, Attribute> {
 
 	private static final long serialVersionUID = 1L;
 	private YearSimilarity sim = new YearSimilarity(2);

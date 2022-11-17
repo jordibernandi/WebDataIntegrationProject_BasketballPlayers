@@ -31,7 +31,7 @@ import java.time.format.DateTimeFormatter;
  * @author Oliver Lehmberg (oli@dwslab.de)
  *
  */
-public class PlayerBirthdateComparatorLevenshtein implements Comparator<Player, Attribute> {
+public class PlayerBirthDateComparatorLevenshtein implements Comparator<Player, Attribute> {
 
 	private static final long serialVersionUID = 1L;
 	private LevenshteinSimilarity sim = new LevenshteinSimilarity();
