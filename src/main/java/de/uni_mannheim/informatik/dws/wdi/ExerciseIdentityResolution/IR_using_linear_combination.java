@@ -91,33 +91,19 @@ public class IR_using_linear_combination
 //		matchingRulePredFifa.activateDebugReport("data/output/debugResultsMatchingRulePredFifas.csv", 1000, gsTestPredFifa);
 //		gsTestPredFifa.loadFromCSVFile(new File("data/goldstandard/prediction_2_fifa.csv"));
 
-		//added comparators for RealPred
-		matchingRulePlayerStatDBpedia.addComparator(new PlayerNameComparatorEqual(), 1);
-		matchingRulePlayerStatDBpedia.addComparator(new PlayerNameComparatorJaccard(), 1);
-		matchingRulePlayerStatDBpedia.addComparator(new PlayerNameComparatorLevenshtein(), 1);
-		matchingRulePlayerStatDBpedia.addComparator(new PlayerBirthdateComparatorEqual(), 1);
-		matchingRulePlayerStatDBpedia.addComparator(new PlayerBirthdateComparatorJaccard(), 1);
-		matchingRulePlayerStatDBpedia.addComparator(new PlayerBirthdateComparatorLevenshtein(), 1);
-		matchingRulePlayerStatDBpedia.addComparator(new PlayerHeightComparatorEqual(), 1);
-		matchingRulePlayerStatDBpedia.addComparator(new PlayerHeightComparatorJaccard(), 1);
-		matchingRulePlayerStatDBpedia.addComparator(new PlayerHeightComparatorLevenshtein(), 1);
-		matchingRulePlayerStatDBpedia.addComparator(new PlayerPositionsComparatorEqual(), 1);
-		matchingRulePlayerStatDBpedia.addComparator(new PlayerPositionsComparatorJaccard(), 1);
-		matchingRulePlayerStatDBpedia.addComparator(new PlayerPositionsComparatorLevenshtein(), 1);
-		matchingRulePlayerStatDBpedia.addComparator(new PlayerTeamsComparatorJaccard(), 1);
-		matchingRulePlayerStatDBpedia.addComparator(new PlayerWeightComparatorEqual(), 1);
-		matchingRulePlayerStatDBpedia.addComparator(new PlayerWeightComparatorJaccard(), 1);
-		matchingRulePlayerStatDBpedia.addComparator(new PlayerWeightComparatorLevenshtein(), 1);
-//		matchingRuleRealPred.addComparator(new PlayerNationalityComparatorJaccard(), 0.10);
-//		matchingRuleRealPred.addComparator(new PlayerBirthDateComparatorEqual(), 0.50);
-//
-//		//added comparators for RealFifa
+		//added comparators for StatDBpedia
+//		matchingRulePlayerStatDBpedia.addComparator(new PlayerNameComparatorEqual(), 1);
+		matchingRulePlayerStatDBpedia.addComparator(new PlayerNameComparatorJaccard(), 0.5);
+//		matchingRulePlayerStatDBpedia.addComparator(new PlayerNameComparatorLevenshtein(), 1);
+		matchingRulePlayerStatDBpedia.addComparator(new PlayerBirthdateComparatorEqual(), 0.5);
+
+//		//added comparators for StatSalary
 //		matchingRuleRealFifa.addComparator(new PlayerNameShortComparatorJaccard(), 0.40);
 //		matchingRuleRealFifa.addComparator(new PlayerClubComparatorNGramJaccard(), 0.20);
 //		matchingRuleRealFifa.addComparator(new PlayerNationalityComparatorJaccard(), 0.35);
 //		matchingRuleRealFifa.addComparator(new PlayerKitNumberComparatorEqual(), 0.05);
 //
-//		//added comparators for PredFifa
+//		//added comparators for StatInjury
 //		matchingRulePredFifa.addComparator(new PlayerNameShortComparatorJaccard(), 0.40);
 //		matchingRulePredFifa.addComparator(new PlayerNationalityComparatorJaccard(), 0.30);
 //		matchingRulePredFifa.addComparator(new PlayerClubComparatorNGramJaccard(), 0.30);

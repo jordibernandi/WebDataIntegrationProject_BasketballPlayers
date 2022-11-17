@@ -18,22 +18,18 @@ public class PlayerBirthdateComparatorEqual implements Comparator<Player, Attrib
 
     private ComparatorLogger comparisonLog;
 
-
-
-
-
     @Override
     public double compare(Player record1, Player record2, Correspondence<Attribute, Matchable> schemaCorrespondence) {
-        LocalDate record1BirthDate = LocalDate.from(record1.getBirthDate());
-        LocalDate record2BirthDate = LocalDate.from(record2.getBirthDate());
+        if(record1.getBirthDate() != null && record2.getBirthDate() != null) {
+            LocalDate record1BirthDate = LocalDate.from(record1.getBirthDate());
+            LocalDate record2BirthDate = LocalDate.from(record2.getBirthDate());
 
-        if(record1BirthDate != null && record2BirthDate != null) {
             String s1 = record1BirthDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
             String s2 = record2BirthDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
 
             double similarity = sim.calculate(s1, s2);
 
-            if(this.comparisonLog != null){
+            if(this.comparisonLog != null) {
                 this.comparisonLog.setComparatorName(getClass().getName());
 
                 this.comparisonLog.setRecord1Value(s1);
@@ -52,8 +48,6 @@ public class PlayerBirthdateComparatorEqual implements Comparator<Player, Attrib
 //        return Comparator.super.hasMissingValue(record1, record2, schemaCorrespondence);
 //    }
 
-
-
     @Override
     public ComparatorLogger getComparisonLog() {
         return this.comparisonLog;
@@ -63,12 +57,4 @@ public class PlayerBirthdateComparatorEqual implements Comparator<Player, Attrib
     public void setComparisonLog(ComparatorLogger comparatorLog) {
     	this.comparisonLog = comparatorLog;
     }
-
-
-
-
-//    @Override
-//    public String getName(Correspondence<Attribute, Matchable> schemaCorrespondence) {
-//        return Comparator.super.getName(schemaCorrespondence);
-//    }
 }

@@ -33,7 +33,7 @@ public class PlayerXMLReader extends XMLMatchableReader<Player, Attribute> {
         // convert the date string into a DateTime object
         try {
             String date = getValueFromChildElement(node, "birthDate");
-            if (date != null) {
+            if (date != null && !date.isEmpty()) {
                 DateTimeFormatter formatter = new DateTimeFormatterBuilder()
                         .appendPattern("yyyy-MM-dd")
                         .parseDefaulting(ChronoField.CLOCK_HOUR_OF_DAY, 0)
