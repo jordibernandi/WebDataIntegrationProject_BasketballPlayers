@@ -7,45 +7,44 @@ import de.uni_mannheim.informatik.dws.winter.model.Correspondence;
 import de.uni_mannheim.informatik.dws.winter.model.Matchable;
 import de.uni_mannheim.informatik.dws.winter.model.defaultmodel.Attribute;
 import de.uni_mannheim.informatik.dws.winter.similarity.EqualsSimilarity;
+import de.uni_mannheim.informatik.dws.winter.similarity.date.YearSimilarity;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class PlayerBirthdateComparatorEqual implements Comparator<Player, Attribute> {
 
-    private static final long serialVersionUID = 1L;
-    private EqualsSimilarity<String> sim = new EqualsSimilarity<String>();
-
-    private ComparatorLogger comparisonLog;
-
-
-
+	private static final long serialVersionUID = 1L;
+	private YearSimilarity sim = new YearSimilarity(10);
+	
+	private ComparatorLogger comparisonLog;
 
 
     @Override
     public double compare(Player record1, Player record2, Correspondence<Attribute, Matchable> schemaCorrespondence) {
-        LocalDate record1BirthDate = LocalDate.from(record1.getBirthDate());
-        LocalDate record2BirthDate = LocalDate.from(record2.getBirthDate());
-
+        LocalDateTime record1BirthDate = record1.getBirthDate();
+        LocalDateTime record2BirthDate = record2.getBirthDate();
+        double similarity = sim.calculate(record1.getBirthDate(), record2.getBirthDate());
+        
         if(record1BirthDate != null && record2BirthDate != null) {
             String s1 = record1BirthDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
             String s2 = record2BirthDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
 
-            double similarity = sim.calculate(s1, s2);
-
-            if(this.comparisonLog != null){
-                this.comparisonLog.setComparatorName(getClass().getName());
-
-                this.comparisonLog.setRecord1Value(s1);
-                this.comparisonLog.setRecord2Value(s2);
-
-                this.comparisonLog.setSimilarity(Double.toString(similarity));
-            }
-            return similarity;
-        } else {
-            return 0;
-        }
+            
+        	
+    		if(this.comparisonLog != null){
+    			this.comparisonLog.setComparatorName(getClass().getName());
+    		
+    			this.comparisonLog.setRecord1Value(record1.getBirthDate().toString());
+    			this.comparisonLog.setRecord2Value(record2.getBirthDate().toString());
+        	
+    			this.comparisonLog.setSimilarity(Double.toString(similarity));
+    		}
+    		
     }
+        return similarity;
+}
 
 //    @Override
 //    public boolean hasMissingValue(Player record1, Player record2, Correspondence<Attribute, Matchable> schemaCorrespondence) {

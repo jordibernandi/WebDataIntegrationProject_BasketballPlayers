@@ -20,6 +20,7 @@ import de.uni_mannheim.informatik.dws.winter.similarity.string.LevenshteinSimila
 import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.model.Player;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 /**
@@ -41,8 +42,8 @@ public class PlayerBirthdateComparatorLevenshtein implements Comparator<Player, 
 
 	@Override
 	public double compare(Player record1, Player record2, Correspondence<Attribute, Matchable> schemaCorrespondence) {
-		LocalDate record1BirthDate = LocalDate.from(record1.getBirthDate());
-		LocalDate record2BirthDate = LocalDate.from(record2.getBirthDate());
+		LocalDateTime record1BirthDate = record1.getBirthDate();
+        LocalDateTime record2BirthDate = record2.getBirthDate();
 
 		if(record1BirthDate != null && record2BirthDate != null) {
 			String s1 = record1BirthDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
