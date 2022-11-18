@@ -37,7 +37,7 @@ public class SalaryXMLReader extends XMLMatchableReader<Salary, Attribute> {
             salary.setAmount(Double.parseDouble(amount));
         }
         salary.setSeasonStartYear(Integer.parseInt(getValueFromChildElement(node, "seasonStartYear")));
-        salary.setSessionEndYear(Integer.parseInt(getValueFromChildElement(node, "seasonEndYear")));
+        salary.setSeasonEndyear(Integer.parseInt(getValueFromChildElement(node, "seasonEndYear")));
 
         return salary;
     }

@@ -2,26 +2,7 @@ package de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution;
 
 import java.io.File;
 
-import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Comparators.PlayerNameComparatorEqual;
-import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Comparators.PlayerNameComparatorJaccard;
-import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Comparators.PlayerNameComparatorLevenshtein;
-import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Comparators.PlayerBirthDateComparator10Years;
-import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Comparators.PlayerBirthDateComparator2Years;
-import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Comparators.PlayerBirthDateComparatorEqual;
-import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Comparators.PlayerBirthDateComparatorJaccard;
-import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Comparators.PlayerBirthDateComparatorLevenshtein;
-import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Comparators.PlayerHeightComparatorEqual;
-import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Comparators.PlayerHeightComparatorJaccard;
-import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Comparators.PlayerHeightComparatorLevenshtein;
-import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Comparators.PlayerHeightComparatorPercentageSim;
-import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Comparators.PlayerPositionsComparatorEqual;
-import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Comparators.PlayerPositionsComparatorJaccard;
-import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Comparators.PlayerPositionsComparatorLevenshtein;
-import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Comparators.PlayerTeamsComparatorJaccard;
-import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Comparators.PlayerWeightComparatorEqual;
-import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Comparators.PlayerWeightComparatorJaccard;
-import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Comparators.PlayerWeightComparatorLevenshtein;
-import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Comparators.PlayerWeightComparatorPercentageSim;
+import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Comparators.*;
 import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Blocking.PlayerBlockingByKeyNameGenerator;
 import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.model.*;
 import org.slf4j.Logger;
@@ -93,32 +74,31 @@ public class IR_using_linear_combination
 		gsTestPlayerStatInjury.loadFromCSVFile(new File("data/goldstandard/gs_player_stat_2_injury.csv"));
 
 		//added comparators for StatDBpedia
-		matchingRulePlayerStatDBpedia.addComparator(new PlayerNameComparatorJaccard(), 0.3);
-		matchingRulePlayerStatDBpedia.addComparator(new PlayerBirthDateComparatorEqual(), 0.3);
-		matchingRulePlayerStatDBpedia.addComparator(new PlayerHeightComparatorPercentageSim(), 0.2);
-		matchingRulePlayerStatDBpedia.addComparator(new PlayerWeightComparatorPercentageSim(), 0.2);
+		matchingRulePlayerStatDBpedia.addComparator(new PlayerNameComparatorJaccard(), 0.4);
+		matchingRulePlayerStatDBpedia.addComparator(new PlayerBirthDateComparatorEqual(), 0.4);
+		matchingRulePlayerStatDBpedia.addComparator(new PlayerHeightComparatorPercentageSim(), 0.1);
+		matchingRulePlayerStatDBpedia.addComparator(new PlayerWeightComparatorPercentageSim(), 0.1);
 		
-//		//added comparators for StatSalary
-		matchingRulePlayerStatSalary.addComparator(new PlayerNameComparatorJaccard(), 0.50);
-		matchingRulePlayerStatSalary.addComparator(new PlayerPositionsComparatorJaccard(), 0.50);
-		//matchingRulePlayerStatSalary.addComparator(new PlayerNationalityComparatorJaccard(), 0.35);
-//		matchingRuleRealFifa.addComparator(new PlayerKitNumberComparatorEqual(), 0.05);
-//
-//		//added comparators for StatInjury
-		matchingRulePlayerStatInjury.addComparator(new PlayerNameComparatorJaccard(), 0.50);
-		matchingRulePlayerStatInjury.addComparator(new PlayerPositionsComparatorJaccard(), 0.50);
-//
-//		// Initialize Matching Engines
+		//added comparators for StatSalary
+		matchingRulePlayerStatSalary.addComparator(new PlayerNameComparatorJaccard(), 0.5);
+		matchingRulePlayerStatSalary.addComparator(new PlayerCareerComparatorRange(), 0.4);
+		matchingRulePlayerStatSalary.addComparator(new PlayerPositionsComparatorJaccard(), 0.1);
+
+		//added comparators for StatInjury
+		matchingRulePlayerStatInjury.addComparator(new PlayerNameComparatorJaccard(), 0.6);
+		matchingRulePlayerStatInjury.addComparator(new PlayerPositionsComparatorJaccard(), 0.4);
+
+		// Initialize Matching Engines
 		MatchingEngine<Player, Attribute> enginePlayerStatDBpedia = new MatchingEngine<>();
 		MatchingEngine<Player, Attribute> enginePlayerStatSalary = new MatchingEngine<>();
 		MatchingEngine<Player, Attribute> enginePlayerStatInjury = new MatchingEngine<>();
-//
-//		// create a blocker (blocking strategy)
+
+		// create a blocker (blocking strategy)
 //		NoBlocker<Player, Attribute> blocker = new NoBlocker<>();
 //		SortedNeighbourhoodBlocker<Movie, Attribute, Attribute> blocker = new SortedNeighbourhoodBlocker<>(new MovieBlockingKeyByTitleGenerator(), 1);
 		StandardRecordBlocker<Player, Attribute> blocker = new StandardRecordBlocker<Player, Attribute>(new PlayerBlockingByKeyNameGenerator());
-//
-//		// Execute the matchings
+
+		// Execute the matchings
 		Processable<Correspondence<Player, Attribute>> correspondencesPlayerStatDBpedia = enginePlayerStatDBpedia.runIdentityResolution(
 				dataPlayerStat, dataPlayerDBpedia, null, matchingRulePlayerStatDBpedia, blocker);
 		Processable<Correspondence<Player, Attribute>> correspondencesPlayerStatSalary = enginePlayerStatSalary.runIdentityResolution(
@@ -129,27 +109,33 @@ public class IR_using_linear_combination
 		correspondencesPlayerStatDBpedia = enginePlayerStatDBpedia.getTopKInstanceCorrespondences(correspondencesPlayerStatDBpedia, 1, 0.8);
 		correspondencesPlayerStatSalary = enginePlayerStatSalary.getTopKInstanceCorrespondences(correspondencesPlayerStatSalary, 1, 0.75);
 		correspondencesPlayerStatInjury = enginePlayerStatInjury.getTopKInstanceCorrespondences(correspondencesPlayerStatInjury, 1, 0.75);
-//
-//		// write the correspondences to the output file
+
+		// write the correspondences to the output file
 		new CSVCorrespondenceFormatter().writeCSV(new File("data/output/correspondences/player_stat_2_dbpedia_correspondences.csv"), correspondencesPlayerStatDBpedia);
 		new CSVCorrespondenceFormatter().writeCSV(new File("data/output/correspondences/player_stat_2_salary_correspondences.csv"), correspondencesPlayerStatSalary);
 		new CSVCorrespondenceFormatter().writeCSV(new File("data/output/correspondences/player_stat_2_injury_correspondences.csv"), correspondencesPlayerStatInjury);
 
-//		System.out.println("*\n*\tEvaluating result for Player Stat to DBpedia \n*");
 		// evaluate your results
+				System.out.println("*\n*\tEvaluating result for Player Stat to DBpedia \n*");
 		MatchingEvaluator<Player, Attribute> evaluatorPlayerStatDBpedia = new MatchingEvaluator<Player, Attribute>();
 		Performance perfTestPlayerStatDBpedia = evaluatorPlayerStatDBpedia.evaluateMatching(correspondencesPlayerStatDBpedia,
 				gsTestPlayerStatDBpedia);
 
-//		System.out.println("*\n*\tEvaluating result for Player Stat to Salary \n*");
+		System.out.println("");
+
+		System.out.println("*\n*\tEvaluating result for Player Stat to Salary \n*");
 		MatchingEvaluator<Player, Attribute> evaluatorPlayerStatSalary = new MatchingEvaluator<Player, Attribute>();
 		Performance perfTestPlayerStatSalary = evaluatorPlayerStatSalary.evaluateMatching(correspondencesPlayerStatSalary,
 				gsTestPlayerStatSalary);
 
-//		System.out.println("*\n*\tEvaluating result for Player Stat to Injury \n*");
+		System.out.println("");
+
+		System.out.println("*\n*\tEvaluating result for Player Stat to Injury \n*");
 		MatchingEvaluator<Player, Attribute> evaluatorPlayerStatInjury = new MatchingEvaluator<Player, Attribute>();
 		Performance perfTestPlayerStatInjury = evaluatorPlayerStatInjury.evaluateMatching(correspondencesPlayerStatInjury,
 				gsTestPlayerStatInjury);
+
+		System.out.println("");
 
 		// print the evaluation result
 		System.out.println("Players - Stat <-> Players - DBpedia");

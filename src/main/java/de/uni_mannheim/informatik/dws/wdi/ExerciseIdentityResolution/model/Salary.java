@@ -43,7 +43,7 @@ public class Salary extends AbstractRecord<Attribute> implements Serializable {
     }
 
     public int getSeasonEndYear() { return seasonEndYear; }
-    public void setSessionEndYear(int seasonEndYear) {
+    public void setSeasonEndyear(int seasonEndYear) {
         this.seasonEndYear = seasonEndYear;
     }
 

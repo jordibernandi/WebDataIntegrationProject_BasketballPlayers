@@ -59,7 +59,7 @@ public class PlayerXMLReader extends XMLMatchableReader<Player, Attribute> {
 
         String yearEnd = getValueFromChildElement(node, "yearEnd");
         if (yearEnd != null && !yearEnd.isEmpty()) {
-            player.setYearStart(Integer.parseInt(yearEnd));
+            player.setYearEnd(Integer.parseInt(yearEnd));
         }
 
         String height = getValueFromChildElement(node, "height");
