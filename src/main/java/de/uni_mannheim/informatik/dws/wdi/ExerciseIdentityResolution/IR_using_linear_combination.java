@@ -76,17 +76,17 @@ public class IR_using_linear_combination
 		//added comparators for StatDBpedia
 		matchingRulePlayerStatDBpedia.addComparator(new PlayerNameComparatorJaccard(), 0.4);
 		matchingRulePlayerStatDBpedia.addComparator(new PlayerBirthDateComparatorEqual(), 0.4);
-		matchingRulePlayerStatDBpedia.addComparator(new PlayerHeightComparatorPercentageSim(), 0.1);
-		matchingRulePlayerStatDBpedia.addComparator(new PlayerWeightComparatorPercentageSim(), 0.1);
+//		matchingRulePlayerStatDBpedia.addComparator(new PlayerHeightComparatorPercentageSim(), 0.1);
+		matchingRulePlayerStatDBpedia.addComparator(new PlayerWeightComparatorPercentageSim(), 0.2);
 		
 		//added comparators for StatSalary
-		matchingRulePlayerStatSalary.addComparator(new PlayerNameComparatorJaccard(), 0.5);
-		matchingRulePlayerStatSalary.addComparator(new PlayerCareerComparatorRange(), 0.4);
-		matchingRulePlayerStatSalary.addComparator(new PlayerPositionsComparatorJaccard(), 0.1);
+		matchingRulePlayerStatSalary.addComparator(new PlayerNameComparatorJaccardTokenizer(), 0.5);
+		matchingRulePlayerStatSalary.addComparator(new PlayerCareerComparatorRange(), 0.5);
+//		matchingRulePlayerStatSalary.addComparator(new PlayerPositionsComparatorJaccard(), 0.1);
 
 		//added comparators for StatInjury
-		matchingRulePlayerStatInjury.addComparator(new PlayerNameComparatorJaccard(), 0.6);
-		matchingRulePlayerStatInjury.addComparator(new PlayerPositionsComparatorJaccard(), 0.4);
+		matchingRulePlayerStatInjury.addComparator(new PlayerNameComparatorJaccard(), 1);
+//		matchingRulePlayerStatInjury.addComparator(new PlayerPositionsComparatorJaccard(), 0.4);
 
 		// Initialize Matching Engines
 		MatchingEngine<Player, Attribute> enginePlayerStatDBpedia = new MatchingEngine<>();
