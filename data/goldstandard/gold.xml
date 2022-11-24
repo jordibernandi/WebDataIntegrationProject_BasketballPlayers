@@ -4,7 +4,7 @@
 		<id>player_stat_id_1</id>
 		<name>Alaa Abdelnaby</name>
 		<yearStart>1990</yearStart>
-		<birth_date>1968-06-24</birth_date>
+		<birthDate>1968-06-24</birthDate>
 		<height>185.928</height>
 		<weight>109</weight>
 		<salary>395000</salary>
@@ -18,9 +18,9 @@
 		<id>player_stat_id_498</id>
 		<name>Jaylen Brown</name>
 		<yearStart>2019</yearStart>
-		<birth_date>1996-10-24</birth_date>
-		<height>198</height>
-		<weight>100</weight>
+		<birthDate>1996-10-24</birthDate>
+		<height>201.168</height>
+		<weight>101.151</weight>
 		<salary>24830000</salary>
 		<positions>
 			<name>Shooting Guard</name>
@@ -34,7 +34,7 @@
 		<id>player_stat_id_499</id>
 		<name>John Brown</name>
 		<yearStart>2019</yearStart>
-		<birth_date>1990-4-3</birth_date>
+		<birthDate>1990-04-03</birthDate>
 		<height>156</height>
 		<weight>81</weight>
 		<salary>1000000</salary>
@@ -48,7 +48,7 @@
 		<id>player_stat_id_632</id>
 		<name>Cory Carr</name>
 		<yearStart>1998</yearStart>
-		<birth_date>1975-12-5</birth_date>
+		<birthDate>1975-12-05</birthDate>
 		<height>193</height>
 		<weight>100</weight>
 		<salary>287500</salary>
@@ -61,7 +61,7 @@
 		<id>player_stat_id_19</id>
 		<name>Hassan Adams</name>
 		<yearStart>2006</yearStart>
-		<birth_date>1984-6-20</birth_date>
+		<birthDate>1984-06-20</birthDate>
 		<height>193</height>
 		<weight>99.8</weight>
 		<salary>412718</salary>
@@ -74,7 +74,7 @@
 		<id>player_stat_id_20</id>
 		<name>Jordan Adams</name>
 		<yearStart>2014</yearStart>
-		<birth_date>1994-7-8</birth_date>
+		<birthDate>1994-07-08</birthDate>
 		<height>196</height>
 		<weight>99.8</weight>
 		<salary>1340000</salary>
@@ -87,7 +87,7 @@
 		<id>player_stat_id_22</id>
 		<name>Steven Adams</name>
 		<yearStart>2013</yearStart>
-		<birth_date>1993-7-20</birth_date>
+		<birthDate>1993-07-20</birthDate>
 		<height>211</height>
 		<weight>113</weight>
 		<salary>2753000</salary>
@@ -100,7 +100,7 @@
 		<id>player_stat_id_24</id>
 		<name>Bam Adebayo</name>
 		<yearStart>2017</yearStart>
-		<birth_date>1997-7-18</birth_date>
+		<birthDate>1997-07-18</birthDate>
 		<height>206</height>
 		<weight>110.2</weight>
 		<salary>2490360</salary>
@@ -113,7 +113,7 @@
 		<id>player_stat_id_1953</id>
 		<name>LeBron James</name>
 		<yearStart>2003</yearStart>
-		<birth_date>1984-12-30</birth_date>
+		<birthDate>1984-12-30</birthDate>
 		<height>206</height>
 		<weight>113</weight>
 		<salary>4018920</salary>
@@ -126,7 +126,7 @@
 		<id>player_stat_id_2117</id>
 		<name>Michael Jordan</name>
 		<yearStart>1984</yearStart>
-		<birth_date>1963-2-17</birth_date>
+		<birthDate>1963-02-17</birthDate>
 		<height>198</height>
 		<weight>98</weight>
 		<salary>2500000</salary>
@@ -141,7 +141,7 @@
 		<id>player_stat_id_3037</id>
 		<name>Hakeem Olajuwon</name>
 		<yearStart>1984</yearStart>
-		<birth_date>1963-1-21</birth_date>
+		<birthDate>1963-01-21</birthDate>
 		<height>213</height>
 		<weight>116</weight>
 		<salary>3175000</salary>
@@ -154,7 +154,7 @@
 		<id>player_stat_id_3067</id>
 		<name>Travis Outlaw</name>
 		<yearStart>2003</yearStart>
-		<birth_date>1984-9-18</birth_date>
+		<birthDate>1984-09-18</birthDate>
 		<height>206</height>
 		<weight>103</weight>
 		<salary>941040</salary>
@@ -167,7 +167,7 @@
 		<id>player_stat_id_3166</id>
 		<name>Sam Perkins</name>
 		<yearStart>1984</yearStart>
-		<birth_date>1961-6-14</birth_date>
+		<birthDate>1961-06-14</birthDate>
 		<height>206</height>
 		<weight>107</weight>
 		<salary>1970000</salary>
@@ -181,7 +181,7 @@
 		<id>player_stat_id_74</id>
 		<name>Chris Andersen</name>
 		<yearStart>1999</yearStart>
-		<birth_date>1978-7-7</birth_date>
+		<birthDate>1978-07-07</birthDate>
 		<height>208</height>
 		<weight>111</weight>
 		<salary>288171</salary>
@@ -195,7 +195,7 @@
 		<id>player_stat_id_154</id>
 		<name>William Avery</name>
 		<yearStart>1999</yearStart>
-		<birth_date>1979-8-8</birth_date>
+		<birthDate>1979-08-08</birthDate>
 		<height>188</height>
 		<weight>91</weight>
 		<salary>1196520</salary>
