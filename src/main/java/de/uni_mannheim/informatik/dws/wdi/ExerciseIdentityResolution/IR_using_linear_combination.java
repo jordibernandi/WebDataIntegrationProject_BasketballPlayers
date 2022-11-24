@@ -76,17 +76,16 @@ public class IR_using_linear_combination
 		//added comparators for StatDBpedia
 		matchingRulePlayerStatDBpedia.addComparator(new PlayerNameComparatorJaccard(), 0.4);
 		matchingRulePlayerStatDBpedia.addComparator(new PlayerBirthDateComparatorEqual(), 0.4);
-//		matchingRulePlayerStatDBpedia.addComparator(new PlayerHeightComparatorPercentageSim(), 0.1);
-		matchingRulePlayerStatDBpedia.addComparator(new PlayerWeightComparatorPercentageSim(), 0.2);
+		matchingRulePlayerStatDBpedia.addComparator(new PlayerHeightComparatorPercentageSim(), 0.1);
+		matchingRulePlayerStatDBpedia.addComparator(new PlayerWeightComparatorPercentageSim(), 0.1);
 		
 		//added comparators for StatSalary
 		matchingRulePlayerStatSalary.addComparator(new PlayerNameComparatorJaccardTokenizer(), 0.5);
 		matchingRulePlayerStatSalary.addComparator(new PlayerCareerComparatorRange(), 0.5);
-//		matchingRulePlayerStatSalary.addComparator(new PlayerPositionsComparatorJaccard(), 0.1);
 
 		//added comparators for StatInjury
-		matchingRulePlayerStatInjury.addComparator(new PlayerNameComparatorJaccard(), 1);
-//		matchingRulePlayerStatInjury.addComparator(new PlayerPositionsComparatorJaccard(), 0.4);
+		matchingRulePlayerStatInjury.addComparator(new PlayerNameComparatorJaccard(), 0.5);
+		matchingRulePlayerStatInjury.addComparator(new PlayerPositionsComparatorEqual(), 0.5);
 
 		// Initialize Matching Engines
 		MatchingEngine<Player, Attribute> enginePlayerStatDBpedia = new MatchingEngine<>();
@@ -106,9 +105,9 @@ public class IR_using_linear_combination
 		Processable<Correspondence<Player, Attribute>> correspondencesPlayerStatInjury = enginePlayerStatInjury.runIdentityResolution(
 				dataPlayerStat, dataPlayerInjury , null, matchingRulePlayerStatInjury, blocker);
 
-		correspondencesPlayerStatDBpedia = enginePlayerStatDBpedia.getTopKInstanceCorrespondences(correspondencesPlayerStatDBpedia, 1, 0.8);
-		correspondencesPlayerStatSalary = enginePlayerStatSalary.getTopKInstanceCorrespondences(correspondencesPlayerStatSalary, 1, 0.75);
-		correspondencesPlayerStatInjury = enginePlayerStatInjury.getTopKInstanceCorrespondences(correspondencesPlayerStatInjury, 1, 0.75);
+//		correspondencesPlayerStatDBpedia = enginePlayerStatDBpedia.getTopKInstanceCorrespondences(correspondencesPlayerStatDBpedia, 1, 0.8);
+//		correspondencesPlayerStatSalary = enginePlayerStatSalary.getTopKInstanceCorrespondences(correspondencesPlayerStatSalary, 1, 0.75);
+//		correspondencesPlayerStatInjury = enginePlayerStatInjury.getTopKInstanceCorrespondences(correspondencesPlayerStatInjury, 1, 0.75);
 
 		// write the correspondences to the output file
 		new CSVCorrespondenceFormatter().writeCSV(new File("data/output/correspondences/player_stat_2_dbpedia_correspondences.csv"), correspondencesPlayerStatDBpedia);

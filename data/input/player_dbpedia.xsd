@@ -11,8 +11,8 @@
               <xs:element type="xs:string" name="birthPlace"/>
               <xs:element type="xs:float" name="height"/>
               <xs:element type="xs:float" name="weight"/>
-              <xs:element type="xs:short" name="startYear"/>
-              <xs:element type="xs:short" name="endYear"/>
+              <xs:element type="xs:short" name="yearStart"/>
+              <xs:element type="xs:short" name="yearEnd"/>
               <xs:element name="league">
                 <xs:complexType>
                   <xs:sequence>

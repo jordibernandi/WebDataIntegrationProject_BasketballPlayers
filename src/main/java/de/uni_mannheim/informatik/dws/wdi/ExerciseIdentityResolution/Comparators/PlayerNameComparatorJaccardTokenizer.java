@@ -20,13 +20,6 @@ public class PlayerNameComparatorJaccardTokenizer implements Comparator<Player, 
 		String s1 = String.valueOf(record1.getName()).toLowerCase();
 		String s2 = String.valueOf(record2.getName()).toLowerCase();
 
-		System.out.println(record1.getIdentifier());
-
-		if(record1.getIdentifier() == "player_stat_id_2196") {
-			System.out.println("HELLO");
-			System.out.println(record1.getIdentifier());
-		}
-
 		double similarity = sim.calculate(s1, s2);
 
 		if(this.comparisonLog != null){

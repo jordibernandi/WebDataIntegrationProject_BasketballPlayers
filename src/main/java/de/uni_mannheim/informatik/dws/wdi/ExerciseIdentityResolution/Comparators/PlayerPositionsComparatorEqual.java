@@ -17,6 +17,9 @@ public class PlayerPositionsComparatorEqual implements Comparator<Player, Attrib
     private ComparatorLogger comparisonLog;
     @Override
     public double compare(Player record1, Player record2, Correspondence<Attribute, Matchable> schemaCorrespondence) {
+        System.out.println(record1.getIdentifier() + record1.getPositions());
+        System.out.println("RECORD 2 " + record2.getPositions());
+
         List<String> s1 = record1.getPositions();
         List<String> s2L = record2.getPositions();
         if (s2L != null && s1 != null) {
