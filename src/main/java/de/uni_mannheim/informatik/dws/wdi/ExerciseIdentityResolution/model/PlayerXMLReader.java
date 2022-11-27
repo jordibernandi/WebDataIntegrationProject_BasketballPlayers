@@ -14,6 +14,7 @@ import org.w3c.dom.Node;
 
 import de.uni_mannheim.informatik.dws.winter.model.defaultmodel.Attribute;
 import de.uni_mannheim.informatik.dws.winter.model.io.XMLMatchableReader;
+import org.apache.commons.lang3.StringUtils;
 
 public class PlayerXMLReader extends XMLMatchableReader<Player, Attribute> implements
 				FusibleFactory<Player, Attribute> {
@@ -101,6 +102,16 @@ public class PlayerXMLReader extends XMLMatchableReader<Player, Attribute> imple
 	@Override
 	public Player createInstanceForFusion(RecordGroup<Player, Attribute> cluster) {
 		// TODO Auto-generated method stub
-		return null;
+		List<String> ids = new LinkedList<>();
+
+        for (Player p : cluster.getRecords()) {
+            ids.add(p.getIdentifier());
+        }
+
+        Collections.sort(ids);
+
+        String mergedId = StringUtils.join(ids, '+');
+
+        return new Player(mergedId, "fused");
 	}
 }

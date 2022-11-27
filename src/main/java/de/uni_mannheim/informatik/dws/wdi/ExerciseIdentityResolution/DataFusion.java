@@ -19,7 +19,16 @@ import java.util.Locale;
 
 import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Comparators.*;
 import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Evaluation.BirthDateEvaluationRule;
+import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Evaluation.HeightEvaluationRule;
+import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Evaluation.NameEvaluationRule;
+import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Evaluation.PositionsEvaluationRule;
+import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Evaluation.WeightEvaluationRule;
 import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Fusers.BirthDateFuserFavourSource;
+import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Fusers.HeightFuserFavourSource;
+import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Fusers.NameFuserLongestString;
+import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Fusers.NameFuserVoting;
+import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Fusers.PositionsFuserUnion;
+import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Fusers.WeightFuserFavourSource;
 import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.model.Player;
 import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.model.PlayerXMLReader;
 import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Blocking.PlayerBlockingByKeyNameGenerator;
@@ -93,16 +102,16 @@ public class DataFusion {
         // load correspondences
         System.out.println("*\n*\tLoading correspondences\n*");
         CorrespondenceSet<Player, Attribute> correspondences = new CorrespondenceSet<>();
-//        correspondences.loadCorrespondences(new File("data/output/correspondences/stat_2_dbpedia_correspondences.csv"),dsPlayerStat, dsPlayerDBpedia);
-//        correspondences.loadCorrespondences(new File("data/output/correspondences/stat_2_salary_correspondences.csv"),dsPlayerStat, dsPlayerSalary);
-//        correspondences.loadCorrespondences(new File("data/output/correspondences/stat_2_injury_correspondences.csv"),dsPlayerStat, dsPlayerInjury);
+        correspondences.loadCorrespondences(new File("data/output/correspondences/player_stat_2_dbpedia_correspondences.csv"),dsPlayerStat, dsPlayerDBpedia);
+        correspondences.loadCorrespondences(new File("data/output/correspondences/player_stat_2_salary_correspondences.csv"),dsPlayerStat, dsPlayerSalary);
+        correspondences.loadCorrespondences(new File("data/output/correspondences/player_stat_2_injury_correspondences.csv"),dsPlayerStat, dsPlayerInjury);
 
         correspondences.printGroupSizeDistribution();
 
         // load the gold standard
         System.out.println("*\n*\tEvaluating results\n*");
         DataSet<Player, Attribute> gs = new FusibleHashedDataSet<>();
-//        new PlayerXMLReader().loadFromXML(new File("data/goldstandard/fused.xml"), "/players/player", gs);
+        new PlayerXMLReader().loadFromXML(new File("data/goldstandard/gold.xml"), "/players/player", gs);
 
         for(Player p : gs.get()) {
             System.out.println(String.format("gs: %s", p.getIdentifier()));
@@ -113,19 +122,20 @@ public class DataFusion {
         // write debug results to file
         strategy.activateDebugReport("data/output/debugResultsDatafusion.csv", 100000000, gs);
 
-        // add attribute fusers
-       // strategy.addAttributeFuser(Player.NAME, new NameFuserLongestString(),new NameEvaluationRule());
-//        strategy.addAttributeFuser(Player.NAME, new NameFuserVoting(),new NameEvaluationRule());
+          //add attribute fusers and evaluation rules
+          strategy.addAttributeFuser(Player.NAME, new NameFuserLongestString(),new NameEvaluationRule());
+          strategy.addAttributeFuser(Player.NAME, new NameFuserVoting(),new NameEvaluationRule());
           strategy.addAttributeFuser(Player.BIRTHDATE, new BirthDateFuserFavourSource(), new BirthDateEvaluationRule());
+          strategy.addAttributeFuser(Player.HEIGHT, new HeightFuserFavourSource(),new HeightEvaluationRule());
+          strategy.addAttributeFuser(Player.WEIGHT, new WeightFuserFavourSource(),new WeightEvaluationRule());
+          strategy.addAttributeFuser(Player.POSITIONS,new PositionsFuserUnion(), new PositionsEvaluationRule());
 //        strategy.addAttributeFuser(Player.BIRTHPLACE, new BirthPlaceFuserFavourSource(),new BirthPlaceEvaluationRule());
-//        strategy.addAttributeFuser(Player.HEIGHT, new HeightFuserFavourSource(),new BirthPlaceEvaluationRule());
-//        strategy.addAttributeFuser(Player.WEIGHT, new WeightFuserFavourSource(),new BirthPlaceEvaluationRule());
 //        strategy.addAttributeFuser(Player.COLLEGE, new CollegeFuserFavourSource(),new CollegeEvaluationRule());
 //        strategy.addAttributeFuser(Player.YEARSTART, new YearStartFuserMostRecent(),new YearStartEvaluationRule());
 //        strategy.addAttributeFuser(Player.YEAREND, new YearEndFuserFavourSource(),new YearEndEvaluationRule());
 //        strategy.addAttributeFuser(Player.SALARIES, new SalariesFuserUnion(), new SalariesEvaluationRule());
 //        strategy.addAttributeFuser(Player.INJURIES, new InjuriesFuserUnion(), new InjuriesvaluationRule());
-//        strategy.addAttributeFuser(Player.POSITIONS,new PositionsFuserUnion(), new PositionsEvaluationRule());
+          
 //        strategy.addAttributeFuser(Player.LEAGUES,new LeaguesFuserUnion(), new LeaguesEvaluationRule());
 //        strategy.addAttributeFuser(Player.TEAMS,new TeamsFuserUnion(), new TeamsEvaluationRule());
 //        strategy.addAttributeFuser(Player.AWARDS,new AwardsFuserUnion(), new AwardsEvaluationRule());
