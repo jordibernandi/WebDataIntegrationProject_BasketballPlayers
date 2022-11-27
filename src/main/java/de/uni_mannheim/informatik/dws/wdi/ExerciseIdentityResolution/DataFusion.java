@@ -58,19 +58,19 @@ public class DataFusion {
     	System.out.println("*\n*\tLoading datasets\n*");
         FusibleDataSet<Player, Attribute> dsPlayerStat = new FusibleHashedDataSet<>();
         new PlayerXMLReader().loadFromXML(new File("data/input/player_stat.xml"), "/players/player", dsPlayerStat);
-        dsPlayerStat.printDataSetDensityReport();
+//        dsPlayerStat.printDataSetDensityReport();
     	
         FusibleDataSet<Player, Attribute> dsPlayerDBpedia = new FusibleHashedDataSet<>();
         new PlayerXMLReader().loadFromXML(new File("data/input/player_dbpedia.xml"), "/players/player", dsPlayerDBpedia);
-        dsPlayerDBpedia.printDataSetDensityReport();
+//        dsPlayerDBpedia.printDataSetDensityReport();
 
         FusibleDataSet<Player, Attribute> dsPlayerSalary = new FusibleHashedDataSet<>();
         new PlayerXMLReader().loadFromXML(new File("data/input/player_salary.xml"), "/players/player", dsPlayerSalary);
-        dsPlayerSalary.printDataSetDensityReport();
+//        dsPlayerSalary.printDataSetDensityReport();
 
         FusibleDataSet<Player, Attribute> dsPlayerInjury = new FusibleHashedDataSet<>();
         new PlayerXMLReader().loadFromXML(new File("data/input/player_injury.xml"), "/players/player", dsPlayerInjury);
-        dsPlayerInjury.printDataSetDensityReport();
+//        dsPlayerInjury.printDataSetDensityReport();
 
         // Scores (e.g. from rating)
         dsPlayerStat.setScore(3.0);
@@ -93,16 +93,16 @@ public class DataFusion {
         // load correspondences
         System.out.println("*\n*\tLoading correspondences\n*");
         CorrespondenceSet<Player, Attribute> correspondences = new CorrespondenceSet<>();
-        correspondences.loadCorrespondences(new File("data/output/correspondences/stat_2_dbpedia_correspondences.csv"),dsPlayerStat, dsPlayerDBpedia);
-        correspondences.loadCorrespondences(new File("data/output/correspondences/stat_2_salary_correspondences.csv"),dsPlayerStat, dsPlayerSalary);
-        correspondences.loadCorrespondences(new File("data/output/correspondences/stat_2_injury_correspondences.csv"),dsPlayerStat, dsPlayerInjury);
+//        correspondences.loadCorrespondences(new File("data/output/correspondences/stat_2_dbpedia_correspondences.csv"),dsPlayerStat, dsPlayerDBpedia);
+//        correspondences.loadCorrespondences(new File("data/output/correspondences/stat_2_salary_correspondences.csv"),dsPlayerStat, dsPlayerSalary);
+//        correspondences.loadCorrespondences(new File("data/output/correspondences/stat_2_injury_correspondences.csv"),dsPlayerStat, dsPlayerInjury);
 
         correspondences.printGroupSizeDistribution();
 
         // load the gold standard
         System.out.println("*\n*\tEvaluating results\n*");
         DataSet<Player, Attribute> gs = new FusibleHashedDataSet<>();
-        new PlayerXMLReader().loadFromXML(new File("data/goldstandard/fused.xml"), "/players/player", gs);
+//        new PlayerXMLReader().loadFromXML(new File("data/goldstandard/fused.xml"), "/players/player", gs);
 
         for(Player p : gs.get()) {
             System.out.println(String.format("gs: %s", p.getIdentifier()));
