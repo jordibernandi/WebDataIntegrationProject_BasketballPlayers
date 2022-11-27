@@ -210,9 +210,36 @@ public class Player extends AbstractRecord<Attribute> implements Serializable {
         }
     }
 
-	@Override
-	public boolean hasValue(Attribute attribute) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+    @Override
+    public boolean hasValue(Attribute attribute) {
+        if(attribute==NAME)
+            return name != null;
+        else if(attribute==BIRTHDATE)
+            return birthDate!=null;
+        else if(attribute==BIRTHPLACE)
+            return birthPlace!=null;
+        else if(attribute==YEAREND)
+            return yearEnd != 0;
+        else if(attribute==YEARSTART)
+            return yearStart!= 0;
+        else if(attribute==HEIGHT)
+            return height!=0;
+        else if(attribute==WEIGHT)
+            return weight!=0;
+        else if(attribute==COLLEGE)
+            return college!=null;
+        else if(attribute==POSITIONS)
+            return positions != null && positions.size() > 0;
+        else if(attribute==SALARIES)
+            return salaries != null && salaries.size() > 0;
+        else if(attribute==INJURIES)
+            return injuries != null && injuries.size() > 0;
+        else if(attribute==TEAMS)
+            return teams != null && teams.size() > 0;
+        else if(attribute==AWARDS)
+            return awards != null && awards.size() > 0;
+        else if(attribute==LEAGUES)
+            return leagues != null && leagues.size() > 0;
+        return false;
+    }
 }
