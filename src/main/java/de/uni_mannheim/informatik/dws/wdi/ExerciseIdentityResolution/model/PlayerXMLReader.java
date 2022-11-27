@@ -7,12 +7,16 @@ import java.time.temporal.ChronoField;
 import java.util.*;
 
 import de.uni_mannheim.informatik.dws.winter.model.DataSet;
+import de.uni_mannheim.informatik.dws.winter.model.FusibleFactory;
+import de.uni_mannheim.informatik.dws.winter.model.RecordGroup;
+
 import org.w3c.dom.Node;
 
 import de.uni_mannheim.informatik.dws.winter.model.defaultmodel.Attribute;
 import de.uni_mannheim.informatik.dws.winter.model.io.XMLMatchableReader;
 
-public class PlayerXMLReader extends XMLMatchableReader<Player, Attribute> {
+public class PlayerXMLReader extends XMLMatchableReader<Player, Attribute> implements
+				FusibleFactory<Player, Attribute> {
 
     @Override
     protected void initialiseDataset(DataSet<Player, Attribute> dataset) {
@@ -93,4 +97,10 @@ public class PlayerXMLReader extends XMLMatchableReader<Player, Attribute> {
 
         return player;
     }
+
+	@Override
+	public Player createInstanceForFusion(RecordGroup<Player, Attribute> cluster) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
