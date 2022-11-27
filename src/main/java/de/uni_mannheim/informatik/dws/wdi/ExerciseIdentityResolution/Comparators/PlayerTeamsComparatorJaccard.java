@@ -57,23 +57,6 @@ public class PlayerTeamsComparatorJaccard implements Comparator<Player, Attribut
         }
     }
 
-
-
-//    @Override
-//    public boolean hasMissingValue(PlayerStat record1, PlayerStat record2, Correspondence<Attribute, Matchable> schemaCorrespondence) {
-//        return Comparator.super.hasMissingValue(record1, record2, schemaCorrespondence);
-//    }
-//
-//    @Override
-//    public Attribute getFirstSchemaElement(PlayerStat record) {
-//        return Comparator.super.getFirstSchemaElement(record);
-//    }
-//
-//    @Override
-//    public Attribute getSecondSchemaElement(PlayerStat record) {
-//        return Comparator.super.getSecondSchemaElement(record);
-//    }
-
     @Override
     public ComparatorLogger getComparisonLog() {
         return this.comparisonLog;

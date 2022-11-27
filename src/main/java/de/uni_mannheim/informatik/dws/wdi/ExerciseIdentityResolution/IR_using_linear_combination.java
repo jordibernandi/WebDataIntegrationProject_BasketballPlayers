@@ -59,13 +59,13 @@ public class IR_using_linear_combination
 		LinearCombinationMatchingRule<Player, Attribute> matchingRulePlayerStatDBpedia = new LinearCombinationMatchingRule<>(0.8);
 		MatchingGoldStandard gsTestPlayerStatDBpedia = new MatchingGoldStandard();
 		matchingRulePlayerStatDBpedia.activateDebugReport("data/output/debugResultsMatchingRulePlayerStatDBpedia.csv", 1000, gsTestPlayerStatDBpedia);
-		gsTestPlayerStatDBpedia.loadFromCSVFile(new File("data/goldstandard/gs_player_stat_2_dbpedia.csv"));
+		gsTestPlayerStatDBpedia.loadFromCSVFile(new File("data/goldstandard/gs_player_stat_2_dbpedia_test.csv"));
 
 		System.out.println("*\n*\tLoading gold standard for Player Stat to Salary \n*");
 		LinearCombinationMatchingRule<Player, Attribute> matchingRulePlayerStatSalary = new LinearCombinationMatchingRule<>(0.7);
 		MatchingGoldStandard gsTestPlayerStatSalary = new MatchingGoldStandard();
 		matchingRulePlayerStatSalary.activateDebugReport("data/output/debugResultsMatchingRulePlayerStatSalary.csv", 1000, gsTestPlayerStatSalary);
-		gsTestPlayerStatSalary.loadFromCSVFile(new File("data/goldstandard/gs_player_stat_2_salary.csv"));
+		gsTestPlayerStatSalary.loadFromCSVFile(new File("data/goldstandard/gs_player_stat_2_salary_test.csv"));
 
 		System.out.println("*\n*\tLoading gold standard for Player Stat to Injury \n*");
 		LinearCombinationMatchingRule<Player, Attribute> matchingRulePlayerStatInjury = new LinearCombinationMatchingRule<>(0.75);
@@ -80,12 +80,12 @@ public class IR_using_linear_combination
 		matchingRulePlayerStatDBpedia.addComparator(new PlayerWeightComparatorPercentageSim(), 0.1);
 		
 		//added comparators for StatSalary
-		matchingRulePlayerStatSalary.addComparator(new PlayerNameComparatorJaccardTokenizer(), 0.5);
+		matchingRulePlayerStatSalary.addComparator(new PlayerNameComparatorJaccard(), 0.5);
 		matchingRulePlayerStatSalary.addComparator(new PlayerCareerComparatorRange(), 0.5);
 
 		//added comparators for StatInjury
-		matchingRulePlayerStatInjury.addComparator(new PlayerNameComparatorJaccard(), 0.5);
-		matchingRulePlayerStatInjury.addComparator(new PlayerPositionsComparatorEqual(), 0.5);
+		matchingRulePlayerStatInjury.addComparator(new PlayerNameComparatorJaccard(), 0.6);
+		matchingRulePlayerStatInjury.addComparator(new PlayerPositionsComparatorOverlap(), 0.4);
 
 		// Initialize Matching Engines
 		MatchingEngine<Player, Attribute> enginePlayerStatDBpedia = new MatchingEngine<>();

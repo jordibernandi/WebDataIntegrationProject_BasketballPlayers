@@ -15,16 +15,10 @@ public class PlayerNameComparatorLevenshtein implements Comparator<Player, Attri
 
 	private ComparatorLogger comparisonLog;
 
-
-
-
-
-
 	@Override
 	public double compare(Player record1, Player record2, Correspondence<Attribute, Matchable> schemaCorrespondence) {
 		String s1 = String.valueOf(record1.getName()).toLowerCase();
 		String s2 = String.valueOf(record2.getName()).toLowerCase();
-
 
 		double similarity = sim.calculate(s1, s2);
 
@@ -38,13 +32,6 @@ public class PlayerNameComparatorLevenshtein implements Comparator<Player, Attri
 		}
 		return similarity;
 	}
-
-//	@Override
-//	public boolean hasMissingValue(PlayerStat record1, PlayerStat record2, Correspondence<Attribute, Matchable> schemaCorrespondence) {
-//		return Comparator.super.hasMissingValue(record1, record2, schemaCorrespondence);
-//	}
-
-
 
 	@Override
 	public ComparatorLogger getComparisonLog() {

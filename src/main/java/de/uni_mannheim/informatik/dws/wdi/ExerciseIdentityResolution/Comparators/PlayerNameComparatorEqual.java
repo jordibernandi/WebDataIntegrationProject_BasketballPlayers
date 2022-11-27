@@ -15,7 +15,6 @@ public class PlayerNameComparatorEqual implements Comparator<Player, Attribute> 
 
     private ComparatorLogger comparisonLog;
 
-
     @Override
     public double compare(Player record1, Player record2, Correspondence<Attribute, Matchable> schemaCorrespondence) {
         String s1 = String.valueOf(record1.getName()).toLowerCase();
@@ -43,6 +42,4 @@ public class PlayerNameComparatorEqual implements Comparator<Player, Attribute> 
     public void setComparisonLog(ComparatorLogger comparatorLog) {
         this.comparisonLog = comparatorLog;
     }
-
-
 }
