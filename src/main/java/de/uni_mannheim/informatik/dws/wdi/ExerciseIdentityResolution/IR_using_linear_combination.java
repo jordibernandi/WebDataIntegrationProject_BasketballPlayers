@@ -71,10 +71,10 @@ public class IR_using_linear_combination
 		LinearCombinationMatchingRule<Player, Attribute> matchingRulePlayerStatInjury = new LinearCombinationMatchingRule<>(0.75);
 		MatchingGoldStandard gsTestPlayerStatInjury = new MatchingGoldStandard();
 		matchingRulePlayerStatInjury.activateDebugReport("data/output/debugResultsMatchingRulePlayerStatInjury.csv", 1000, gsTestPlayerStatInjury);
-		gsTestPlayerStatInjury.loadFromCSVFile(new File("data/goldstandard/gs_player_stat_2_injury.csv"));
+		gsTestPlayerStatInjury.loadFromCSVFile(new File("data/goldstandard/gs_player_stat_2_injury_test.csv"));
 
 		//added comparators for StatDBpedia
-		matchingRulePlayerStatDBpedia.addComparator(new PlayerNameComparatorJaccard(), 0.4);
+		matchingRulePlayerStatDBpedia.addComparator(new PlayerNameComparatorLevenshtein(), 0.4);
 		matchingRulePlayerStatDBpedia.addComparator(new PlayerBirthDateComparatorEqual(), 0.4);
 		matchingRulePlayerStatDBpedia.addComparator(new PlayerHeightComparatorPercentageSim(), 0.1);
 		matchingRulePlayerStatDBpedia.addComparator(new PlayerWeightComparatorPercentageSim(), 0.1);
