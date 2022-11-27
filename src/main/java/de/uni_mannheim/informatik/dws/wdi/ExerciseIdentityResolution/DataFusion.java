@@ -18,6 +18,8 @@ import java.time.temporal.ChronoField;
 import java.util.Locale;
 
 import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Comparators.*;
+import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Evaluation.BirthDateEvaluationRule;
+import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Fusers.BirthDateFuserFavourSource;
 import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.model.Player;
 import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.model.PlayerXMLReader;
 import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Blocking.PlayerBlockingByKeyNameGenerator;
@@ -114,7 +116,7 @@ public class DataFusion {
         // add attribute fusers
        // strategy.addAttributeFuser(Player.NAME, new NameFuserLongestString(),new NameEvaluationRule());
 //        strategy.addAttributeFuser(Player.NAME, new NameFuserVoting(),new NameEvaluationRule());
-//        strategy.addAttributeFuser(Player.BIRTHDATE, new BirthDateFuserFavourSource(), new BirthDateEvaluationRule());
+          strategy.addAttributeFuser(Player.BIRTHDATE, new BirthDateFuserFavourSource(), new BirthDateEvaluationRule());
 //        strategy.addAttributeFuser(Player.BIRTHPLACE, new BirthPlaceFuserFavourSource(),new BirthPlaceEvaluationRule());
 //        strategy.addAttributeFuser(Player.HEIGHT, new HeightFuserFavourSource(),new BirthPlaceEvaluationRule());
 //        strategy.addAttributeFuser(Player.WEIGHT, new WeightFuserFavourSource(),new BirthPlaceEvaluationRule());
