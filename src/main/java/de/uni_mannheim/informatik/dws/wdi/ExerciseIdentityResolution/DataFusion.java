@@ -26,6 +26,7 @@ import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Evaluation.
 import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Fusers.BirthDateFuserFavourSource;
 import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Fusers.HeightFuserFavourSource;
 import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Fusers.NameFuserLongestString;
+import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Fusers.NameFuserVoting;
 import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Fusers.PositionsFuserUnion;
 import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Fusers.WeightFuserFavourSource;
 import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.model.Player;
@@ -101,16 +102,16 @@ public class DataFusion {
         // load correspondences
         System.out.println("*\n*\tLoading correspondences\n*");
         CorrespondenceSet<Player, Attribute> correspondences = new CorrespondenceSet<>();
-//        correspondences.loadCorrespondences(new File("data/output/correspondences/player_stat_2_dbpedia_correspondences.csv"),dsPlayerStat, dsPlayerDBpedia);
-//        correspondences.loadCorrespondences(new File("data/output/correspondences/player_stat_2_salary_correspondences.csv"),dsPlayerStat, dsPlayerSalary);
-//        correspondences.loadCorrespondences(new File("data/output/correspondences/player_stat_2_injury_correspondences.csv"),dsPlayerStat, dsPlayerInjury);
+        correspondences.loadCorrespondences(new File("data/output/correspondences/player_stat_2_dbpedia_correspondences.csv"),dsPlayerStat, dsPlayerDBpedia);
+        correspondences.loadCorrespondences(new File("data/output/correspondences/player_stat_2_salary_correspondences.csv"),dsPlayerStat, dsPlayerSalary);
+        correspondences.loadCorrespondences(new File("data/output/correspondences/player_stat_2_injury_correspondences.csv"),dsPlayerStat, dsPlayerInjury);
 
         correspondences.printGroupSizeDistribution();
 
         // load the gold standard
         System.out.println("*\n*\tEvaluating results\n*");
         DataSet<Player, Attribute> gs = new FusibleHashedDataSet<>();
-//        new PlayerXMLReader().loadFromXML(new File("data/goldstandard/fused.xml"), "/players/player", gs);
+        new PlayerXMLReader().loadFromXML(new File("data/goldstandard/gold.xml"), "/players/player", gs);
 
         for(Player p : gs.get()) {
             System.out.println(String.format("gs: %s", p.getIdentifier()));
@@ -123,7 +124,7 @@ public class DataFusion {
 
           //add attribute fusers and evaluation rules
           strategy.addAttributeFuser(Player.NAME, new NameFuserLongestString(),new NameEvaluationRule());
-//        strategy.addAttributeFuser(Player.NAME, new NameFuserVoting(),new NameEvaluationRule());
+          strategy.addAttributeFuser(Player.NAME, new NameFuserVoting(),new NameEvaluationRule());
           strategy.addAttributeFuser(Player.BIRTHDATE, new BirthDateFuserFavourSource(), new BirthDateEvaluationRule());
           strategy.addAttributeFuser(Player.HEIGHT, new HeightFuserFavourSource(),new HeightEvaluationRule());
           strategy.addAttributeFuser(Player.WEIGHT, new WeightFuserFavourSource(),new WeightEvaluationRule());
