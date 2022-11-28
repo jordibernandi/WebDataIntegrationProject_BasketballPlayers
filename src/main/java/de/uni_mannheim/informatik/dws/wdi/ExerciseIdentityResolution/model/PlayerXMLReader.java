@@ -23,6 +23,20 @@ public class PlayerXMLReader extends XMLMatchableReader<Player, Attribute> imple
     protected void initialiseDataset(DataSet<Player, Attribute> dataset) {
         super.initialiseDataset(dataset);
 
+        dataset.addAttribute(Player.NAME);
+        dataset.addAttribute(Player.BIRTHDATE);
+        dataset.addAttribute(Player.BIRTHPLACE);
+        dataset.addAttribute(Player.YEARSTART);
+        dataset.addAttribute(Player.YEAREND);
+        dataset.addAttribute(Player.HEIGHT);
+        dataset.addAttribute(Player.WEIGHT);
+        dataset.addAttribute(Player.COLLEGE);
+        dataset.addAttribute(Player.SALARIES);
+        dataset.addAttribute(Player.POSITIONS);
+        dataset.addAttribute(Player.LEAGUES);
+        dataset.addAttribute(Player.TEAMS);
+        dataset.addAttribute(Player.AWARDS);
+        dataset.addAttribute(Player.INJURIES);
     }
 
     @Override

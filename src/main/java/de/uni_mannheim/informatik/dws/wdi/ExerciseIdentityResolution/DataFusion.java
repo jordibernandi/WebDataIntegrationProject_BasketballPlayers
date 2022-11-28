@@ -67,25 +67,25 @@ public class DataFusion {
     	System.out.println("*\n*\tLoading datasets\n*");
         FusibleDataSet<Player, Attribute> dsPlayerStat = new FusibleHashedDataSet<>();
         new PlayerXMLReader().loadFromXML(new File("data/input/player_stat.xml"), "/players/player", dsPlayerStat);
-//        dsPlayerStat.printDataSetDensityReport();
-    	
+        dsPlayerStat.printDataSetDensityReport();
+
         FusibleDataSet<Player, Attribute> dsPlayerDBpedia = new FusibleHashedDataSet<>();
         new PlayerXMLReader().loadFromXML(new File("data/input/player_dbpedia.xml"), "/players/player", dsPlayerDBpedia);
-//        dsPlayerDBpedia.printDataSetDensityReport();
+        dsPlayerDBpedia.printDataSetDensityReport();
 
         FusibleDataSet<Player, Attribute> dsPlayerSalary = new FusibleHashedDataSet<>();
         new PlayerXMLReader().loadFromXML(new File("data/input/player_salary.xml"), "/players/player", dsPlayerSalary);
-//        dsPlayerSalary.printDataSetDensityReport();
+        dsPlayerSalary.printDataSetDensityReport();
 
         FusibleDataSet<Player, Attribute> dsPlayerInjury = new FusibleHashedDataSet<>();
         new PlayerXMLReader().loadFromXML(new File("data/input/player_injury.xml"), "/players/player", dsPlayerInjury);
-//        dsPlayerInjury.printDataSetDensityReport();
+        dsPlayerInjury.printDataSetDensityReport();
 
         // Scores (e.g. from rating)
-        dsPlayerStat.setScore(3.0);
+        dsPlayerStat.setScore(1.0);
         dsPlayerDBpedia.setScore(2.0);
-        dsPlayerSalary.setScore(1.0);
-        dsPlayerInjury.setScore(1.0);
+        dsPlayerSalary.setScore(3.0);
+        dsPlayerInjury.setScore(4.0);
 
         // Date (e.g. last update)
         DateTimeFormatter formatter = new DateTimeFormatterBuilder()
@@ -95,6 +95,7 @@ public class DataFusion {
                 .parseDefaulting(ChronoField.SECOND_OF_MINUTE, 0)
                 .toFormatter(Locale.ENGLISH);
 
+        dsPlayerStat.setDate(LocalDateTime.parse("2019-03-15", formatter));
         dsPlayerDBpedia.setDate(LocalDateTime.parse("2019-03-15", formatter));
         dsPlayerSalary.setDate(LocalDateTime.parse("2018-12-31", formatter));
         dsPlayerInjury.setDate(LocalDateTime.parse("2018-12-21", formatter));
@@ -122,34 +123,19 @@ public class DataFusion {
         // write debug results to file
         strategy.activateDebugReport("data/output/debugResultsDatafusion.csv", 100000000, gs);
 
-          //add attribute fusers and evaluation rules
-          strategy.addAttributeFuser(Player.NAME, new NameFuserLongestString(),new NameEvaluationRule());
-          strategy.addAttributeFuser(Player.NAME, new NameFuserVoting(),new NameEvaluationRule());
-          strategy.addAttributeFuser(Player.BIRTHDATE, new BirthDateFuserFavourSource(), new BirthDateEvaluationRule());
-          strategy.addAttributeFuser(Player.HEIGHT, new HeightFuserFavourSource(),new HeightEvaluationRule());
-          strategy.addAttributeFuser(Player.WEIGHT, new WeightFuserFavourSource(),new WeightEvaluationRule());
-          strategy.addAttributeFuser(Player.POSITIONS,new PositionsFuserUnion(), new PositionsEvaluationRule());
+        //add attribute fusers and evaluation rules
+        strategy.addAttributeFuser(Player.NAME, new NameFuserVoting(),new NameEvaluationRule());
+        strategy.addAttributeFuser(Player.BIRTHDATE, new BirthDateFuserFavourSource(), new BirthDateEvaluationRule());
 //        strategy.addAttributeFuser(Player.BIRTHPLACE, new BirthPlaceFuserFavourSource(),new BirthPlaceEvaluationRule());
+        strategy.addAttributeFuser(Player.HEIGHT, new HeightFuserFavourSource(),new HeightEvaluationRule());
+        strategy.addAttributeFuser(Player.WEIGHT, new WeightFuserFavourSource(),new WeightEvaluationRule());
 //        strategy.addAttributeFuser(Player.COLLEGE, new CollegeFuserFavourSource(),new CollegeEvaluationRule());
 //        strategy.addAttributeFuser(Player.YEARSTART, new YearStartFuserMostRecent(),new YearStartEvaluationRule());
 //        strategy.addAttributeFuser(Player.YEAREND, new YearEndFuserFavourSource(),new YearEndEvaluationRule());
+        strategy.addAttributeFuser(Player.POSITIONS,new PositionsFuserUnion(), new PositionsEvaluationRule());
 //        strategy.addAttributeFuser(Player.SALARIES, new SalariesFuserUnion(), new SalariesEvaluationRule());
 //        strategy.addAttributeFuser(Player.INJURIES, new InjuriesFuserUnion(), new InjuriesvaluationRule());
-          
-//        strategy.addAttributeFuser(Player.LEAGUES,new LeaguesFuserUnion(), new LeaguesEvaluationRule());
-//        strategy.addAttributeFuser(Player.TEAMS,new TeamsFuserUnion(), new TeamsEvaluationRule());
-//        strategy.addAttributeFuser(Player.AWARDS,new AwardsFuserUnion(), new AwardsEvaluationRule());
-//        strategy.addAttributeFuser(Player.POTENTIAL,new PotentialFuserFavourSources(), new PotentialEvaluationRule());
-//        strategy.addAttributeFuser(Player.RELEASECLAUSE, new ReleaseCluaseFuserFavourSources(), new ReleaseCluaseEvaluationRule());
-//        strategy.addAttributeFuser(Player.WAGE, new WageFuserFavourSources(), new WageEvaluationRule());
-//        strategy.addAttributeFuser(Player.STRONGFOOT, new StrongFootFuserVoting(), new StrongFootEvaluationRule());
 
-//        strategy.addAttributeFuser(Player.ESTMARKETVALUE18,new EstimatedVal18FuserLongestString(),new EstimatedValEvaluationRule());
-//        strategy.addAttributeFuser(Player.KITNUMBER,new KitNumberFuserFavourSource(),new KitNumberEvaluationRule());
-//        strategy.addAttributeFuser(Player.MARKETVALUE19,new MarketValueFuserLongestString(),new MarketValueEvaluationRule());
-//        strategy.addAttributeFuser(Player.NATIONALITY,new NationalityFuserFavourSource(),new NationalityEvaluationRule());
-//        strategy.addAttributeFuser(Player.NATIONALITY,new NationalityFuserVoting(),new NationalityEvaluationRule());
-//        strategy.addAttributeFuser(Player.OVERALL,new OverallFuserLongestString(),new OverallEvaluationRule());
 
         // create the fusion engine
         DataFusionEngine<Player, Attribute> engine = new DataFusionEngine<>(strategy);
