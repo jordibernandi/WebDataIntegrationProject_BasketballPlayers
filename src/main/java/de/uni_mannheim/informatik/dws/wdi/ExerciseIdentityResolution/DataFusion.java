@@ -3,10 +3,8 @@ import de.uni_mannheim.informatik.dws.winter.datafusion.CorrespondenceSet;
 import de.uni_mannheim.informatik.dws.winter.datafusion.DataFusionEngine;
 import de.uni_mannheim.informatik.dws.winter.datafusion.DataFusionEvaluator;
 import de.uni_mannheim.informatik.dws.winter.datafusion.DataFusionStrategy;
-//import de.uni_mannheim.informatik.dws.winter.model.*;
 import de.uni_mannheim.informatik.dws.winter.model.defaultmodel.Attribute;
 import de.uni_mannheim.informatik.dws.winter.utils.WinterLogManager;
-//import model.PlayerXMLFormatter;
 import de.uni_mannheim.informatik.dws.winter.model.DataSet;
 import de.uni_mannheim.informatik.dws.winter.model.FusibleDataSet;
 import de.uni_mannheim.informatik.dws.winter.model.FusibleHashedDataSet;
@@ -16,46 +14,10 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
 import java.time.temporal.ChronoField;
 import java.util.Locale;
-
-import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Comparators.*;
-import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Evaluation.BirthDateEvaluationRule;
-import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Evaluation.HeightEvaluationRule;
-import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Evaluation.NameEvaluationRule;
-import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Evaluation.PositionsEvaluationRule;
-import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Evaluation.WeightEvaluationRule;
-import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Fusers.BirthDateFuserFavourSource;
-import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Fusers.HeightFuserFavourSource;
-import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Fusers.NameFuserLongestString;
-import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Fusers.NameFuserVoting;
-import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Fusers.PositionsFuserUnion;
-import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Fusers.WeightFuserFavourSource;
-import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.model.Player;
-import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.model.PlayerXMLReader;
-import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Blocking.PlayerBlockingByKeyNameGenerator;
+import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Evaluation.*;
+import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Fusers.*;
 import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.model.*;
 import org.slf4j.Logger;
-import de.uni_mannheim.informatik.dws.winter.matching.MatchingEngine;
-import de.uni_mannheim.informatik.dws.winter.matching.MatchingEvaluator;
-import de.uni_mannheim.informatik.dws.winter.matching.algorithms.MaximumBipartiteMatchingAlgorithm;
-import de.uni_mannheim.informatik.dws.winter.matching.blockers.Blocker;
-import de.uni_mannheim.informatik.dws.winter.matching.blockers.NoBlocker;
-import de.uni_mannheim.informatik.dws.winter.matching.blockers.SortedNeighbourhoodBlocker;
-import de.uni_mannheim.informatik.dws.winter.matching.blockers.StandardRecordBlocker;
-import de.uni_mannheim.informatik.dws.winter.matching.rules.LinearCombinationMatchingRule;
-import de.uni_mannheim.informatik.dws.winter.model.Correspondence;
-import de.uni_mannheim.informatik.dws.winter.model.HashedDataSet;
-import de.uni_mannheim.informatik.dws.winter.model.MatchingGoldStandard;
-import de.uni_mannheim.informatik.dws.winter.model.Performance;
-import de.uni_mannheim.informatik.dws.winter.model.RecordGroupFactory;
-import de.uni_mannheim.informatik.dws.winter.model.io.CSVCorrespondenceFormatter;
-import de.uni_mannheim.informatik.dws.winter.processing.Processable;
-//import evaluation.*;
-//import fusers.*;
-//import java.time.LocalDateTime;
-//import java.time.format.DateTimeFormatter;
-//import java.time.format.DateTimeFormatterBuilder;
-//import java.time.temporal.ChronoField;
-//import java.util.Locale;
 
 public class DataFusion {
 
@@ -125,14 +87,18 @@ public class DataFusion {
 
         //add attribute fusers and evaluation rules
         strategy.addAttributeFuser(Player.NAME, new NameFuserVoting(),new NameEvaluationRule());
+        strategy.addAttributeFuser(Player.NAME, new NameFuserLongestString(),new NameEvaluationRule());
         strategy.addAttributeFuser(Player.BIRTHDATE, new BirthDateFuserFavourSource(), new BirthDateEvaluationRule());
-//        strategy.addAttributeFuser(Player.BIRTHPLACE, new BirthPlaceFuserFavourSource(),new BirthPlaceEvaluationRule());
+        strategy.addAttributeFuser(Player.BIRTHPLACE, new BirthPlaceFuserLongestString(),new BirthPlaceEvaluationRule());
         strategy.addAttributeFuser(Player.HEIGHT, new HeightFuserFavourSource(),new HeightEvaluationRule());
         strategy.addAttributeFuser(Player.WEIGHT, new WeightFuserFavourSource(),new WeightEvaluationRule());
-//        strategy.addAttributeFuser(Player.COLLEGE, new CollegeFuserFavourSource(),new CollegeEvaluationRule());
-//        strategy.addAttributeFuser(Player.YEARSTART, new YearStartFuserMostRecent(),new YearStartEvaluationRule());
-//        strategy.addAttributeFuser(Player.YEAREND, new YearEndFuserFavourSource(),new YearEndEvaluationRule());
-//        strategy.addAttributeFuser(Player.POSITIONS,new PositionsFuserUnion(), new PositionsEvaluationRule());
+        strategy.addAttributeFuser(Player.COLLEGE, new CollegeFuserLongestString(),new CollegeEvaluationRule());
+        strategy.addAttributeFuser(Player.YEARSTART, new YearStartFuserFavourSource(),new YearStartEvaluationRule());
+        strategy.addAttributeFuser(Player.YEAREND, new YearEndFuserFavourSource(),new YearEndEvaluationRule());
+        strategy.addAttributeFuser(Player.POSITIONS,new PositionsFuserUnion(), new PositionsEvaluationRule());
+        strategy.addAttributeFuser(Player.AWARDS,new AwardsFuserUnion(), new AwardsEvaluationRule());
+        strategy.addAttributeFuser(Player.TEAMS,new TeamsFuserUnion(), new TeamsEvaluationRule());
+        strategy.addAttributeFuser(Player.LEAGUES,new LeaguesFuserUnion(), new LeaguesEvaluationRule());
 //        strategy.addAttributeFuser(Player.SALARIES, new SalariesFuserUnion(), new SalariesEvaluationRule());
 //        strategy.addAttributeFuser(Player.INJURIES, new InjuriesFuserUnion(), new InjuriesvaluationRule());
 
