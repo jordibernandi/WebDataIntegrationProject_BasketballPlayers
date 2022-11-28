@@ -1,5 +1,6 @@
 package de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.model;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
@@ -59,7 +60,7 @@ public class PlayerXMLReader extends XMLMatchableReader<Player, Attribute> imple
                         .parseDefaulting(ChronoField.MINUTE_OF_HOUR, 0)
                         .parseDefaulting(ChronoField.SECOND_OF_MINUTE, 0)
                         .toFormatter(Locale.ENGLISH);
-                LocalDateTime dt = LocalDateTime.parse(date, formatter);
+                LocalDate dt = LocalDate.parse(date, formatter);
                 player.setBirthDate(dt);
             }
         } catch (Exception e) {

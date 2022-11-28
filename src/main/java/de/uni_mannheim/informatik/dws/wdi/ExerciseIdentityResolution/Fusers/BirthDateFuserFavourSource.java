@@ -9,12 +9,14 @@ import de.uni_mannheim.informatik.dws.winter.model.RecordGroup;
 import de.uni_mannheim.informatik.dws.winter.model.defaultmodel.Attribute;
 import de.uni_mannheim.informatik.dws.winter.processing.Processable;
 import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.model.Player;
+
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-public class BirthDateFuserFavourSource extends AttributeValueFuser<LocalDateTime, Player, Attribute> {
+public class BirthDateFuserFavourSource extends AttributeValueFuser<LocalDate, Player, Attribute> {
 
 	public BirthDateFuserFavourSource() {
-		super(new FavourSources<LocalDateTime, Player, Attribute>());
+		super(new FavourSources<LocalDate, Player, Attribute>());
 	}
 
 	@Override
@@ -23,13 +25,13 @@ public class BirthDateFuserFavourSource extends AttributeValueFuser<LocalDateTim
 	}
 
 	@Override
-	public LocalDateTime getValue(Player record, Correspondence<Attribute, Matchable> correspondence) {
+	public LocalDate getValue(Player record, Correspondence<Attribute, Matchable> correspondence) {
 		return record.getBirthDate();
 	}
 
 	@Override
 	public void fuse(RecordGroup<Player, Attribute> group, Player fusedRecord, Processable<Correspondence<Attribute, Matchable>> schemaCorrespondences, Attribute schemaElement) {
-		FusedValue<LocalDateTime, Player, Attribute> fused = getFusedValue(group, schemaCorrespondences, schemaElement);
+		FusedValue<LocalDate, Player, Attribute> fused = getFusedValue(group, schemaCorrespondences, schemaElement);
 		fusedRecord.setBirthDate(fused.getValue());
 		fusedRecord.setAttributeProvenance(Player.BIRTHDATE, fused.getOriginalIds());
 	}

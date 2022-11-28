@@ -132,7 +132,7 @@ public class DataFusion {
 //        strategy.addAttributeFuser(Player.COLLEGE, new CollegeFuserFavourSource(),new CollegeEvaluationRule());
 //        strategy.addAttributeFuser(Player.YEARSTART, new YearStartFuserMostRecent(),new YearStartEvaluationRule());
 //        strategy.addAttributeFuser(Player.YEAREND, new YearEndFuserFavourSource(),new YearEndEvaluationRule());
-        strategy.addAttributeFuser(Player.POSITIONS,new PositionsFuserUnion(), new PositionsEvaluationRule());
+//        strategy.addAttributeFuser(Player.POSITIONS,new PositionsFuserUnion(), new PositionsEvaluationRule());
 //        strategy.addAttributeFuser(Player.SALARIES, new SalariesFuserUnion(), new SalariesEvaluationRule());
 //        strategy.addAttributeFuser(Player.INJURIES, new InjuriesFuserUnion(), new InjuriesvaluationRule());
 

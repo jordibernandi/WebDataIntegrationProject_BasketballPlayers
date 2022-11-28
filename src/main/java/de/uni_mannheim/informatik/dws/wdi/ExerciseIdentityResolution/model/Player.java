@@ -1,6 +1,7 @@
 package de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.model;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.HashMap;
@@ -20,7 +21,7 @@ public class Player extends AbstractRecord<Attribute> implements Serializable {
     protected String id;
     protected String provenance;
     private String name;
-    private LocalDateTime birthDate;
+    private LocalDate birthDate;
     private String birthPlace;
     private int yearStart;
     private int yearEnd;
@@ -71,10 +72,10 @@ public class Player extends AbstractRecord<Attribute> implements Serializable {
         this.name = name;
     }
 
-    public LocalDateTime getBirthDate() {
+    public LocalDate getBirthDate() {
         return birthDate;
     }
-    public void setBirthDate(LocalDateTime birthDate) {
+    public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
     }
 

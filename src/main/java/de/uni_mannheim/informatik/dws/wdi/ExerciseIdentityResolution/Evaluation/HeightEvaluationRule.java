@@ -9,12 +9,10 @@ import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.model.Playe
 public class HeightEvaluationRule extends EvaluationRule<Player, Attribute> {
     @Override
     public boolean isEqual(Player record1, Player record2, Attribute schemaElement) {
-        if(record1.getHeight()== 0 && record2.getHeight()==0)
+        if(record1.getHeight()> (record2.getHeight()*0.9) && record1.getHeight()<record2.getHeight()*1.1)
             return true;
-        else if(record1.getHeight()== 0 ^ record2.getHeight()==0)
-            return false;
         else
-            return record1.getHeight() == (record2.getHeight());
+            return false;
     }
 
     @Override

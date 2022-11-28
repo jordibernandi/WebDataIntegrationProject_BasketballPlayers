@@ -9,12 +9,10 @@ import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.model.Playe
 public class WeightEvaluationRule extends EvaluationRule<Player, Attribute> {
     @Override
     public boolean isEqual(Player record1, Player record2, Attribute schemaElement) {
-        if(record1.getWeight()== 0 && record2.getWeight()==0)
+        if(record1.getWeight()> (record2.getWeight()*0.9) && record1.getWeight()<record2.getWeight()*1.1)
             return true;
-        else if(record1.getWeight()== 0 ^ record2.getWeight()==0)
-            return false;
         else
-            return record1.getWeight() == (record2.getWeight());
+            return false;
     }
 
     @Override

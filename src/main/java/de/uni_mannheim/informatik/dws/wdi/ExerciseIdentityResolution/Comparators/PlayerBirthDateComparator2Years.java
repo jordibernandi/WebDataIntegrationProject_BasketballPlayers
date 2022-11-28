@@ -7,6 +7,8 @@ import de.uni_mannheim.informatik.dws.winter.model.Correspondence;
 import de.uni_mannheim.informatik.dws.winter.model.Matchable;
 import de.uni_mannheim.informatik.dws.winter.model.defaultmodel.Attribute;
 import de.uni_mannheim.informatik.dws.winter.similarity.date.YearSimilarity;
+
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class PlayerBirthDateComparator2Years implements Comparator<Player, Attribute> {
@@ -19,9 +21,9 @@ public class PlayerBirthDateComparator2Years implements Comparator<Player, Attri
 
     @Override
     public double compare(Player record1, Player record2, Correspondence<Attribute, Matchable> schemaCorrespondence) {
-        LocalDateTime record1BirthDate = record1.getBirthDate();
-        LocalDateTime record2BirthDate = record2.getBirthDate();
-        double similarity = sim.calculate(record1.getBirthDate(), record2.getBirthDate());
+        LocalDate record1BirthDate = record1.getBirthDate();
+        LocalDate record2BirthDate = record2.getBirthDate();
+        double similarity = sim.calculate(record1.getBirthDate().atStartOfDay(), record2.getBirthDate().atStartOfDay());
         
         if(record1BirthDate != null && record2BirthDate != null) {
                	if(this.comparisonLog != null){
