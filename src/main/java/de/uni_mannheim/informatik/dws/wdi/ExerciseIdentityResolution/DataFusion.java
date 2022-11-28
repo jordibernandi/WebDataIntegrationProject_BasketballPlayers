@@ -101,9 +101,8 @@ public class DataFusion {
         strategy.addAttributeFuser(Player.AWARDS,new AwardsFuserUnion(), new AwardsEvaluationRule());
         strategy.addAttributeFuser(Player.TEAMS,new TeamsFuserUnion(), new TeamsEvaluationRule());
         strategy.addAttributeFuser(Player.LEAGUES,new LeaguesFuserUnion(), new LeaguesEvaluationRule());
-//        strategy.addAttributeFuser(Player.SALARIES, new SalariesFuserUnion(), new SalariesEvaluationRule());
-//        strategy.addAttributeFuser(Player.INJURIES, new InjuriesFuserUnion(), new InjuriesvaluationRule());
-
+        strategy.addAttributeFuser(Player.SALARIES, new SalariesFuserUnion(), new SalariesEvaluationRule());
+        strategy.addAttributeFuser(Player.INJURIES, new InjuriesFuserUnion(), new InjuriesEvaluationRule());
 
         // create the fusion engine
         DataFusionEngine<Player, Attribute> engine = new DataFusionEngine<>(strategy);
