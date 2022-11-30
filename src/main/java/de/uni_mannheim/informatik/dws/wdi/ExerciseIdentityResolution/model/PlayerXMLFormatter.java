@@ -10,6 +10,9 @@ import java.util.List;
 
 public class PlayerXMLFormatter extends XMLFormatter<Player> {
 
+    SalaryXMLFormatter salaryFormatter = new SalaryXMLFormatter();
+    InjuryXMLFormatter injuryFormatter = new InjuryXMLFormatter();
+
     @Override
     public Element createRootElement(Document doc) {
         return doc.createElement("players");
@@ -121,6 +124,9 @@ public class PlayerXMLFormatter extends XMLFormatter<Player> {
             player.appendChild(awards1);
         }
 
+        player.appendChild(createSalariesElement(record, doc));
+        player.appendChild(createInjuriesElement(record, doc));
+
         return player;
     }
 
@@ -131,4 +137,33 @@ public class PlayerXMLFormatter extends XMLFormatter<Player> {
 
     }
 
+    protected Element createSalariesElement(Player record, Document doc) {
+        Element salaryRoot = salaryFormatter.createRootElement(doc);
+        salaryRoot.setAttribute("provenance",
+                record.getMergedAttributeProvenance(Player.SALARIES));
+
+        if(record.getSalaries() != null) {
+            for (Salary s : record.getSalaries()) {
+                salaryRoot.appendChild(salaryFormatter
+                        .createElementFromRecord(s, doc));
+            }
+        }
+
+        return salaryRoot;
+    }
+
+    protected Element createInjuriesElement(Player record, Document doc) {
+        Element injuryRoot = injuryFormatter.createRootElement(doc);
+        injuryRoot.setAttribute("provenance",
+                record.getMergedAttributeProvenance(Player.INJURIES));
+
+        if(record.getInjuries() != null) {
+            for (Injury i : record.getInjuries()) {
+                injuryRoot.appendChild(injuryFormatter
+                        .createElementFromRecord(i, doc));
+            }
+        }
+
+        return injuryRoot;
+    }
 }

@@ -88,7 +88,7 @@ public class DataFusion {
         strategy.activateDebugReport("data/output/debugResultsDatafusion.csv", 100000000, gs);
 
         //add attribute fusers and evaluation rules
-        strategy.addAttributeFuser(Player.NAME, new NameFuserVoting(),new NameEvaluationRule());
+//        strategy.addAttributeFuser(Player.NAME, new NameFuserVoting(),new NameEvaluationRule());
         strategy.addAttributeFuser(Player.NAME, new NameFuserLongestString(),new NameEvaluationRule());
         strategy.addAttributeFuser(Player.BIRTHDATE, new BirthDateFuserFavourSource(), new BirthDateEvaluationRule());
         strategy.addAttributeFuser(Player.BIRTHPLACE, new BirthPlaceFuserLongestString(),new BirthPlaceEvaluationRule());
@@ -98,37 +98,45 @@ public class DataFusion {
         strategy.addAttributeFuser(Player.YEARSTART, new YearStartFuserFavourSource(),new YearStartEvaluationRule());
         strategy.addAttributeFuser(Player.YEAREND, new YearEndFuserFavourSource(),new YearEndEvaluationRule());
         strategy.addAttributeFuser(Player.POSITIONS,new PositionsFuserUnion(), new PositionsEvaluationRule());
-        strategy.addAttributeFuser(Player.AWARDS,new AwardsFuserUnion(), new AwardsEvaluationRule());
         strategy.addAttributeFuser(Player.TEAMS,new TeamsFuserUnion(), new TeamsEvaluationRule());
+        strategy.addAttributeFuser(Player.AWARDS,new AwardsFuserUnion(), new AwardsEvaluationRule());
         strategy.addAttributeFuser(Player.LEAGUES,new LeaguesFuserUnion(), new LeaguesEvaluationRule());
         strategy.addAttributeFuser(Player.SALARIES, new SalariesFuserUnion(), new SalariesEvaluationRule());
         strategy.addAttributeFuser(Player.INJURIES, new InjuriesFuserUnion(), new InjuriesEvaluationRule());
 
         // create the fusion engine
-        DataFusionEngine<Player, Attribute> engine = new DataFusionEngine<>(strategy);
+        try{
+            DataFusionEngine<Player, Attribute> engine = new DataFusionEngine<>(strategy);
 
-        // print consistency report
-        engine.printClusterConsistencyReport(correspondences, null);
+            // print consistency report
+            engine.printClusterConsistencyReport(correspondences, null);
 
-        // print record groups sorted by consistency
-        engine.writeRecordGroupsByConsistency(new File("data/output/recordGroupConsistencies.csv"), correspondences, null);
+            // print record groups sorted by consistency
+            engine.writeRecordGroupsByConsistency(new File("data/output/recordGroupConsistencies.csv"), correspondences, null);
 
-        // run the fusion
-        System.out.println("*\n*\tRunning data fusion\n*");
-        FusibleDataSet<Player, Attribute> fusedDataSet = engine.run(correspondences, null);
+            // run the fusion
+            System.out.println("*\n*\tRunning data fusion\n*");
+            FusibleDataSet<Player, Attribute> fusedDataSet = engine.run(correspondences, null);
+            // write the result
+            new PlayerXMLFormatter().writeXML(new File("data/output/fused.xml"), fusedDataSet);
 
-        // write the result
-        new PlayerXMLFormatter().writeXML(new File("data/output/fused.xml"), fusedDataSet);
+            // evaluate
+            DataFusionEvaluator<Player, Attribute> evaluator = new DataFusionEvaluator<>(strategy, new RecordGroupFactory<Player, Attribute>());
 
-        // evaluate
-        DataFusionEvaluator<Player, Attribute> evaluator = new DataFusionEvaluator<>(strategy, new RecordGroupFactory<Player, Attribute>());
+            double accuracy = evaluator.evaluate(fusedDataSet, gs, null);
 
-        double accuracy = evaluator.evaluate(fusedDataSet, gs, null);
+            System.out.println(String.format("Accuracy: %.2f", accuracy));
 
-        System.out.println(String.format("Accuracy: %.2f", accuracy));
+            FusibleDataSet<Player, Attribute> dsfusi = new FusibleHashedDataSet<>();
+            new PlayerXMLReader().loadFromXML(new File("data/output/fused.xml"), "/players/player", dsfusi);
+            dsfusi.printDataSetDensityReport();
+        }
+        catch (Exception ex)
+        {
+            System.out.println(ex);
+        }
 
-        FusibleDataSet<Player, Attribute> dsfusi = new FusibleHashedDataSet<>();
-        new PlayerXMLReader().loadFromXML(new File("data/output/fused.xml"), "/players/player", dsfusi);
-        dsfusi.printDataSetDensityReport();
+
+
     }
 }

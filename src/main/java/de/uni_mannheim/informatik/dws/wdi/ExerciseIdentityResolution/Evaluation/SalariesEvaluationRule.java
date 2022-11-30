@@ -16,13 +16,13 @@ public class SalariesEvaluationRule extends EvaluationRule<Player, Attribute>{
         if (record1.getSalaries() != null) {
             for (Salary p : record1.getSalaries()) {
 
-            	salaries1.add(p);
+            	salaries1.add(p.getIdentifier());
             }
         }
         Collection salaries2 = new ArrayList();
         if (record2.getSalaries() != null) {
             for (Salary p : record2.getSalaries()) {
-            	salaries2.add(p);
+            	salaries2.add(p.getIdentifier());
             }
         }
 

@@ -13,9 +13,11 @@ import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.model.Playe
 import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.model.Salary;
 
 public class SalariesFuserUnion extends AttributeValueFuser<List<Salary>, Player, Attribute> {
+
     public SalariesFuserUnion() {
         super(new Union<Salary, Player, Attribute>());
     }
+
     @Override
     public boolean hasValue(Player record, Correspondence<Attribute, Matchable> correspondence) {
         return record.hasValue(Player.SALARIES);
@@ -32,6 +34,5 @@ public class SalariesFuserUnion extends AttributeValueFuser<List<Salary>, Player
         fusedRecord.setSalaries(fused.getValue());
         fusedRecord.setAttributeProvenance(Player.SALARIES, fused.getOriginalIds());
     }
-
 
 }

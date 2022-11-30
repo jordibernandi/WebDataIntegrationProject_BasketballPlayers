@@ -91,18 +91,19 @@ public class IR_using_machine_learning {
         matchingRulePlayerStatInjury.activateDebugReport("data/output/debugResultsMatchingRuleStatInjury.csv", 1000, gsTrainingPlayerStatInjury);
 
 		//added comparators for StatDBpedia
-		matchingRulePlayerStatDBpedia.addComparator(new PlayerNameComparatorJaccard());
+		matchingRulePlayerStatDBpedia.addComparator(new PlayerNameComparatorLevenshtein());
 		matchingRulePlayerStatDBpedia.addComparator(new PlayerBirthDateComparatorEqual());
 		matchingRulePlayerStatDBpedia.addComparator(new PlayerHeightComparatorPercentageSim());
 		matchingRulePlayerStatDBpedia.addComparator(new PlayerWeightComparatorPercentageSim());
 
 		//added comparators for StatSalary
 		matchingRulePlayerStatSalary.addComparator(new PlayerNameComparatorJaccard());
-		matchingRulePlayerStatSalary.addComparator(new PlayerCareerComparatorRange());
+		matchingRulePlayerStatSalary.addComparator(new PlayerSalaryYearCareerComparatorRange());
 
 		//added comparators for StatInjury
 		matchingRulePlayerStatInjury.addComparator(new PlayerNameComparatorJaccard());
 		matchingRulePlayerStatInjury.addComparator(new PlayerPositionsComparatorOverlap());
+		matchingRulePlayerStatInjury.addComparator(new PlayerInjuryYearCareerComparatorRange());
 
 		// train the matching rule's model
         System.out.println("*\n*\tLearning matching rule\n*");

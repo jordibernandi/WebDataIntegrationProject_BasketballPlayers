@@ -11,7 +11,6 @@ public class PositionsEvaluationRule extends EvaluationRule<Player, Attribute>{
 
     @Override
     public boolean isEqual(Player record1, Player record2, Attribute schemaElement) {
-        // Set<String> positions1 = new HashSet<>();
         Collection positions1 = new ArrayList();
         if (record1.getPositions() != null) {
             for (String p : record1.getPositions()) {
@@ -19,7 +18,6 @@ public class PositionsEvaluationRule extends EvaluationRule<Player, Attribute>{
                 positions1.add(p);
             }
         }
-        //Set<String> positions2 = new HashSet<>();
         Collection positions2 = new ArrayList();
         if (record2.getPositions() != null) {
             for (String p : record2.getPositions()) {
@@ -29,7 +27,6 @@ public class PositionsEvaluationRule extends EvaluationRule<Player, Attribute>{
 
 
         positions1.retainAll( positions2 );
-        //System.out.println( positions1.size() );
         return positions1.size()>0;
     }
 

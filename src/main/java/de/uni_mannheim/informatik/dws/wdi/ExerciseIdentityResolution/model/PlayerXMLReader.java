@@ -97,20 +97,48 @@ public class PlayerXMLReader extends XMLMatchableReader<Player, Attribute> imple
             player.setCollege(college);
         }
 
+        player.setLeagues(getListFromChildElement(node, "league"));
+        player.setPositions(getListFromChildElement(node, "position"));
+        player.setTeams(getListFromChildElement(node, "team"));
+        player.setAwards(getListFromChildElement(node, "award"));
+
+//        List<String> positions = getListFromChildElement(node, "position");
+//        if (positions != null) {
+//            player.setPositions(positions);
+//        } else {
+//            player.setPositions(Arrays.asList(""));
+//        }
+//
+//        List<String> teams = getListFromChildElement(node, "team");
+//        if (teams != null) {
+//            player.setTeams(teams);
+//        } else {
+//            player.setTeams(Arrays.asList(""));
+//        }
+
+//        List<String> leagues = getListFromChildElement(node, "league");
+//        if (leagues != null) {
+//            player.setLeagues(leagues);
+//        } else {
+//            player.setLeagues(Arrays.asList(""));
+//        }
+
+//        List<String> awards = getListFromChildElement(node, "award");
+//        if (awards != null) {
+//            player.setAwards(awards);
+//        } else {
+//            player.setAwards(Arrays.asList(""));
+//        }
+
         // load the list of salaries
         List<Salary> salaries = getObjectListFromChildElement(node, "salaries",
                 "salary", new SalaryXMLReader(), provenanceInfo);
         player.setSalaries(salaries);
 
-        player.setPositions(getListFromChildElement(node, "position"));
-        player.setTeams(getListFromChildElement(node, "team"));
-        player.setAwards(getListFromChildElement(node, "award"));
-
         // load the list of injuries
         List<Injury> injuries = getObjectListFromChildElement(node, "injuries",
                 "injury", new InjuryXMLReader(), provenanceInfo);
         player.setInjuries(injuries);
-
         return player;
     }
 

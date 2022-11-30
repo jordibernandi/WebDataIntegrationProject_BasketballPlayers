@@ -16,19 +16,19 @@ public class InjuriesEvaluationRule extends EvaluationRule<Player, Attribute>{
         if (record1.getInjuries() != null) {
             for (Injury p : record1.getInjuries()) {
 
-            	injuries1.add(p);
+            	injuries1.add(p.getInjuryDate());
             }
         }
         Collection injuries2 = new ArrayList();
         if (record2.getInjuries() != null) {
             for (Injury p : record2.getInjuries()) {
-            	injuries2.add(p);
+            	injuries2.add(p.getInjuryDate());
             }
         }
 
 
         injuries1.retainAll( injuries2 );
-        return injuries1.size()>0;
+        return injuries1.containsAll(injuries2);
     }
 
     /* (non-Javadoc)
