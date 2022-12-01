@@ -32,11 +32,11 @@ public class PlayerXMLReader extends XMLMatchableReader<Player, Attribute> imple
         dataset.addAttribute(Player.HEIGHT);
         dataset.addAttribute(Player.WEIGHT);
         dataset.addAttribute(Player.COLLEGE);
-        dataset.addAttribute(Player.SALARIES);
-        dataset.addAttribute(Player.POSITIONS);
         dataset.addAttribute(Player.LEAGUES);
         dataset.addAttribute(Player.TEAMS);
+        dataset.addAttribute(Player.POSITIONS);
         dataset.addAttribute(Player.AWARDS);
+        dataset.addAttribute(Player.SALARIES);
         dataset.addAttribute(Player.INJURIES);
     }
 
@@ -97,18 +97,18 @@ public class PlayerXMLReader extends XMLMatchableReader<Player, Attribute> imple
             player.setCollege(college);
         }
 
-        player.setLeagues(getListFromChildElement(node, "league"));
-        player.setPositions(getListFromChildElement(node, "position"));
+//        player.setLeagues(getListFromChildElement(node, "league"));
         player.setTeams(getListFromChildElement(node, "team"));
-        player.setAwards(getListFromChildElement(node, "award"));
+        player.setPositions(getListFromChildElement(node, "position"));
+//        player.setAwards(getListFromChildElement(node, "award"));
 
-//        List<String> positions = getListFromChildElement(node, "position");
-//        if (positions != null) {
-//            player.setPositions(positions);
-//        } else {
-//            player.setPositions(Arrays.asList(""));
-//        }
-//
+        List<String> leagues = getListFromChildElement(node, "league");
+        if (leagues != null) {
+            player.setLeagues(leagues);
+        } else {
+            player.setLeagues(Arrays.asList(""));
+        }
+
 //        List<String> teams = getListFromChildElement(node, "team");
 //        if (teams != null) {
 //            player.setTeams(teams);
@@ -116,29 +116,51 @@ public class PlayerXMLReader extends XMLMatchableReader<Player, Attribute> imple
 //            player.setTeams(Arrays.asList(""));
 //        }
 
-//        List<String> leagues = getListFromChildElement(node, "league");
-//        if (leagues != null) {
-//            player.setLeagues(leagues);
+//        List<String> positions = getListFromChildElement(node, "position");
+//        if (positions != null) {
+//            player.setPositions(positions);
 //        } else {
-//            player.setLeagues(Arrays.asList(""));
+//            player.setPositions(Arrays.asList(""));
 //        }
 
-//        List<String> awards = getListFromChildElement(node, "award");
-//        if (awards != null) {
-//            player.setAwards(awards);
-//        } else {
-//            player.setAwards(Arrays.asList(""));
-//        }
+        List<String> awards = getListFromChildElement(node, "award");
+        if (awards != null) {
+            player.setAwards(awards);
+        } else {
+            player.setAwards(Arrays.asList(""));
+        }
 
         // load the list of salaries
         List<Salary> salaries = getObjectListFromChildElement(node, "salaries",
                 "salary", new SalaryXMLReader(), provenanceInfo);
-        player.setSalaries(salaries);
+        if (salaries != null) {
+            player.setSalaries(salaries);
+        }
+        else {
+            List<Salary> default_salaries = new ArrayList<>();
+            Salary s = new Salary(id, provenanceInfo);
+            s.setAmount(0.0);
+            s.setSeasonStartYear(0);
+            s.setSeasonEndyear(0);
+            default_salaries.add(s);
+            player.setSalaries(default_salaries);
+        }
 
         // load the list of injuries
         List<Injury> injuries = getObjectListFromChildElement(node, "injuries",
                 "injury", new InjuryXMLReader(), provenanceInfo);
-        player.setInjuries(injuries);
+        if (injuries != null) {
+            player.setInjuries(injuries);
+        }
+        else {
+            List<Injury> default_injuries = new ArrayList<>();
+            Injury i = new Injury(id, provenanceInfo);
+            i.setInjuryDate(LocalDate.of(9999, 1, 1));
+            i.setInjuryNote("");
+            default_injuries.add(i);
+            player.setInjuries(default_injuries);
+        }
+
         return player;
     }
 

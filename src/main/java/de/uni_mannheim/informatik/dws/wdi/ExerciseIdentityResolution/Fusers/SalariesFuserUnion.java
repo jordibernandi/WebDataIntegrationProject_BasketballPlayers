@@ -1,5 +1,7 @@
 package de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Fusers;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import de.uni_mannheim.informatik.dws.winter.datafusion.AttributeValueFuser;
 import de.uni_mannheim.informatik.dws.winter.datafusion.conflictresolution.list.Union;

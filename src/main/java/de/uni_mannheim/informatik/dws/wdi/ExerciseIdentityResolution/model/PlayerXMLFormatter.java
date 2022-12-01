@@ -62,6 +62,28 @@ public class PlayerXMLFormatter extends XMLFormatter<Player> {
                     record.getMergedAttributeProvenance(Player.YEAREND), doc));
         }
 
+        List<String> leagues = record.getLeagues();
+        if (leagues != null && !leagues.isEmpty()) {
+            Element leagues1 = doc.createElement("league");
+            for (int i = 0; i < record.getLeagues().size(); i++) {
+                leagues1
+                        .appendChild(createTextElementWithProvenance("name", record.getLeagues().get(i),
+                                record.getMergedAttributeProvenance(Player.LEAGUES), doc));
+            }
+            player.appendChild(leagues1);
+        }
+
+        List<String> teams = record.getTeams();
+        if (teams != null && !teams.isEmpty()) {
+            Element teams1 = doc.createElement("team");
+            for (int i = 0; i < record.getTeams().size(); i++) {
+                teams1
+                        .appendChild(createTextElementWithProvenance("name", record.getTeams().get(i),
+                                record.getMergedAttributeProvenance(Player.TEAMS), doc));
+            }
+            player.appendChild(teams1);
+        }
+
         List<String> positions = record.getPositions();
         if (positions != null && !positions.isEmpty()) {
             Element positions1 = doc.createElement("position");
@@ -73,46 +95,6 @@ public class PlayerXMLFormatter extends XMLFormatter<Player> {
             player.appendChild(positions1);
         }
 
-        List<Salary> salaries = record.getSalaries();
-        if (salaries != null && !salaries.isEmpty()) {
-            Element salaries1 = doc.createElement("salary");
-            for (int i = 0; i < record.getSalaries().size(); i++) {
-            	salaries1
-                        .appendChild(createTextElementWithProvenance("name", record.getSalaries().get(i).toString(),
-                                record.getMergedAttributeProvenance(Player.SALARIES), doc));
-            }
-            player.appendChild(salaries1);
-        }
-        List<Injury> injuries = record.getInjuries();
-        if (injuries != null && !injuries.isEmpty()) {
-            Element injuries1 = doc.createElement("injury");
-            for (int i = 0; i < record.getInjuries().size(); i++) {
-            	injuries1
-                        .appendChild(createTextElementWithProvenance("name", record.getInjuries().get(i).toString(),
-                                record.getMergedAttributeProvenance(Player.INJURIES), doc));
-            }
-            player.appendChild(injuries1);
-        }
-        List<String> teams = record.getTeams();
-        if (teams != null && !teams.isEmpty()) {
-            Element teams1 = doc.createElement("team");
-            for (int i = 0; i < record.getTeams().size(); i++) {
-                teams1
-                        .appendChild(createTextElementWithProvenance("name", record.getTeams().get(i),
-                                record.getMergedAttributeProvenance(Player.TEAMS), doc));
-            }
-            player.appendChild(teams1);
-        }
-        List<String> leagues = record.getLeagues();
-        if (leagues != null && !leagues.isEmpty()) {
-            Element leagues1 = doc.createElement("league");
-            for (int i = 0; i < record.getLeagues().size(); i++) {
-            	leagues1
-                        .appendChild(createTextElementWithProvenance("name", record.getLeagues().get(i),
-                                record.getMergedAttributeProvenance(Player.LEAGUES), doc));
-            }
-            player.appendChild(leagues1);
-        }
         List<String> awards = record.getAwards();
         if (awards != null && !awards.isEmpty()) {
             Element awards1 = doc.createElement("award");
@@ -142,11 +124,9 @@ public class PlayerXMLFormatter extends XMLFormatter<Player> {
         salaryRoot.setAttribute("provenance",
                 record.getMergedAttributeProvenance(Player.SALARIES));
 
-        if(record.getSalaries() != null) {
-            for (Salary s : record.getSalaries()) {
-                salaryRoot.appendChild(salaryFormatter
-                        .createElementFromRecord(s, doc));
-            }
+        for (Salary s : record.getSalaries()) {
+            salaryRoot.appendChild(salaryFormatter
+                    .createElementFromRecord(s, doc));
         }
 
         return salaryRoot;
@@ -157,11 +137,9 @@ public class PlayerXMLFormatter extends XMLFormatter<Player> {
         injuryRoot.setAttribute("provenance",
                 record.getMergedAttributeProvenance(Player.INJURIES));
 
-        if(record.getInjuries() != null) {
-            for (Injury i : record.getInjuries()) {
-                injuryRoot.appendChild(injuryFormatter
-                        .createElementFromRecord(i, doc));
-            }
+        for (Injury i : record.getInjuries()) {
+            injuryRoot.appendChild(injuryFormatter
+                    .createElementFromRecord(i, doc));
         }
 
         return injuryRoot;

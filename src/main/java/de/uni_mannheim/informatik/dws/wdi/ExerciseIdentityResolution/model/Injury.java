@@ -12,6 +12,7 @@
 package de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.model;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import de.uni_mannheim.informatik.dws.winter.model.AbstractRecord;
@@ -20,17 +21,17 @@ import de.uni_mannheim.informatik.dws.winter.model.defaultmodel.Attribute;
 public class Injury extends AbstractRecord<Attribute> implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    private LocalDateTime injuryDate;
+    private LocalDate injuryDate;
     private String injuryNote;
 
     public Injury(String identifier, String provenance) {
         super(identifier, provenance);
     }
 
-    public LocalDateTime getInjuryDate() {
+    public LocalDate getInjuryDate() {
         return injuryDate;
     }
-    public void setInjuryDate(LocalDateTime injuryDate) {
+    public void setInjuryDate(LocalDate injuryDate) {
         this.injuryDate = injuryDate;
     }
 
@@ -77,5 +78,10 @@ public class Injury extends AbstractRecord<Attribute> implements Serializable {
         else if(attribute==INJURYNOTE)
             return injuryNote!=null;
         return false;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("[Injury: %s]", getInjuryDate().toString());
     }
 }

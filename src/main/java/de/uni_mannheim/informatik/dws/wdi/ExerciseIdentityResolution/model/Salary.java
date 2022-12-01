@@ -49,7 +49,7 @@ public class Salary extends AbstractRecord<Attribute> implements Serializable {
 
 //    @Override
 //    public int hashCode() {
-//        int result = 31 + ((name == null) ? 0 : name.hashCode());
+//        int result = 31 + ((amount == 0) ? 0 : amount.hashCode());
 //        return result;
 //    }
 
@@ -83,5 +83,10 @@ public class Salary extends AbstractRecord<Attribute> implements Serializable {
         else if(attribute==SEASONENDYEAR)
             return seasonEndYear!=0;
         return false;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("[Salary %s: %s / %s]", getAmount(), getSeasonStartYear(), getSeasonEndYear());
     }
 }

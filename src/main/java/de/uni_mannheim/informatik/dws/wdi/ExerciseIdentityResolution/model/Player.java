@@ -18,8 +18,6 @@ import de.uni_mannheim.informatik.dws.winter.utils.StringUtils;
 
 public class Player extends AbstractRecord<Attribute> implements Serializable {
 
-    protected String id;
-    protected String provenance;
     private String name;
     private LocalDate birthDate;
     private String birthPlace;
@@ -28,32 +26,38 @@ public class Player extends AbstractRecord<Attribute> implements Serializable {
     private float height;
     private float weight;
     private String college;
-    private List<Salary> salaries;
-    private List<String> positions;
     private List<String> leagues;
     private List<String> teams;
+    private List<String> positions;
     private List<String> awards;
+    private List<Salary> salaries;
     private List<Injury> injuries;
-    
+
+    public Player(String identifier, String provenance) {
+        id = identifier;
+        this.provenance = provenance;
+        teams = new LinkedList<>();
+        positions = new LinkedList<>();
+        leagues = new LinkedList<>();
+        awards = new LinkedList<>();
+        salaries = new LinkedList<>();
+        injuries = new LinkedList<>();
+    }
+
     public static final Attribute NAME = new Attribute("Name");
     public static final Attribute BIRTHDATE = new Attribute("BirthDate");
     public static final Attribute BIRTHPLACE = new Attribute("BirthPlace");
-    public static final Attribute POSITIONS = new Attribute("Positions");
     public static final Attribute YEARSTART = new Attribute("YearStart");
     public static final Attribute YEAREND = new Attribute("YearEnd");
     public static final Attribute HEIGHT = new Attribute("Height");
     public static final Attribute WEIGHT = new Attribute("Weight");
     public static final Attribute COLLEGE = new Attribute("College");
-    public static final Attribute SALARIES = new Attribute("Salaries");
     public static final Attribute LEAGUES = new Attribute("Leagues");
     public static final Attribute TEAMS = new Attribute("Teams");
+    public static final Attribute POSITIONS = new Attribute("Positions");
     public static final Attribute AWARDS = new Attribute("Awards");
+    public static final Attribute SALARIES = new Attribute("Salaries");
     public static final Attribute INJURIES = new Attribute("Injuries");
-
-    public Player(String identifier, String provenance) {
-        id = identifier;
-        this.provenance = provenance;
-    }
 
     @Override
     public String getIdentifier() {
@@ -121,25 +125,11 @@ public class Player extends AbstractRecord<Attribute> implements Serializable {
         this.college = college;
     }
 
-    public List<Salary> getSalaries() {
-        return salaries;
-    }
-    public void setSalaries(List<Salary> salaries) {
-        this.salaries = salaries;
-    }
-
     public List<String> getLeagues() {
         return leagues;
     }
     public void setLeagues(List<String> leagues) {
         this.leagues = leagues;
-    }
-
-    public List<String> getPositions() {
-        return positions;
-    }
-    public void setPositions(List<String> positions) {
-        this.positions = positions;
     }
 
     public List<String> getTeams() {
@@ -149,6 +139,13 @@ public class Player extends AbstractRecord<Attribute> implements Serializable {
         this.teams = teams;
     }
 
+    public List<String> getPositions() {
+        return positions;
+    }
+    public void setPositions(List<String> positions) {
+        this.positions = positions;
+    }
+
     public List<String> getAwards() {
         return awards;
     }
@@ -156,6 +153,10 @@ public class Player extends AbstractRecord<Attribute> implements Serializable {
         this.awards = awards;
     }
 
+    public List<Salary> getSalaries() {
+        return salaries;
+    }
+    public void setSalaries(List<Salary> salaries) { this.salaries = salaries; }
     public List<Injury> getInjuries() {
         return injuries;
     }
@@ -165,8 +166,8 @@ public class Player extends AbstractRecord<Attribute> implements Serializable {
 
     @Override
     public String toString() {
-        return String.format("[PlayerStat %s: %s / %s]", getIdentifier(), getName(),
-                getBirthDate());
+        return String.format("[Player %s: %s / %s]", getIdentifier(), getName(),
+                getBirthDate().toString());
     }
 
     @Override
@@ -229,18 +230,19 @@ public class Player extends AbstractRecord<Attribute> implements Serializable {
             return weight!=0;
         else if(attribute==COLLEGE)
             return college!=null;
+        else if(attribute==LEAGUES)
+            return leagues != null && leagues.size() > 0;
+        else if(attribute==TEAMS)
+            return teams != null && teams.size() > 0;
         else if(attribute==POSITIONS)
             return positions != null && positions.size() > 0;
+        else if(attribute==AWARDS)
+            return awards != null && awards.size() > 0;
         else if(attribute==SALARIES)
             return salaries != null && salaries.size() > 0;
         else if(attribute==INJURIES)
             return injuries != null && injuries.size() > 0;
-        else if(attribute==TEAMS)
-            return teams != null && teams.size() > 0;
-        else if(attribute==AWARDS)
-            return awards != null && awards.size() > 0;
-        else if(attribute==LEAGUES)
-            return leagues != null && leagues.size() > 0;
+
         return false;
     }
 }
