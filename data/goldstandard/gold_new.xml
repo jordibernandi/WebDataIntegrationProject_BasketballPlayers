@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<players>
+
+	<player>
+		<id>player_stat_id_1082</id>
+		<name>Kris Dunn</name>
+		<yearStart>2016</yearStart>
+        <yearEnd>NA</yearEnd>
+		<birthDate>1994-03-18</birthDate>
+		<height>190</height>
+		<weight>92</weight>
+        <positions>
+			<name>Point guard</name>
+			<name>Guard</name>
+		</positions>
+        <salary>
+            <amount>3872520</amount>
+            <seasonStartYear>2016</seasonStartYear>
+            <seasonEndYear>2017</seasonEndYear>
+        </salary>
+        <injuryDate>NA</injuryDate>
+	</player>
+
+	<player>
+		<id>player_stat_id_1827</id>
+		<name>Al Horford</name>
+		<yearStart>2007</yearStart>
+        <yearEnd>NA</yearEnd>
+		<birthDate>1986-06-03</birthDate>
+		<height>206</height>
+		<weight>108</weight>
+		<positions>
+			<name>Center</name>
+			<name>Power forward</name>
+		</positions>
+        <salary>
+            <amount>3745800</amount>
+            <seasonStartYear>2007</seasonStartYear>
+            <seasonEndYear>2008</seasonEndYear>
+        </salary>
+        <injuryDate>NA</injuryDate>
+	</player>
+
+	<player>
+		<id>player_stat_id_3375</id>
+		<name>Josh Richardson</name>
+		<yearStart>2015</yearStart>
+        <yearEnd>NA</yearEnd>
+		<birthDate>1993-09-15</birthDate>
+		<height>196</height>
+		<weight>90</weight>
+		<positions>
+			<name>Shooting guard</name>
+			<name>Small forward</name>
+		</positions>
+        <salary>
+            <amount>525093</amount>
+            <seasonStartYear>2015</seasonStartYear>
+            <seasonEndYear>2016</seasonEndYear>
+        </salary>
+        <injuryDate>NA</injuryDate>
+	</player>
+
+    <player>
+		<id>player_stat_id_3725</id>
+		<name>Marcus Smart</name>
+		<yearStart>2014</yearStart>
+        <yearEnd>NA</yearEnd>
+		<birthDate>1994-03-06</birthDate>
+		<height>191</height>
+		<weight>100</weight>
+		<positions>
+			<name>Guard</name>
+            <name>Point guard</name>
+			<name>Shooting guard</name>
+		</positions>
+        <salary>
+            <amount>3283320</amount>
+            <seasonStartYear>2014</seasonStartYear>
+            <seasonEndYear>2015</seasonEndYear>
+        </salary>
+        <injuryDate>NA</injuryDate>
+	</player>
+
+    <player>
+		<id>player_stat_id_41</id>
+		<name>LaMarcus Aldridge</name>
+		<yearStart>2006</yearStart>
+        <yearEnd>2021</yearEnd>
+		<birthDate>1985-07-19</birthDate>
+		<height>211</height>
+		<weight>113</weight>
+		<positions>
+			<name>Center</name>
+			<name>Power forward</name>
+		</positions>
+        <salary>
+            <amount>4027320</amount>
+            <seasonStartYear>2006</seasonStartYear>
+            <seasonEndYear>2007</seasonEndYear>
+        </salary>
+        <injuryDate>NA</injuryDate>
+	</player>
+
+    <player>
+		<id>player_stat_id_1086</id>
+		<name>Kevin Durant</name>
+		<yearStart>2007</yearStart>
+        <yearEnd>NA</yearEnd>
+		<birthDate>1988-09-29</birthDate>
+		<height>208</height>
+		<weight>109</weight>
+		<positions>
+			<name>Small forward</name>
+			<name>Power forward</name>
+		</positions>
+        <salary>
+            <amount>4171200</amount>
+            <seasonStartYear>2007</seasonStartYear>
+            <seasonEndYear>2008</seasonEndYear>
+        </salary>
+        <injuryDate>NA</injuryDate>
+	</player>
+
+    <player>
+		<id>player_stat_id_1537</id>
+		<name>Blake Griffin</name>
+		<yearStart>2009</yearStart>
+        <yearEnd>NA</yearEnd>
+		<birthDate>1989-03-16</birthDate>
+		<height>206</height>
+		<weight>113</weight>
+		<positions>
+			<name>Center</name>
+			<name>Power forward</name>
+		</positions>
+        <salary>
+            <amount>4983480</amount>
+            <seasonStartYear>2009</seasonStartYear>
+            <seasonEndYear>2010</seasonEndYear>
+        </salary>
+        <injuryDate>NA</injuryDate>
+	</player>
+
+    <player>
+		<id>player_stat_id_1628</id>
+		<name>James Harden</name>
+		<yearStart>2009</yearStart>
+        <yearEnd>NA</yearEnd>
+		<birthDate>1989-08-26</birthDate>
+		<height>196</height>
+		<weight>100</weight>
+		<positions>
+            <name>Point guard</name>
+			<name>Shooting guard</name>
+		</positions>
+        <salary>
+            <amount>4054160</amount>
+            <seasonStartYear>2009</seasonStartYear>
+            <seasonEndYear>2010</seasonEndYear>
+        </salary>
+        <injuryDate>NA</injuryDate>
+	</player>
+
+    <player>
+		<id>player_stat_id_1659</id>
+		<name>Joe Harris</name>
+		<yearStart>2014</yearStart>
+        <yearEnd>NA</yearEnd>
+		<birthDate>1991-09-06</birthDate>
+		<height>198</height>
+		<weight>99</weight>
+		<positions>
+            <name>Small forward</name>
+			<name>Shooting guard</name>
+		</positions>
+        <salary>
+            <amount>884879</amount>
+            <seasonStartYear>2014</seasonStartYear>
+            <seasonEndYear>2015</seasonEndYear>
+        </salary>
+        <injuryDate>NA</injuryDate>
+	</player>
+
+    <player>
+		<id>player_stat_id_1901</id>
+		<name>Kyrie Irving</name>
+		<yearStart>2011</yearStart>
+        <yearEnd>NA</yearEnd>
+		<birthDate>1992-03-23</birthDate>
+		<height>188</height>
+		<weight>88</weight>
+		<positions>
+            <name>Point guard</name>
+			<name>Shooting guard</name>
+		</positions>
+        <salary>
+            <amount>5144280</amount>
+            <seasonStartYear>2011</seasonStartYear>
+            <seasonEndYear>2012</seasonEndYear>
+        </salary>
+        <injuryDate>NA</injuryDate>
+	</player>
+
+    <player>
+		<id>player_stat_id_2768</id>
+		<name>Patty Mills</name>
+		<yearStart>2009</yearStart>
+        <yearEnd>NA</yearEnd>
+		<birthDate>1988-08-11</birthDate>
+		<height>185</height>
+		<weight>82</weight>
+		<positions>
+            <name>Point guard</name>
+			<name>Shooting guard</name>
+            <name>Guard</name>
+		</positions>
+        <salary>
+            <amount>3578948</amount>
+            <seasonStartYear>2016</seasonStartYear>
+            <seasonEndYear>2017</seasonEndYear>
+        </salary>
+        <injuryDate>NA</injuryDate>
+	</player>
+
+    <player>
+		<id>player_stat_id_2771</id>
+		<name>Paul Millsap</name>
+		<yearStart>2006</yearStart>
+        <yearEnd>NA</yearEnd>
+		<birthDate>1985-02-10</birthDate>
+		<height>201</height>
+		<weight>112</weight>
+		<positions>
+            <name>Power forward</name>
+		</positions>
+        <salary>
+            <amount>687456</amount>
+            <seasonStartYear>2007</seasonStartYear>
+            <seasonEndYear>2008</seasonEndYear>
+        </salary>
+        <injuryDate>NA</injuryDate>
+	</player>
+
+    <player>
+		<id>player_stat_id_163</id>
+		<name>Dwayne Bacon</name>
+		<yearStart>2017</yearStart>
+        <yearEnd>NA</yearEnd>
+		<birthDate>1995-08-30</birthDate>
+		<height>201</height>
+		<weight>100</weight>
+		<positions>
+            <name>Forward guard</name>
+		</positions>
+        <salary>
+            <amount>815615</amount>
+            <seasonStartYear>2017</seasonStartYear>
+            <seasonEndYear>2018</seasonEndYear>
+        </salary>
+        <injuryDate>NA</injuryDate>
+	</player>
+
+
+    <player>
+		<id>player_stat_id_3166</id>
+		<name>Sam Perkins</name>
+		<yearStart>1984</yearStart>
+        <yearEnd>2001</yearEnd>
+		<birthDate>1961-06-14</birthDate>
+		<height>206</height>
+		<weight>107</weight>
+		<positions>
+			<name>Forward</name>
+			<name>Center</name>
+		</positions>
+        <salary>
+            <amount>1970000</amount>
+            <seasonStartYear>1990</seasonStartYear>
+            <seasonEndYear>1991</seasonEndYear>
+        </salary>
+        <injuryDate>NA</injuryDate>
+	</player>
+
+    <player>
+		<id>player_stat_id_3037</id>
+		<name>Hakeem Olajuwon</name>
+		<yearStart>2002</yearStart>
+        <yearEnd>2001</yearEnd>
+		<birthDate>1963-01-21</birthDate>
+		<height>213</height>
+		<weight>116</weight>
+		<positions>
+			<name>Center</name>
+		</positions>
+        <salary>
+            <amount>3175000</amount>
+            <seasonStartYear>1990</seasonStartYear>
+            <seasonEndYear>1991</seasonEndYear>
+        </salary>
+        <injuryDate>NA</injuryDate>
+	</player>
+</players>
