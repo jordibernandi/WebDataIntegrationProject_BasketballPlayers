@@ -461,6 +461,36 @@
 				<seasonStartYear>2011</seasonStartYear>
 				<seasonEndYear>2012</seasonEndYear>
 			</salary>
+			<salary>
+				<amount>5530080</amount>
+				<seasonStartYear>2012</seasonStartYear>
+				<seasonEndYear>2013</seasonEndYear>
+			</salary>
+			<salary>
+				<amount>5607240</amount>
+				<seasonStartYear>2013</seasonStartYear>
+				<seasonEndYear>2014</seasonEndYear>
+			</salary>
+			<salary>
+				<amount>7070730</amount>
+				<seasonStartYear>2014</seasonStartYear>
+				<seasonEndYear>2015</seasonEndYear>
+			</salary>
+			<salary>
+				<amount>14746000</amount>
+				<seasonStartYear>2015</seasonStartYear>
+				<seasonEndYear>2016</seasonEndYear>
+			</salary>
+			<salary>
+				<amount>17638063</amount>
+				<seasonStartYear>2016</seasonStartYear>
+				<seasonEndYear>2017</seasonEndYear>
+			</salary>
+			<salary>
+				<amount>18868625</amount>
+				<seasonStartYear>2017</seasonStartYear>
+				<seasonEndYear>2018</seasonEndYear>
+			</salary>
 		</salaries>
 	</player>
 
@@ -482,6 +512,11 @@
 				<seasonStartYear>2016</seasonStartYear>
 				<seasonEndYear>2017</seasonEndYear>
 			</salary>
+			<salary>
+				<amount>10714286</amount>
+				<seasonStartYear>2017</seasonStartYear>
+				<seasonEndYear>2018</seasonEndYear>
+			</salary>
 		</salaries>
 	</player>
 
@@ -500,6 +535,51 @@
 				<amount>687456</amount>
 				<seasonStartYear>2007</seasonStartYear>
 				<seasonEndYear>2008</seasonEndYear>
+			</salary>
+			<salary>
+				<amount>797581</amount>
+				<seasonStartYear>2008</seasonStartYear>
+				<seasonEndYear>2009</seasonEndYear>
+			</salary>
+			<salary>
+				<amount>7692932</amount>
+				<seasonStartYear>2009</seasonStartYear>
+				<seasonEndYear>2010</seasonEndYear>
+			</salary>
+			<salary>
+				<amount>7600000</amount>
+				<seasonStartYear>2010</seasonStartYear>
+				<seasonEndYear>2011</seasonEndYear>
+			</salary>
+			<salary>
+				<amount>8103435</amount>
+				<seasonStartYear>2011</seasonStartYear>
+				<seasonEndYear>2012</seasonEndYear>
+			</salary>
+			<salary>
+				<amount>8603633</amount>
+				<seasonStartYear>2012</seasonStartYear>
+				<seasonEndYear>2013</seasonEndYear>
+			</salary>
+			<salary>
+				<amount>9500000</amount>
+				<seasonStartYear>2013</seasonStartYear>
+				<seasonEndYear>2014</seasonEndYear>
+			</salary>
+			<salary>
+				<amount>9500000</amount>
+				<seasonStartYear>2014</seasonStartYear>
+				<seasonEndYear>2015</seasonEndYear>
+			</salary>
+			<salary>
+				<amount>20072033</amount>
+				<seasonStartYear>2016</seasonStartYear>
+				<seasonEndYear>2017</seasonEndYear>
+			</salary>
+			<salary>
+				<amount>31269231</amount>
+				<seasonStartYear>2017</seasonStartYear>
+				<seasonEndYear>2018</seasonEndYear>
 			</salary>
 		</salaries>
 	</player>
@@ -541,6 +621,46 @@
 				<seasonStartYear>1990</seasonStartYear>
 				<seasonEndYear>1991</seasonEndYear>
 			</salary>
+			<salary>
+				<amount>2507000</amount>
+				<seasonStartYear>1991</seasonStartYear>
+				<seasonEndYear>1992</seasonEndYear>
+			</salary>
+			<salary>
+				<amount>3047000</amount>
+				<seasonStartYear>1992</seasonStartYear>
+				<seasonEndYear>1993</seasonEndYear>
+			</salary>
+			<salary>
+				<amount>3587000</amount>
+				<seasonStartYear>1993</seasonStartYear>
+				<seasonEndYear>1994</seasonEndYear>
+			</salary>
+			<salary>
+				<amount>4126600</amount>
+				<seasonStartYear>1994</seasonStartYear>
+				<seasonEndYear>1995</seasonEndYear>
+			</salary>
+			<salary>
+				<amount>3967000</amount>
+				<seasonStartYear>1995</seasonStartYear>
+				<seasonEndYear>1996</seasonEndYear>
+			</salary>
+			<salary>
+				<amount>2730000</amount>
+				<seasonStartYear>1996</seasonStartYear>
+				<seasonEndYear>1997</seasonEndYear>
+			</salary>
+			<salary>
+				<amount>3370000</amount>
+				<seasonStartYear>1997</seasonStartYear>
+				<seasonEndYear>1998</seasonEndYear>
+			</salary>
+			<salary>
+				<amount>2250000</amount>
+				<seasonStartYear>2000</seasonStartYear>
+				<seasonEndYear>2001</seasonEndYear>
+			</salary>
 		</salaries>
 	</player>
 
@@ -560,6 +680,61 @@
 				<amount>3175000</amount>
 				<seasonStartYear>1990</seasonStartYear>
 				<seasonEndYear>1991</seasonEndYear>
+			</salary>
+			<salary>
+				<amount>3170000</amount>
+				<seasonStartYear>1991</seasonStartYear>
+				<seasonEndYear>1992</seasonEndYear>
+			</salary>
+			<salary>
+				<amount>3170000</amount>
+				<seasonStartYear>1993</seasonStartYear>
+				<seasonEndYear>1994</seasonEndYear>
+			</salary>
+			<salary>
+				<amount>3169900</amount>
+				<seasonStartYear>1994</seasonStartYear>
+				<seasonEndYear>1995</seasonEndYear>
+			</salary>
+			<salary>
+				<amount>5305000</amount>
+				<seasonStartYear>1995</seasonStartYear>
+				<seasonEndYear>1996</seasonEndYear>
+			</salary>
+			<salary>
+				<amount>9655000</amount>
+				<seasonStartYear>1996</seasonStartYear>
+				<seasonEndYear>1997</seasonEndYear>
+			</salary>
+			<salary>
+				<amount>12943000</amount>
+				<seasonStartYear>1998</seasonStartYear>
+				<seasonEndYear>1999</seasonEndYear>
+			</salary>
+			<salary>
+				<amount>14302001</amount>
+				<seasonStartYear>1999</seasonStartYear>
+				<seasonEndYear>2000</seasonEndYear>
+			</salary>
+			<salary>
+				<amount>16700000</amount>
+				<seasonStartYear>2000</seasonStartYear>
+				<seasonEndYear>2001</seasonEndYear>
+			</salary>
+			<salary>
+				<amount>5061539</amount>
+				<seasonStartYear>2001</seasonStartYear>
+				<seasonEndYear>2002</seasonEndYear>
+			</salary>
+			<salary>
+				<amount>5694231</amount>
+				<seasonStartYear>2002</seasonStartYear>
+				<seasonEndYear>2003</seasonEndYear>
+			</salary>
+			<salary>
+				<amount>6326923</amount>
+				<seasonStartYear>2003</seasonStartYear>
+				<seasonEndYear>2004</seasonEndYear>
 			</salary>
 		</salaries>
 	</player>
