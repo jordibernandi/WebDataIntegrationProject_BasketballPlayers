@@ -24,7 +24,6 @@
 				<seasonEndYear>2018</seasonEndYear>
 			</salary>
 		</salaries>
-        <injuryDate>NA</injuryDate>
 	</player>
 
 	<player>
@@ -95,7 +94,6 @@
 				<seasonEndYear>2017</seasonEndYear>
 			</salary>
 		</salaries>
-        <injuryDate>NA</injuryDate>
 	</player>
 
 	<player>
@@ -126,7 +124,6 @@
 				<seasonEndYear>2018</seasonEndYear>
 			</salary>
 		</salaries>
-        <injuryDate>NA</injuryDate>
 	</player>
 
     <player>
@@ -159,7 +156,6 @@
 				<seasonEndYear>2017</seasonEndYear>
 			</salary>
 		</salaries>
-        <injuryDate>NA</injuryDate>
 	</player>
 
     <player>
@@ -226,8 +222,6 @@
 				<seasonEndYear>2010</seasonEndYear>
 			</salary>
 		</salaries>
-	
-        <injuryDate>NA</injuryDate>
 	</player>
 
     <player>
@@ -298,7 +292,6 @@
 				<seasonEndYear>2018</seasonEndYear>
 			</salary>
 		</salaries>
-        <injuryDate>NA</injuryDate>
 	</player>
 
     <player>
@@ -359,7 +352,6 @@
 				<seasonEndYear>2018</seasonEndYear>
 			</salary>
 		</salaries>
-        <injuryDate>NA</injuryDate>
 	</player>
 
     <player>
@@ -415,7 +407,6 @@
 				<seasonEndYear>2018</seasonEndYear>
 			</salary>
 		</salaries>
-        <injuryDate>NA</injuryDate>
 	</player>
 
     <player>
@@ -451,7 +442,6 @@
 				<seasonEndYear>2018</seasonEndYear>
 			</salary>
 		</salaries>
-        <injuryDate>NA</injuryDate>
 	</player>
 
     <player>
@@ -472,7 +462,6 @@
 				<seasonEndYear>2012</seasonEndYear>
 			</salary>
 		</salaries>
-        <injuryDate>NA</injuryDate>
 	</player>
 
     <player>
@@ -494,7 +483,6 @@
 				<seasonEndYear>2017</seasonEndYear>
 			</salary>
 		</salaries>
-        <injuryDate>NA</injuryDate>
 	</player>
 
     <player>
@@ -514,7 +502,6 @@
 				<seasonEndYear>2008</seasonEndYear>
 			</salary>
 		</salaries>
-        <injuryDate>NA</injuryDate>
 	</player>
 
     <player>
@@ -534,7 +521,6 @@
 				<seasonEndYear>2018</seasonEndYear>
 			</salary>
 		</salaries>
-        <injuryDate>NA</injuryDate>
 	</player>
 
 
@@ -556,7 +542,6 @@
 				<seasonEndYear>1991</seasonEndYear>
 			</salary>
 		</salaries>
-        <injuryDate>NA</injuryDate>
 	</player>
 
     <player>
@@ -577,6 +562,5 @@
 				<seasonEndYear>1991</seasonEndYear>
 			</salary>
 		</salaries>
-        <injuryDate>NA</injuryDate>
 	</player>
 </players>
