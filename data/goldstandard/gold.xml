@@ -312,11 +312,53 @@
 			<name>Center</name>
 			<name>Power forward</name>
 		</positions>
-        <salary>
-            <amount>4983480</amount>
-            <seasonStartYear>2009</seasonStartYear>
-            <seasonEndYear>2010</seasonEndYear>
-        </salary>
+		<salaries>
+			<salary>
+				<amount>4983480</amount>
+				<seasonStartYear>2009</seasonStartYear>
+				<seasonEndYear>2010</seasonEndYear>
+			</salary>
+			<salary>
+				<amount>5357280</amount>
+				<seasonStartYear>2010</seasonStartYear>
+				<seasonEndYear>2011</seasonEndYear>
+			</salary>
+			<salary>
+				<amount>5731080</amount>
+				<seasonStartYear>2011</seasonStartYear>
+				<seasonEndYear>2012</seasonEndYear>
+			</salary>
+			<salary>
+				<amount>7226892</amount>
+				<seasonStartYear>2012</seasonStartYear>
+				<seasonEndYear>2013</seasonEndYear>
+			</salary>
+			<salary>
+				<amount>16441500</amount>
+				<seasonStartYear>2013</seasonStartYear>
+				<seasonEndYear>2014</seasonEndYear>
+			</salary>
+			<salary>
+				<amount>17674612</amount>
+				<seasonStartYear>2014</seasonStartYear>
+				<seasonEndYear>2015</seasonEndYear>
+			</salary>
+			<salary>
+				<amount>18907725</amount>
+				<seasonStartYear>2015</seasonStartYear>
+				<seasonEndYear>2016</seasonEndYear>
+			</salary>
+			<salary>
+				<amount>20140838</amount>
+				<seasonStartYear>2016</seasonStartYear>
+				<seasonEndYear>2017</seasonEndYear>
+			</salary>
+			<salary>
+				<amount>29512900</amount>
+				<seasonStartYear>2017</seasonStartYear>
+				<seasonEndYear>2018</seasonEndYear>
+			</salary>
+		</salaries>
         <injuryDate>NA</injuryDate>
 	</player>
 
@@ -331,11 +373,48 @@
             <name>Point guard</name>
 			<name>Shooting guard</name>
 		</positions>
-        <salary>
-            <amount>4054160</amount>
-            <seasonStartYear>2009</seasonStartYear>
-            <seasonEndYear>2010</seasonEndYear>
-        </salary>
+		<salaries>
+			<salary>
+				<amount>4054160</amount>
+				<seasonStartYear>2009</seasonStartYear>
+				<seasonEndYear>2010</seasonEndYear>
+			</salary>
+			<salary>
+				<amount>4304520</amount>
+				<seasonStartYear>2010</seasonStartYear>
+				<seasonEndYear>2011</seasonEndYear>
+			</salary>
+			<salary>
+				<amount>4604760</amount>
+				<seasonStartYear>2011</seasonStartYear>
+				<seasonEndYear>2012</seasonEndYear>
+			</salary>
+			<salary>
+				<amount>13701250</amount>
+				<seasonStartYear>2013</seasonStartYear>
+				<seasonEndYear>2014</seasonEndYear>
+			</salary>
+			<salary>
+				<amount>14728844</amount>
+				<seasonStartYear>2014</seasonStartYear>
+				<seasonEndYear>2015</seasonEndYear>
+			</salary>
+			<salary>
+				<amount>15756438</amount>
+				<seasonStartYear>2015</seasonStartYear>
+				<seasonEndYear>2016</seasonEndYear>
+			</salary>
+			<salary>
+				<amount>26540100</amount>
+				<seasonStartYear>2016</seasonStartYear>
+				<seasonEndYear>2017</seasonEndYear>
+			</salary>
+			<salary>
+				<amount>28299399</amount>
+				<seasonStartYear>2017</seasonStartYear>
+				<seasonEndYear>2018</seasonEndYear>
+			</salary>
+		</salaries>
         <injuryDate>NA</injuryDate>
 	</player>
 
@@ -350,11 +429,28 @@
             <name>Small forward</name>
 			<name>Shooting guard</name>
 		</positions>
-        <salary>
-            <amount>884879</amount>
-            <seasonStartYear>2014</seasonStartYear>
-            <seasonEndYear>2015</seasonEndYear>
-        </salary>
+		<salaries>
+			<salary>
+				<amount>884879</amount>
+				<seasonStartYear>2014</seasonStartYear>
+				<seasonEndYear>2015</seasonEndYear>
+			</salary>
+			<salary>
+				<amount>845059</amount>
+				<seasonStartYear>2015</seasonStartYear>
+				<seasonEndYear>2016</seasonEndYear>
+			</salary>
+			<salary>
+				<amount>980431</amount>
+				<seasonStartYear>2016</seasonStartYear>
+				<seasonEndYear>2017</seasonEndYear>
+			</salary>
+			<salary>
+				<amount>1524305</amount>
+				<seasonStartYear>2017</seasonStartYear>
+				<seasonEndYear>2018</seasonEndYear>
+			</salary>
+		</salaries>
         <injuryDate>NA</injuryDate>
 	</player>
 
@@ -369,11 +465,13 @@
             <name>Point guard</name>
 			<name>Shooting guard</name>
 		</positions>
-        <salary>
-            <amount>5144280</amount>
-            <seasonStartYear>2011</seasonStartYear>
-            <seasonEndYear>2012</seasonEndYear>
-        </salary>
+    	<salaries>
+			<salary>
+				<amount>5144280</amount>
+				<seasonStartYear>2011</seasonStartYear>
+				<seasonEndYear>2012</seasonEndYear>
+			</salary>
+		</salaries>
         <injuryDate>NA</injuryDate>
 	</player>
 
@@ -389,11 +487,13 @@
 			<name>Shooting guard</name>
             <name>Guard</name>
 		</positions>
-        <salary>
-            <amount>3578948</amount>
-            <seasonStartYear>2016</seasonStartYear>
-            <seasonEndYear>2017</seasonEndYear>
-        </salary>
+		<salaries>
+			<salary>
+				<amount>3578948</amount>
+				<seasonStartYear>2016</seasonStartYear>
+				<seasonEndYear>2017</seasonEndYear>
+			</salary>
+		</salaries>
         <injuryDate>NA</injuryDate>
 	</player>
 
@@ -407,11 +507,13 @@
 		<positions>
             <name>Power forward</name>
 		</positions>
-        <salary>
-            <amount>687456</amount>
-            <seasonStartYear>2007</seasonStartYear>
-            <seasonEndYear>2008</seasonEndYear>
-        </salary>
+		<salaries>
+			<salary>
+				<amount>687456</amount>
+				<seasonStartYear>2007</seasonStartYear>
+				<seasonEndYear>2008</seasonEndYear>
+			</salary>
+		</salaries>
         <injuryDate>NA</injuryDate>
 	</player>
 
@@ -425,11 +527,13 @@
 		<positions>
             <name>Forward guard</name>
 		</positions>
-        <salary>
-            <amount>815615</amount>
-            <seasonStartYear>2017</seasonStartYear>
-            <seasonEndYear>2018</seasonEndYear>
-        </salary>
+		<salaries>
+			<salary>
+				<amount>815615</amount>
+				<seasonStartYear>2017</seasonStartYear>
+				<seasonEndYear>2018</seasonEndYear>
+			</salary>
+		</salaries>
         <injuryDate>NA</injuryDate>
 	</player>
 
@@ -445,11 +549,13 @@
 			<name>Forward</name>
 			<name>Center</name>
 		</positions>
-        <salary>
-            <amount>1970000</amount>
-            <seasonStartYear>1990</seasonStartYear>
-            <seasonEndYear>1991</seasonEndYear>
-        </salary>
+		<salaries>
+			<salary>
+				<amount>1970000</amount>
+				<seasonStartYear>1990</seasonStartYear>
+				<seasonEndYear>1991</seasonEndYear>
+			</salary>
+		</salaries>
         <injuryDate>NA</injuryDate>
 	</player>
 
@@ -464,11 +570,13 @@
 		<positions>
 			<name>Center</name>
 		</positions>
-        <salary>
-            <amount>3175000</amount>
-            <seasonStartYear>1990</seasonStartYear>
-            <seasonEndYear>1991</seasonEndYear>
-        </salary>
+		<salaries>
+			<salary>
+				<amount>3175000</amount>
+				<seasonStartYear>1990</seasonStartYear>
+				<seasonEndYear>1991</seasonEndYear>
+			</salary>
+		</salaries>
         <injuryDate>NA</injuryDate>
 	</player>
 </players>
