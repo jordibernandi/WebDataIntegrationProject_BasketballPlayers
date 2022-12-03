@@ -12,18 +12,12 @@
 			<name>Point guard</name>
 			<name>Guard</name>
 		</position>
-		<salaries>
-			<salary>
-				<amount>3872520</amount>
-				<seasonStartYear>2016</seasonStartYear>
-				<seasonEndYear>2017</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>4046760</amount>
-				<seasonStartYear>2017</seasonStartYear>
-				<seasonEndYear>2018</seasonEndYear>
-			</salary>
-		</salaries>
+		<team>
+			<name>Minnesota Timberwolves</name>
+			<name>Chicago Bulls</name>
+			<name>Atlanta Hawks</name>
+			<name>Portland Trail Blazers</name>
+		</team>
 	</player>
 
 	<player>
@@ -37,63 +31,12 @@
 			<name>Center</name>
 			<name>Power forward</name>
 		</position>
-		<salaries>
-			<salary>
-				<amount>3745800</amount>
-				<seasonStartYear>2007</seasonStartYear>
-				<seasonEndYear>2008</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>4026720</amount>
-				<seasonStartYear>2008</seasonStartYear>
-				<seasonEndYear>2009</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>4307640</amount>
-				<seasonStartYear>2009</seasonStartYear>
-				<seasonEndYear>2010</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>5444857</amount>
-				<seasonStartYear>2010</seasonStartYear>
-				<seasonEndYear>2011</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>12000000</amount>
-				<seasonStartYear>2011</seasonStartYear>
-				<seasonEndYear>2012</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>12000000</amount>
-				<seasonStartYear>2012</seasonStartYear>
-				<seasonEndYear>2013</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>12000000</amount>
-				<seasonStartYear>2013</seasonStartYear>
-				<seasonEndYear>2014</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>27734405</amount>
-				<seasonStartYear>2017</seasonStartYear>
-				<seasonEndYear>2018</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>12000000</amount>
-				<seasonStartYear>2014</seasonStartYear>
-				<seasonEndYear>2015</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>12000000</amount>
-				<seasonStartYear>2015</seasonStartYear>
-				<seasonEndYear>2016</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>26540100</amount>
-				<seasonStartYear>2016</seasonStartYear>
-				<seasonEndYear>2017</seasonEndYear>
-			</salary>
-		</salaries>
+		<team>
+			<name>Atlanta Hawks</name>
+			<name>Boston Celtics</name>
+			<name>Philadelphia 76ers</name>
+			<name>Oklahoma City Thunder</name>
+		</team>
 	</player>
 
 	<player>
@@ -107,23 +50,14 @@
 			<name>Shooting guard</name>
 			<name>Small forward</name>
 		</position>
-		<salaries>
-			<salary>
-				<amount>525093</amount>
-				<seasonStartYear>2015</seasonStartYear>
-				<seasonEndYear>2016</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>874636</amount>
-				<seasonStartYear>2016</seasonStartYear>
-				<seasonEndYear>2017</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>1471382</amount>
-				<seasonStartYear>2017</seasonStartYear>
-				<seasonEndYear>2018</seasonEndYear>
-			</salary>
-		</salaries>
+		<team>
+			<name>Miami Heat</name>
+			<name>Philadelphia 76ers</name>
+			<name>Dallas Mavericks</name>
+			<name>Boston Celtics</name>
+			<name>San Antonio Spurs</name>
+		</team>
+
 	</player>
 
     <player>
@@ -138,23 +72,9 @@
             <name>Point guard</name>
 			<name>Shooting guard</name>
 		</position>
-		<salaries>
-			<salary>
-				<amount>3283320</amount>
-				<seasonStartYear>2014</seasonStartYear>
-				<seasonEndYear>2015</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>3431040</amount>
-				<seasonStartYear>2015</seasonStartYear>
-				<seasonEndYear>2016</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>3578880</amount>
-				<seasonStartYear>2016</seasonStartYear>
-				<seasonEndYear>2017</seasonEndYear>
-			</salary>
-		</salaries>
+		<team>
+			<name>Boston Celtics</name>
+		</team>
 	</player>
 
     <player>
@@ -169,58 +89,11 @@
 			<name>Center</name>
 			<name>Power forward</name>
 		</position>
-		<salaries>
-			<salary>
-				<amount>12372000</amount>
-				<seasonStartYear>2011</seasonStartYear>
-				<seasonEndYear>2012</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>20575005</amount>
-				<seasonStartYear>2016</seasonStartYear>
-				<seasonEndYear>2017</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>15200000</amount>
-				<seasonStartYear>2014</seasonStartYear>
-				<seasonEndYear>2015</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>19500000</amount>
-				<seasonStartYear>2015</seasonStartYear>
-				<seasonEndYear>2016</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>13000000</amount>
-				<seasonStartYear>2012</seasonStartYear>
-				<seasonEndYear>2013</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>21461010</amount>
-				<seasonStartYear>2017</seasonStartYear>
-				<seasonEndYear>2018</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>4027320</amount>
-				<seasonStartYear>2006</seasonStartYear>
-				<seasonEndYear>2007</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>4329360</amount>
-				<seasonStartYear>2007</seasonStartYear>
-				<seasonEndYear>2008</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>4631400</amount>
-				<seasonStartYear>2008</seasonStartYear>
-				<seasonEndYear>2009</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>5844827</amount>
-				<seasonStartYear>2009</seasonStartYear>
-				<seasonEndYear>2010</seasonEndYear>
-			</salary>
-		</salaries>
+		<team>
+			<name>Portland Trail Blazers</name>
+			<name>San Antonio Spurs</name>
+			<name>Brooklyn Nets</name>
+		</team>
 	</player>
 
     <player>
@@ -234,63 +107,12 @@
 			<name>Small forward</name>
 			<name>Power forward</name>
 		</position>
-		<salaries>
-			<salary>
-				<amount>4171200</amount>
-				<seasonStartYear>2007</seasonStartYear>
-				<seasonEndYear>2008</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>4484040</amount>
-				<seasonStartYear>2008</seasonStartYear>
-				<seasonEndYear>2009</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>4796880</amount>
-				<seasonStartYear>2009</seasonStartYear>
-				<seasonEndYear>2010</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>6053663</amount>
-				<seasonStartYear>2010</seasonStartYear>
-				<seasonEndYear>2011</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>15506632</amount>
-				<seasonStartYear>2011</seasonStartYear>
-				<seasonEndYear>2012</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>16669630</amount>
-				<seasonStartYear>2012</seasonStartYear>
-				<seasonEndYear>2013</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>17832627</amount>
-				<seasonStartYear>2013</seasonStartYear>
-				<seasonEndYear>2014</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>18995624</amount>
-				<seasonStartYear>2014</seasonStartYear>
-				<seasonEndYear>2015</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>20158622</amount>
-				<seasonStartYear>2015</seasonStartYear>
-				<seasonEndYear>2016</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>26540100</amount>
-				<seasonStartYear>2016</seasonStartYear>
-				<seasonEndYear>2017</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>25000000</amount>
-				<seasonStartYear>2017</seasonStartYear>
-				<seasonEndYear>2018</seasonEndYear>
-			</salary>
-		</salaries>
+		<team>
+			<name>Seattle SuperSonics</name>
+			<name>Oklahoma City Thunder</name>
+			<name>Golden State Warriors</name>
+			<name>Brooklyn Nets</name>
+		</team>
 	</player>
 
     <player>
@@ -304,53 +126,12 @@
 			<name>Center</name>
 			<name>Power forward</name>
 		</position>
-		<salaries>
-			<salary>
-				<amount>4983480</amount>
-				<seasonStartYear>2009</seasonStartYear>
-				<seasonEndYear>2010</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>5357280</amount>
-				<seasonStartYear>2010</seasonStartYear>
-				<seasonEndYear>2011</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>5731080</amount>
-				<seasonStartYear>2011</seasonStartYear>
-				<seasonEndYear>2012</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>7226892</amount>
-				<seasonStartYear>2012</seasonStartYear>
-				<seasonEndYear>2013</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>16441500</amount>
-				<seasonStartYear>2013</seasonStartYear>
-				<seasonEndYear>2014</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>17674612</amount>
-				<seasonStartYear>2014</seasonStartYear>
-				<seasonEndYear>2015</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>18907725</amount>
-				<seasonStartYear>2015</seasonStartYear>
-				<seasonEndYear>2016</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>20140838</amount>
-				<seasonStartYear>2016</seasonStartYear>
-				<seasonEndYear>2017</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>29512900</amount>
-				<seasonStartYear>2017</seasonStartYear>
-				<seasonEndYear>2018</seasonEndYear>
-			</salary>
-		</salaries>
+		<team>
+			<name>Los Angeles Clippers</name>
+			<name>Detroit Pistons</name>
+			<name>Brooklyn Nets</name>
+			<name>Boston Celtics</name>
+		</team>
 	</player>
 
     <player>
@@ -364,47 +145,12 @@
             <name>Point guard</name>
 			<name>Shooting guard</name>
 		</position>
-		<salaries>
-			<salary>
-				<amount>4054160</amount>
-				<seasonStartYear>2009</seasonStartYear>
-				<seasonEndYear>2010</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>4304520</amount>
-				<seasonStartYear>2010</seasonStartYear>
-				<seasonEndYear>2011</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>4604760</amount>
-				<seasonStartYear>2011</seasonStartYear>
-				<seasonEndYear>2012</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>13701250</amount>
-				<seasonStartYear>2013</seasonStartYear>
-				<seasonEndYear>2014</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>14728844</amount>
-				<seasonStartYear>2014</seasonStartYear>
-				<seasonEndYear>2015</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>15756438</amount>
-				<seasonStartYear>2015</seasonStartYear>
-				<seasonEndYear>2016</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>26540100</amount>
-				<seasonStartYear>2016</seasonStartYear>
-				<seasonEndYear>2017</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>28299399</amount>
-				<seasonStartYear>2017</seasonStartYear>
-				<seasonEndYear>2018</seasonEndYear>
-			</salary>
+		<team>
+			<name>Oklahoma City Thunder</name>
+			<name>Houston Rockets</name>
+			<name>Brooklyn Nets</name>
+			<name>Philadelphia 76ers</name>
+		</team>
 		</salaries>
 	</player>
 
@@ -419,28 +165,10 @@
             <name>Small forward</name>
 			<name>Shooting guard</name>
 		</position>
-		<salaries>
-			<salary>
-				<amount>884879</amount>
-				<seasonStartYear>2014</seasonStartYear>
-				<seasonEndYear>2015</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>845059</amount>
-				<seasonStartYear>2015</seasonStartYear>
-				<seasonEndYear>2016</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>980431</amount>
-				<seasonStartYear>2016</seasonStartYear>
-				<seasonEndYear>2017</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>1524305</amount>
-				<seasonStartYear>2017</seasonStartYear>
-				<seasonEndYear>2018</seasonEndYear>
-			</salary>
-		</salaries>
+		<team>
+			<name>Cleveland Cavaliers</name>
+			<name>Brooklyn Nets</name>
+		</team>
 	</player>
 
     <player>
@@ -454,43 +182,11 @@
             <name>Point guard</name>
 			<name>Shooting guard</name>
 		</position>
-    	<salaries>
-			<salary>
-				<amount>5144280</amount>
-				<seasonStartYear>2011</seasonStartYear>
-				<seasonEndYear>2012</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>5530080</amount>
-				<seasonStartYear>2012</seasonStartYear>
-				<seasonEndYear>2013</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>5607240</amount>
-				<seasonStartYear>2013</seasonStartYear>
-				<seasonEndYear>2014</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>7070730</amount>
-				<seasonStartYear>2014</seasonStartYear>
-				<seasonEndYear>2015</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>14746000</amount>
-				<seasonStartYear>2015</seasonStartYear>
-				<seasonEndYear>2016</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>17638063</amount>
-				<seasonStartYear>2016</seasonStartYear>
-				<seasonEndYear>2017</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>18868625</amount>
-				<seasonStartYear>2017</seasonStartYear>
-				<seasonEndYear>2018</seasonEndYear>
-			</salary>
-		</salaries>
+		<team>
+			<name>Cleveland Cavaliers</name>
+			<name>Boston Celtics</name>
+			<name>Brooklyn Nets</name>
+		</team>
 	</player>
 
     <player>
@@ -505,18 +201,11 @@
 			<name>Shooting guard</name>
             <name>Guard</name>
 		</position>
-		<salaries>
-			<salary>
-				<amount>3578948</amount>
-				<seasonStartYear>2016</seasonStartYear>
-				<seasonEndYear>2017</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>10714286</amount>
-				<seasonStartYear>2017</seasonStartYear>
-				<seasonEndYear>2018</seasonEndYear>
-			</salary>
-		</salaries>
+		<team>
+			<name>Portland Trail Blazers</name>
+			<name>San Antonio Spurs</name>
+			<name>Brooklyn Nets</name>
+		</team>
 	</player>
 
     <player>
@@ -529,58 +218,13 @@
 		<position>
             <name>Power forward</name>
 		</position>
-		<salaries>
-			<salary>
-				<amount>687456</amount>
-				<seasonStartYear>2007</seasonStartYear>
-				<seasonEndYear>2008</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>797581</amount>
-				<seasonStartYear>2008</seasonStartYear>
-				<seasonEndYear>2009</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>7692932</amount>
-				<seasonStartYear>2009</seasonStartYear>
-				<seasonEndYear>2010</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>7600000</amount>
-				<seasonStartYear>2010</seasonStartYear>
-				<seasonEndYear>2011</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>8103435</amount>
-				<seasonStartYear>2011</seasonStartYear>
-				<seasonEndYear>2012</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>8603633</amount>
-				<seasonStartYear>2012</seasonStartYear>
-				<seasonEndYear>2013</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>9500000</amount>
-				<seasonStartYear>2013</seasonStartYear>
-				<seasonEndYear>2014</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>9500000</amount>
-				<seasonStartYear>2014</seasonStartYear>
-				<seasonEndYear>2015</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>20072033</amount>
-				<seasonStartYear>2016</seasonStartYear>
-				<seasonEndYear>2017</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>31269231</amount>
-				<seasonStartYear>2017</seasonStartYear>
-				<seasonEndYear>2018</seasonEndYear>
-			</salary>
-		</salaries>
+		<team>
+			<name>Utah Jazz</name>
+			<name>Atlanta Hawks</name>
+			<name>Denver Nuggets</name>
+			<name>Brooklyn Nets</name>
+			<name>Philadelphia 76ers</name>
+		</team>
 	</player>
 
     <player>
@@ -593,15 +237,11 @@
 		<position>
             <name>Forward guard</name>
 		</position>
-		<salaries>
-			<salary>
-				<amount>815615</amount>
-				<seasonStartYear>2017</seasonStartYear>
-				<seasonEndYear>2018</seasonEndYear>
-			</salary>
-		</salaries>
+		<team>
+			<name>Charlotte Hornets</name>
+			<name>Orlando Magic</name>
+		</team>
 	</player>
-
 
     <player>
 		<id>player_stat_id_3166</id>
@@ -614,53 +254,12 @@
 			<name>Forward</name>
 			<name>Center</name>
 		</position>
-		<salaries>
-			<salary>
-				<amount>1970000</amount>
-				<seasonStartYear>1990</seasonStartYear>
-				<seasonEndYear>1991</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>2507000</amount>
-				<seasonStartYear>1991</seasonStartYear>
-				<seasonEndYear>1992</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>3047000</amount>
-				<seasonStartYear>1992</seasonStartYear>
-				<seasonEndYear>1993</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>3587000</amount>
-				<seasonStartYear>1993</seasonStartYear>
-				<seasonEndYear>1994</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>4126600</amount>
-				<seasonStartYear>1994</seasonStartYear>
-				<seasonEndYear>1995</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>3967000</amount>
-				<seasonStartYear>1995</seasonStartYear>
-				<seasonEndYear>1996</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>2730000</amount>
-				<seasonStartYear>1996</seasonStartYear>
-				<seasonEndYear>1997</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>3370000</amount>
-				<seasonStartYear>1997</seasonStartYear>
-				<seasonEndYear>1998</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>2250000</amount>
-				<seasonStartYear>2000</seasonStartYear>
-				<seasonEndYear>2001</seasonEndYear>
-			</salary>
-		</salaries>
+		<team>
+			<name>Dallas Mavericks</name>
+			<name>Los Angeles Lakers</name>
+			<name>Seattle SuperSonics</name>
+			<name>Indiana Pacers</name>
+		</team>
 	</player>
 
     <player>
@@ -674,67 +273,9 @@
 		<position>
 			<name>Center</name>
 		</position>
-		<salaries>
-			<salary>
-				<amount>3175000</amount>
-				<seasonStartYear>1990</seasonStartYear>
-				<seasonEndYear>1991</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>3170000</amount>
-				<seasonStartYear>1991</seasonStartYear>
-				<seasonEndYear>1992</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>3170000</amount>
-				<seasonStartYear>1993</seasonStartYear>
-				<seasonEndYear>1994</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>3169900</amount>
-				<seasonStartYear>1994</seasonStartYear>
-				<seasonEndYear>1995</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>5305000</amount>
-				<seasonStartYear>1995</seasonStartYear>
-				<seasonEndYear>1996</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>9655000</amount>
-				<seasonStartYear>1996</seasonStartYear>
-				<seasonEndYear>1997</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>12943000</amount>
-				<seasonStartYear>1998</seasonStartYear>
-				<seasonEndYear>1999</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>14302001</amount>
-				<seasonStartYear>1999</seasonStartYear>
-				<seasonEndYear>2000</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>16700000</amount>
-				<seasonStartYear>2000</seasonStartYear>
-				<seasonEndYear>2001</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>5061539</amount>
-				<seasonStartYear>2001</seasonStartYear>
-				<seasonEndYear>2002</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>5694231</amount>
-				<seasonStartYear>2002</seasonStartYear>
-				<seasonEndYear>2003</seasonEndYear>
-			</salary>
-			<salary>
-				<amount>6326923</amount>
-				<seasonStartYear>2003</seasonStartYear>
-				<seasonEndYear>2004</seasonEndYear>
-			</salary>
-		</salaries>
+		<team>
+			<name>Houston Rockets</name>
+			<name>Toronto Raptors</name>
+		</team>
 	</player>
 </players>
