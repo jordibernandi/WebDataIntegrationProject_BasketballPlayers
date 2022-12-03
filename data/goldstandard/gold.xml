@@ -8,10 +8,10 @@
 		<birthDate>1994-03-18</birthDate>
 		<height>190</height>
 		<weight>92</weight>
-        <positions>
+        <position>
 			<name>Point guard</name>
 			<name>Guard</name>
-		</positions>
+		</position>
 		<salaries>
 			<salary>
 				<amount>3872520</amount>
@@ -33,10 +33,10 @@
 		<birthDate>1986-06-03</birthDate>
 		<height>206</height>
 		<weight>108</weight>
-		<positions>
+		<position>
 			<name>Center</name>
 			<name>Power forward</name>
-		</positions>
+		</position>
 		<salaries>
 			<salary>
 				<amount>3745800</amount>
@@ -103,10 +103,10 @@
 		<birthDate>1993-09-15</birthDate>
 		<height>196</height>
 		<weight>90</weight>
-		<positions>
+		<position>
 			<name>Shooting guard</name>
 			<name>Small forward</name>
-		</positions>
+		</position>
 		<salaries>
 			<salary>
 				<amount>525093</amount>
@@ -133,11 +133,11 @@
 		<birthDate>1994-03-06</birthDate>
 		<height>191</height>
 		<weight>100</weight>
-		<positions>
+		<position>
 			<name>Guard</name>
             <name>Point guard</name>
 			<name>Shooting guard</name>
-		</positions>
+		</position>
 		<salaries>
 			<salary>
 				<amount>3283320</amount>
@@ -165,10 +165,10 @@
 		<birthDate>1985-07-19</birthDate>
 		<height>211</height>
 		<weight>113</weight>
-		<positions>
+		<position>
 			<name>Center</name>
 			<name>Power forward</name>
-		</positions>
+		</position>
 		<salaries>
 			<salary>
 				<amount>12372000</amount>
@@ -230,10 +230,10 @@
 		<birthDate>1988-09-29</birthDate>
 		<height>208</height>
 		<weight>109</weight>
-		<positions>
+		<position>
 			<name>Small forward</name>
 			<name>Power forward</name>
-		</positions>
+		</position>
 		<salaries>
 			<salary>
 				<amount>4171200</amount>
@@ -300,10 +300,10 @@
 		<birthDate>1989-03-16</birthDate>
 		<height>206</height>
 		<weight>113</weight>
-		<positions>
+		<position>
 			<name>Center</name>
 			<name>Power forward</name>
-		</positions>
+		</position>
 		<salaries>
 			<salary>
 				<amount>4983480</amount>
@@ -360,10 +360,10 @@
 		<birthDate>1989-08-26</birthDate>
 		<height>196</height>
 		<weight>100</weight>
-		<positions>
+		<position>
             <name>Point guard</name>
 			<name>Shooting guard</name>
-		</positions>
+		</position>
 		<salaries>
 			<salary>
 				<amount>4054160</amount>
@@ -415,10 +415,10 @@
 		<birthDate>1991-09-06</birthDate>
 		<height>198</height>
 		<weight>99</weight>
-		<positions>
+		<position>
             <name>Small forward</name>
 			<name>Shooting guard</name>
-		</positions>
+		</position>
 		<salaries>
 			<salary>
 				<amount>884879</amount>
@@ -450,10 +450,10 @@
 		<birthDate>1992-03-23</birthDate>
 		<height>188</height>
 		<weight>88</weight>
-		<positions>
+		<position>
             <name>Point guard</name>
 			<name>Shooting guard</name>
-		</positions>
+		</position>
     	<salaries>
 			<salary>
 				<amount>5144280</amount>
@@ -500,11 +500,11 @@
 		<birthDate>1988-08-11</birthDate>
 		<height>185</height>
 		<weight>82</weight>
-		<positions>
+		<position>
             <name>Point guard</name>
 			<name>Shooting guard</name>
             <name>Guard</name>
-		</positions>
+		</position>
 		<salaries>
 			<salary>
 				<amount>3578948</amount>
@@ -526,9 +526,9 @@
 		<birthDate>1985-02-10</birthDate>
 		<height>201</height>
 		<weight>112</weight>
-		<positions>
+		<position>
             <name>Power forward</name>
-		</positions>
+		</position>
 		<salaries>
 			<salary>
 				<amount>687456</amount>
@@ -590,9 +590,9 @@
 		<birthDate>1995-08-30</birthDate>
 		<height>201</height>
 		<weight>100</weight>
-		<positions>
+		<position>
             <name>Forward guard</name>
-		</positions>
+		</position>
 		<salaries>
 			<salary>
 				<amount>815615</amount>
@@ -610,10 +610,10 @@
 		<birthDate>1961-06-14</birthDate>
 		<height>206</height>
 		<weight>107</weight>
-		<positions>
+		<position>
 			<name>Forward</name>
 			<name>Center</name>
-		</positions>
+		</position>
 		<salaries>
 			<salary>
 				<amount>1970000</amount>
@@ -671,9 +671,9 @@
 		<birthDate>1963-01-21</birthDate>
 		<height>213</height>
 		<weight>116</weight>
-		<positions>
+		<position>
 			<name>Center</name>
-		</positions>
+		</position>
 		<salaries>
 			<salary>
 				<amount>3175000</amount>

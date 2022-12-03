@@ -47,7 +47,7 @@ public class DataFusion {
 
         // Scores (e.g. from rating)
         dsPlayerStat.setScore(1.0);
-        dsPlayerDBpedia.setScore(2.0);
+        dsPlayerDBpedia.setScore(4.0);
         dsPlayerSalary.setScore(3.0);
         dsPlayerInjury.setScore(4.0);
 
@@ -59,10 +59,10 @@ public class DataFusion {
                 .parseDefaulting(ChronoField.SECOND_OF_MINUTE, 0)
                 .toFormatter(Locale.ENGLISH);
 
-        dsPlayerStat.setDate(LocalDateTime.parse("2019-03-15", formatter));
-        dsPlayerDBpedia.setDate(LocalDateTime.parse("2019-03-15", formatter));
-        dsPlayerSalary.setDate(LocalDateTime.parse("2018-12-31", formatter));
-        dsPlayerInjury.setDate(LocalDateTime.parse("2018-12-21", formatter));
+        dsPlayerStat.setDate(LocalDateTime.parse("2018-12-31", formatter));
+        dsPlayerDBpedia.setDate(LocalDateTime.parse("2022-12-31", formatter));
+        dsPlayerSalary.setDate(LocalDateTime.parse("2019-12-31", formatter));
+        dsPlayerInjury.setDate(LocalDateTime.parse("2021-12-31", formatter));
 
         // load correspondences
         System.out.println("*\n*\tLoading correspondences\n*");
@@ -90,12 +90,10 @@ public class DataFusion {
         //add attribute fusers and evaluation rules
         strategy.addAttributeFuser(Player.NAME, new NameFuserLongestString(),new NameEvaluationRule());
         strategy.addAttributeFuser(Player.BIRTHDATE, new BirthDateFuserFavourSource(), new BirthDateEvaluationRule());
-        strategy.addAttributeFuser(Player.BIRTHPLACE, new BirthPlaceFuserLongestString(),new BirthPlaceEvaluationRule());
         strategy.addAttributeFuser(Player.HEIGHT, new HeightFuserFavourSource(),new HeightEvaluationRule());
         strategy.addAttributeFuser(Player.WEIGHT, new WeightFuserFavourSource(),new WeightEvaluationRule());
-        strategy.addAttributeFuser(Player.COLLEGE, new CollegeFuserLongestString(),new CollegeEvaluationRule());
         strategy.addAttributeFuser(Player.YEARSTART, new YearStartFuserFavourSource(),new YearStartEvaluationRule());
-        strategy.addAttributeFuser(Player.YEAREND, new YearEndFuserFavourSource(),new YearEndEvaluationRule());
+        strategy.addAttributeFuser(Player.YEAREND, new YearEndFuserMostRecent(),new YearEndEvaluationRule());
         strategy.addAttributeFuser(Player.POSITIONS,new PositionsFuserUnion(), new PositionsEvaluationRule());
         strategy.addAttributeFuser(Player.TEAMS,new TeamsFuserUnion(), new TeamsEvaluationRule());
 

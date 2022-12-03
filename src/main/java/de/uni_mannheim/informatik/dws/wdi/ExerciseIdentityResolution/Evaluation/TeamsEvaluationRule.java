@@ -11,23 +11,21 @@ public class TeamsEvaluationRule extends EvaluationRule<Player, Attribute>{
 
     @Override
     public boolean isEqual(Player record1, Player record2, Attribute schemaElement) {
-        Collection teams1 = new ArrayList();
+        Set<String> player1 = new HashSet<>();
         if (record1.getTeams() != null) {
             for (String p : record1.getTeams()) {
 
-            	teams1.add(p);
+                player1.add(p);
             }
         }
-        Collection teams2 = new ArrayList();
+        Set<String> player2 = new HashSet<>();
         if (record2.getTeams() != null) {
             for (String p : record2.getTeams()) {
-            	teams2.add(p);
+                player2.add(p);
             }
         }
 
-
-        teams1.retainAll( teams2 );
-        return teams1.size()>0;
+        return player1.containsAll(player2) && player2.containsAll(player1);
     }
 
     /* (non-Javadoc)
