@@ -80,6 +80,10 @@ public class PlayerXMLReader extends XMLMatchableReader<Player, Attribute> imple
         String yearEnd = getValueFromChildElement(node, "yearEnd");
         if (yearEnd != null && !yearEnd.isEmpty()) {
             player.setYearEnd(Integer.parseInt(yearEnd));
+        } else {
+            if (player.getIdentifier().substring(0, 9).equals("player_db")) {
+                player.setYearEnd(9999);
+            }
         }
 
         String height = getValueFromChildElement(node, "height");

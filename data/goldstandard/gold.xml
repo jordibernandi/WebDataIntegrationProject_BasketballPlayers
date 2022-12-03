@@ -5,10 +5,11 @@
 		<id>player_stat_id_1082</id>
 		<name>Kris Dunn</name>
 		<yearStart>2016</yearStart>
+		<yearEnd>9999</yearEnd>
 		<birthDate>1994-03-18</birthDate>
 		<height>190</height>
 		<weight>92</weight>
-        <position>
+		<position>
 			<name>Point guard</name>
 			<name>Guard</name>
 		</position>
@@ -24,6 +25,7 @@
 		<id>player_stat_id_1827</id>
 		<name>Al Horford</name>
 		<yearStart>2007</yearStart>
+		<yearEnd>9999</yearEnd>
 		<birthDate>1986-06-03</birthDate>
 		<height>206</height>
 		<weight>108</weight>
@@ -43,6 +45,7 @@
 		<id>player_stat_id_3375</id>
 		<name>Josh Richardson</name>
 		<yearStart>2015</yearStart>
+		<yearEnd>9999</yearEnd>
 		<birthDate>1993-09-15</birthDate>
 		<height>196</height>
 		<weight>90</weight>
@@ -59,16 +62,17 @@
 		</team>
 	</player>
 
-    <player>
+	<player>
 		<id>player_stat_id_3725</id>
 		<name>Marcus Smart</name>
 		<yearStart>2014</yearStart>
+		<yearEnd>9999</yearEnd>
 		<birthDate>1994-03-06</birthDate>
 		<height>191</height>
 		<weight>100</weight>
 		<position>
 			<name>Guard</name>
-            <name>Point guard</name>
+			<name>Point guard</name>
 			<name>Shooting guard</name>
 		</position>
 		<team>
@@ -76,11 +80,11 @@
 		</team>
 	</player>
 
-    <player>
+	<player>
 		<id>player_stat_id_41</id>
 		<name>LaMarcus Aldridge</name>
 		<yearStart>2006</yearStart>
-        <yearEnd>2021</yearEnd>
+		<yearEnd>2021</yearEnd>
 		<birthDate>1985-07-19</birthDate>
 		<height>211</height>
 		<weight>113</weight>
@@ -95,10 +99,11 @@
 		</team>
 	</player>
 
-    <player>
+	<player>
 		<id>player_stat_id_1086</id>
 		<name>Kevin Durant</name>
 		<yearStart>2007</yearStart>
+		<yearEnd>9999</yearEnd>
 		<birthDate>1988-09-29</birthDate>
 		<height>208</height>
 		<weight>109</weight>
@@ -114,10 +119,11 @@
 		</team>
 	</player>
 
-    <player>
+	<player>
 		<id>player_stat_id_1537</id>
 		<name>Blake Griffin</name>
 		<yearStart>2009</yearStart>
+		<yearEnd>9999</yearEnd>
 		<birthDate>1989-03-16</birthDate>
 		<height>206</height>
 		<weight>113</weight>
@@ -133,15 +139,16 @@
 		</team>
 	</player>
 
-    <player>
+	<player>
 		<id>player_stat_id_1628</id>
 		<name>James Harden</name>
 		<yearStart>2009</yearStart>
+		<yearEnd>9999</yearEnd>
 		<birthDate>1989-08-26</birthDate>
 		<height>196</height>
 		<weight>100</weight>
 		<position>
-            <name>Point guard</name>
+			<name>Point guard</name>
 			<name>Shooting guard</name>
 		</position>
 		<team>
@@ -152,15 +159,16 @@
 		</team>
 	</player>
 
-    <player>
+	<player>
 		<id>player_stat_id_1659</id>
 		<name>Joe Harris</name>
 		<yearStart>2014</yearStart>
+		<yearEnd>9999</yearEnd>
 		<birthDate>1991-09-06</birthDate>
 		<height>198</height>
 		<weight>99</weight>
 		<position>
-            <name>Small forward</name>
+			<name>Small forward</name>
 			<name>Shooting guard</name>
 		</position>
 		<team>
@@ -169,15 +177,16 @@
 		</team>
 	</player>
 
-    <player>
+	<player>
 		<id>player_stat_id_1901</id>
 		<name>Kyrie Irving</name>
 		<yearStart>2011</yearStart>
+		<yearEnd>9999</yearEnd>
 		<birthDate>1992-03-23</birthDate>
 		<height>188</height>
 		<weight>88</weight>
 		<position>
-            <name>Point guard</name>
+			<name>Point guard</name>
 			<name>Shooting guard</name>
 		</position>
 		<team>
@@ -187,17 +196,18 @@
 		</team>
 	</player>
 
-    <player>
+	<player>
 		<id>player_stat_id_2768</id>
 		<name>Patty Mills</name>
 		<yearStart>2009</yearStart>
+		<yearEnd>9999</yearEnd>
 		<birthDate>1988-08-11</birthDate>
 		<height>185</height>
 		<weight>82</weight>
 		<position>
-            <name>Point guard</name>
+			<name>Point guard</name>
 			<name>Shooting guard</name>
-            <name>Guard</name>
+			<name>Guard</name>
 		</position>
 		<team>
 			<name>Portland Trail Blazers</name>
@@ -206,15 +216,16 @@
 		</team>
 	</player>
 
-    <player>
+	<player>
 		<id>player_stat_id_2771</id>
 		<name>Paul Millsap</name>
 		<yearStart>2006</yearStart>
+		<yearEnd>9999</yearEnd>
 		<birthDate>1985-02-10</birthDate>
 		<height>201</height>
 		<weight>112</weight>
 		<position>
-            <name>Power forward</name>
+			<name>Power forward</name>
 		</position>
 		<team>
 			<name>Utah Jazz</name>
@@ -225,15 +236,16 @@
 		</team>
 	</player>
 
-    <player>
+	<player>
 		<id>player_stat_id_163</id>
 		<name>Dwayne Bacon</name>
 		<yearStart>2017</yearStart>
+		<yearEnd>9999</yearEnd>
 		<birthDate>1995-08-30</birthDate>
 		<height>201</height>
 		<weight>100</weight>
 		<position>
-            <name>Forward guard</name>
+			<name>Forward guard</name>
 		</position>
 		<team>
 			<name>Charlotte Hornets</name>
@@ -241,10 +253,11 @@
 		</team>
 	</player>
 
-    <player>
+	<player>
 		<id>player_stat_id_3166</id>
 		<name>Sam Perkins</name>
 		<yearStart>1984</yearStart>
+		<yearEnd>9999</yearEnd>
 		<birthDate>1961-06-14</birthDate>
 		<height>206</height>
 		<weight>107</weight>
@@ -260,11 +273,11 @@
 		</team>
 	</player>
 
-    <player>
+	<player>
 		<id>player_stat_id_3037</id>
 		<name>Hakeem Olajuwon</name>
-		<yearStart>2002</yearStart>
-        <yearEnd>2001</yearEnd>
+		<yearStart>1984</yearStart>
+		<yearEnd>2001</yearEnd>
 		<birthDate>1963-01-21</birthDate>
 		<height>213</height>
 		<weight>116</weight>
@@ -276,5 +289,5 @@
 			<name>Toronto Raptors</name>
 		</team>
 	</player>
-	
+
 </players>
