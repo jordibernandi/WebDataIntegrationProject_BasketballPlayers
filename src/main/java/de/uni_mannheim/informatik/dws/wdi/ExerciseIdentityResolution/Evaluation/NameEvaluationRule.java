@@ -5,17 +5,16 @@ import de.uni_mannheim.informatik.dws.winter.model.Correspondence;
 import de.uni_mannheim.informatik.dws.winter.model.Matchable;
 import de.uni_mannheim.informatik.dws.winter.model.defaultmodel.Attribute;
 import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.model.Player;
+import de.uni_mannheim.informatik.dws.winter.similarity.SimilarityMeasure;
+import de.uni_mannheim.informatik.dws.winter.similarity.string.TokenizingJaccardSimilarity;
 
 public class NameEvaluationRule extends EvaluationRule<Player, Attribute> {
 
+    SimilarityMeasure<String> sim = new TokenizingJaccardSimilarity();
+
     @Override
     public boolean isEqual(Player record1, Player record2, Attribute schemaElement) {
-        if(record1.getName()== null && record2.getName()==null)
-            return true;
-        else if(record1.getName()== null || record2.getName()==null)
-            return false;
-        else
-            return record1.getName().equals(record2.getName());
+        return sim.calculate(record1.getName(), record2.getName()) == 1.0;
     }
 
     @Override

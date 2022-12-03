@@ -1,31 +1,34 @@
 package de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Evaluation;
 
 import java.util.*;
+import java.util.stream.Collectors;
+
 import de.uni_mannheim.informatik.dws.winter.datafusion.EvaluationRule;
 import de.uni_mannheim.informatik.dws.winter.model.Correspondence;
 import de.uni_mannheim.informatik.dws.winter.model.Matchable;
 import de.uni_mannheim.informatik.dws.winter.model.defaultmodel.Attribute;
 import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.model.Player;
+import de.uni_mannheim.informatik.dws.winter.similarity.list.OverlapSimilarity;
 
 public class TeamsEvaluationRule extends EvaluationRule<Player, Attribute>{
 
+    OverlapSimilarity sim = new OverlapSimilarity();
     @Override
     public boolean isEqual(Player record1, Player record2, Attribute schemaElement) {
-        Set<String> player1 = new HashSet<>();
-        if (record1.getTeams() != null) {
-            for (String p : record1.getTeams()) {
+        if (record1.getTeams() != null && record2.getTeams() != null) {
+            List<String> s1 = record1.getTeams().stream().map(String::toLowerCase).collect(Collectors.toList());
+            List<String> s2 = record2.getTeams().stream().map(String::toLowerCase).collect(Collectors.toList());
 
-                player1.add(p);
-            }
-        }
-        Set<String> player2 = new HashSet<>();
-        if (record2.getTeams() != null) {
-            for (String p : record2.getTeams()) {
-                player2.add(p);
-            }
-        }
+            double similarity = sim.calculate(s1, s2);
 
-        return player1.containsAll(player2) && player2.containsAll(player1);
+            if(similarity >= 0.8) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
     }
 
     /* (non-Javadoc)

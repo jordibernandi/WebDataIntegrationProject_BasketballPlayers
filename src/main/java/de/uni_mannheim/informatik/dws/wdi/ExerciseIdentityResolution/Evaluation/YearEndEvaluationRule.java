@@ -9,7 +9,7 @@ import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.model.Playe
 public class YearEndEvaluationRule extends EvaluationRule<Player, Attribute> {
     @Override
     public boolean isEqual(Player record1, Player record2, Attribute schemaElement) {
-        if(record1.getYearEnd()> (record2.getYearEnd()*0.9) && record1.getYearEnd()<record2.getYearEnd()*1.1)
+        if(record1.getYearEnd() >= (record2.getYearEnd() - 1) && record1.getYearEnd() <= record2.getYearEnd() + 1)
             return true;
         else
             return false;

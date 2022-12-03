@@ -1,33 +1,35 @@
 package de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.Evaluation;
 
 import java.util.*;
+import java.util.stream.Collectors;
+
 import de.uni_mannheim.informatik.dws.winter.datafusion.EvaluationRule;
 import de.uni_mannheim.informatik.dws.winter.model.Correspondence;
 import de.uni_mannheim.informatik.dws.winter.model.Matchable;
 import de.uni_mannheim.informatik.dws.winter.model.defaultmodel.Attribute;
 import de.uni_mannheim.informatik.dws.wdi.ExerciseIdentityResolution.model.Player;
+import de.uni_mannheim.informatik.dws.winter.similarity.list.OverlapSimilarity;
+import de.uni_mannheim.informatik.dws.winter.utils.StringUtils;
 
 public class PositionsEvaluationRule extends EvaluationRule<Player, Attribute>{
 
+    OverlapSimilarity sim = new OverlapSimilarity();
     @Override
     public boolean isEqual(Player record1, Player record2, Attribute schemaElement) {
-        Collection positions1 = new ArrayList();
-        if (record1.getPositions() != null) {
-            for (String p : record1.getPositions()) {
+        if (record1.getPositions() != null && record2.getPositions() != null) {
+            List<String> s1 = record1.getPositions().stream().map(String::toLowerCase).collect(Collectors.toList());
+            List<String> s2 = record2.getPositions().stream().map(String::toLowerCase).collect(Collectors.toList());
 
-                positions1.add(p);
+            double similarity = sim.calculate(s1, s2);
+
+            if(similarity >= 0.8) {
+                return true;
+            } else {
+                return false;
             }
+        } else {
+            return false;
         }
-        Collection positions2 = new ArrayList();
-        if (record2.getPositions() != null) {
-            for (String p : record2.getPositions()) {
-                positions2.add(p);
-            }
-        }
-
-
-        positions1.retainAll( positions2 );
-        return positions1.size()>0;
     }
 
     /* (non-Javadoc)
