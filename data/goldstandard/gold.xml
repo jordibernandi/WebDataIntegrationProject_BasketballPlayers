@@ -57,7 +57,6 @@
 			<name>Boston Celtics</name>
 			<name>San Antonio Spurs</name>
 		</team>
-
 	</player>
 
     <player>
@@ -151,7 +150,6 @@
 			<name>Brooklyn Nets</name>
 			<name>Philadelphia 76ers</name>
 		</team>
-		</salaries>
 	</player>
 
     <player>
@@ -278,4 +276,5 @@
 			<name>Toronto Raptors</name>
 		</team>
 	</player>
+	
 </players>
