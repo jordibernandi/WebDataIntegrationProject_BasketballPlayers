@@ -49,7 +49,7 @@ public class DataFusion {
         dsPlayerStat.setScore(1.0);
         dsPlayerDBpedia.setScore(4.0);
         dsPlayerSalary.setScore(3.0);
-        dsPlayerInjury.setScore(4.0);
+        dsPlayerInjury.setScore(2.0);
 
         // Date (e.g. last update)
         DateTimeFormatter formatter = new DateTimeFormatterBuilder()
@@ -90,12 +90,18 @@ public class DataFusion {
         //add attribute fusers and evaluation rules
         strategy.addAttributeFuser(Player.NAME, new NameFuserVoting(),new NameEvaluationRule());
         strategy.addAttributeFuser(Player.BIRTHDATE, new BirthDateFuserFavourSource(), new BirthDateEvaluationRule());
-        strategy.addAttributeFuser(Player.HEIGHT, new HeightFuserFavourSource(),new HeightEvaluationRule());
+        strategy.addAttributeFuser(Player.BIRTHPLACE, new BirthPlaceFuserLongestString(), new BirthPlaceEvaluationRule());
+        strategy.addAttributeFuser(Player.HEIGHT, new HeightFuserMostRecent(),new HeightEvaluationRule());
         strategy.addAttributeFuser(Player.WEIGHT, new WeightFuserMostRecent(),new WeightEvaluationRule());
+        strategy.addAttributeFuser(Player.COLLEGE, new CollegeFuserLongestString(), new CollegeEvaluationRule());
         strategy.addAttributeFuser(Player.YEARSTART, new YearStartFuserFavourSource(),new YearStartEvaluationRule());
         strategy.addAttributeFuser(Player.YEAREND, new YearEndFuserMostRecent(),new YearEndEvaluationRule());
-        strategy.addAttributeFuser(Player.POSITIONS,new PositionsFuserFavourSource(), new PositionsEvaluationRule());
-        strategy.addAttributeFuser(Player.TEAMS,new TeamsFuserFavourSource(), new TeamsEvaluationRule());
+        strategy.addAttributeFuser(Player.LEAGUES,new LeaguesFuserFavourSource(), new LeaguesEvaluationRule());
+        strategy.addAttributeFuser(Player.AWARDS,new AwardsFuserFavourSource(), new AwardsEvaluationRule());
+        strategy.addAttributeFuser(Player.POSITIONS,new PositionsFuserUnion(), new PositionsEvaluationRule());
+        strategy.addAttributeFuser(Player.TEAMS,new TeamsFuserMostRecent(), new TeamsEvaluationRule());
+        strategy.addAttributeFuser(Player.SALARIES,new SalariesMostRecent(), new SalariesEvaluationRule());
+        strategy.addAttributeFuser(Player.INJURIES,new InjuriesMostRecent(), new InjuriesEvaluationRule());
 
         // create the fusion engine
         DataFusionEngine<Player, Attribute> engine = new DataFusionEngine<>(strategy);

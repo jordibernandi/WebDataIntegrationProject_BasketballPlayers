@@ -109,12 +109,37 @@ public class PlayerXMLReader extends XMLMatchableReader<Player, Attribute> imple
         // load the list of salaries
         List<Salary> salaries = getObjectListFromChildElement(node, "salaries",
                 "salary", new SalaryXMLReader(), provenanceInfo);
-        player.setSalaries(salaries);
+        if (salaries != null) {
+            player.setSalaries(salaries);
+        }
+        else {
+            if (player.getIdentifier().substring(0, 9).equals("player_st")) {
+                List<Salary> default_salaries = new ArrayList<>();
+                Salary s = new Salary(id, provenanceInfo);
+                s.setAmount(0.0);
+                s.setSeasonStartYear(0);
+                s.setSeasonEndyear(0);
+                default_salaries.add(s);
+                player.setSalaries(default_salaries);
+            }
+        }
 
         // load the list of injuries
         List<Injury> injuries = getObjectListFromChildElement(node, "injuries",
                 "injury", new InjuryXMLReader(), provenanceInfo);
-        player.setInjuries(injuries);
+        if (injuries != null) {
+            player.setInjuries(injuries);
+        }
+        else {
+            if (player.getIdentifier().substring(0, 9).equals("player_st")) {
+                List<Injury> default_injuries = new ArrayList<>();
+                Injury i = new Injury(id, provenanceInfo);
+                i.setInjuryDate(LocalDate.of(9999, 1, 1));
+                i.setInjuryNote("");
+                default_injuries.add(i);
+                player.setInjuries(default_injuries);
+            }
+        }
 
         return player;
     }

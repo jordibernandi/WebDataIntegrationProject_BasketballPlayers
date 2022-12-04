@@ -20,4 +20,7 @@ public class WeightEvaluationRule extends EvaluationRule<Player, Attribute> {
                            Correspondence<Attribute, Matchable> schemaCorrespondence) {
         return isEqual(record1, record2, (Attribute)null);
     }
+
+    public static class InjuriesEvaluationRule {
+    }
 }

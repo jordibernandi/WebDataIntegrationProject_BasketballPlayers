@@ -31,6 +31,4 @@ public class LeaguesFuserUnion extends AttributeValueFuser<List<String>, Player,
         fusedRecord.setLeagues(fused.getValue());
         fusedRecord.setAttributeProvenance(Player.LEAGUES, fused.getOriginalIds());
     }
-
-
 }

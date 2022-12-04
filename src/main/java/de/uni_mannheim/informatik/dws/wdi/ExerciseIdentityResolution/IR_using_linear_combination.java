@@ -80,11 +80,11 @@ public class IR_using_linear_combination
 		matchingRulePlayerStatDBpedia.addComparator(new PlayerWeightComparatorPercentageSim(), 0.1);
 		
 		//added comparators for StatSalary
-		matchingRulePlayerStatSalary.addComparator(new PlayerNameComparatorJaccard(), 0.5);
+		matchingRulePlayerStatSalary.addComparator(new PlayerNameComparatorLevenshtein(), 0.5);
 		matchingRulePlayerStatSalary.addComparator(new PlayerSalaryYearCareerComparatorRange(), 0.5);
 
 		//added comparators for StatInjury
-		matchingRulePlayerStatInjury.addComparator(new PlayerNameComparatorJaccard(), 0.4);
+		matchingRulePlayerStatInjury.addComparator(new PlayerNameComparatorLevenshtein(), 0.4);
 		matchingRulePlayerStatInjury.addComparator(new PlayerPositionsComparatorOverlap(), 0.2);
 		matchingRulePlayerStatInjury.addComparator(new PlayerInjuryYearCareerComparatorRange(), 0.4);
 
