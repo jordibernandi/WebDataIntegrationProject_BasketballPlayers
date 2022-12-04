@@ -88,14 +88,14 @@ public class DataFusion {
         strategy.activateDebugReport("data/output/debugResultsDatafusion.csv", 100000000, gs);
 
         //add attribute fusers and evaluation rules
-        strategy.addAttributeFuser(Player.NAME, new NameFuserLongestString(),new NameEvaluationRule());
+        strategy.addAttributeFuser(Player.NAME, new NameFuserVoting(),new NameEvaluationRule());
         strategy.addAttributeFuser(Player.BIRTHDATE, new BirthDateFuserFavourSource(), new BirthDateEvaluationRule());
         strategy.addAttributeFuser(Player.HEIGHT, new HeightFuserFavourSource(),new HeightEvaluationRule());
-        strategy.addAttributeFuser(Player.WEIGHT, new WeightFuserFavourSource(),new WeightEvaluationRule());
+        strategy.addAttributeFuser(Player.WEIGHT, new WeightFuserMostRecent(),new WeightEvaluationRule());
         strategy.addAttributeFuser(Player.YEARSTART, new YearStartFuserFavourSource(),new YearStartEvaluationRule());
         strategy.addAttributeFuser(Player.YEAREND, new YearEndFuserMostRecent(),new YearEndEvaluationRule());
-        strategy.addAttributeFuser(Player.POSITIONS,new PositionsFuserUnion(), new PositionsEvaluationRule());
-        strategy.addAttributeFuser(Player.TEAMS,new TeamsFuserUnion(), new TeamsEvaluationRule());
+        strategy.addAttributeFuser(Player.POSITIONS,new PositionsFuserFavourSource(), new PositionsEvaluationRule());
+        strategy.addAttributeFuser(Player.TEAMS,new TeamsFuserFavourSource(), new TeamsEvaluationRule());
 
         // create the fusion engine
         DataFusionEngine<Player, Attribute> engine = new DataFusionEngine<>(strategy);

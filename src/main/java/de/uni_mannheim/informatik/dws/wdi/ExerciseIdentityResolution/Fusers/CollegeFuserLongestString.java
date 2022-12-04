@@ -31,8 +31,7 @@ public class CollegeFuserLongestString extends
     public void fuse(RecordGroup<Player, Attribute> group, Player fusedRecord, Processable<Correspondence<Attribute, Matchable>> schemaCorrespondences, Attribute schemaElement) {
         FusedValue<String, Player, Attribute> fused = getFusedValue(group, schemaCorrespondences, schemaElement);
         fusedRecord.setCollege(fused.getValue());
-        fusedRecord.setAttributeProvenance(Player.COLLEGE,
-                fused.getOriginalIds());
+        fusedRecord.setAttributeProvenance(Player.COLLEGE, fused.getOriginalIds());
     }
 
 }

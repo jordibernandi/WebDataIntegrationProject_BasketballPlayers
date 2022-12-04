@@ -28,11 +28,7 @@ public class YearEndFuserFavourSource extends AttributeValueFuser<Integer, Playe
     @Override
     public void fuse(RecordGroup<Player, Attribute> group, Player fusedRecord, Processable<Correspondence<Attribute, Matchable>> schemaCorrespondences, Attribute schemaElement) {
         FusedValue<Integer, Player, Attribute> fused = getFusedValue(group, schemaCorrespondences, schemaElement);
-        if(fused.getValue() == null) {
-            fusedRecord.setYearEnd(0);
-        } else {
-            fusedRecord.setYearEnd(fused.getValue());
-        }
+        fusedRecord.setYearEnd(fused.getValue());
         fusedRecord.setAttributeProvenance(Player.YEAREND, fused.getOriginalIds());
     }
 

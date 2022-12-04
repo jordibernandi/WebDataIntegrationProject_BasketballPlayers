@@ -28,11 +28,7 @@ public class HeightFuserFavourSource extends AttributeValueFuser<Float, Player, 
         @Override
         public void fuse(RecordGroup<Player, Attribute> group, Player fusedRecord, Processable<Correspondence<Attribute, Matchable>> schemaCorrespondences, Attribute schemaElement) {
             FusedValue<Float, Player, Attribute> fused = getFusedValue(group, schemaCorrespondences, schemaElement);
-            if(fused.getValue() == null) {
-                fusedRecord.setHeight(0);
-            } else {
-                fusedRecord.setHeight(fused.getValue());
-            }
+            fusedRecord.setHeight(fused.getValue());
             fusedRecord.setAttributeProvenance(Player.HEIGHT, fused.getOriginalIds());
         }
 
